@@ -10,16 +10,14 @@ import { getDatabase, set, ref, get, child} from "https://www.gstatic.com/fireba
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyA1cDk1aA-T4uLkFla4k2tzP1rHvUECn7s",
-  authDomain: "moodt-journal.firebaseapp.com",
-  projectId: "moodt-journal",
-  storageBucket: "moodt-journal.appspot.com",
-  messagingSenderId: "861023847423",
-  appId: "1:861023847423:web:73f132c121e4a48c30ddca",
-  measurementId: "G-PLV0WG2PRX"
-};
+    apiKey: "AIzaSyBS7-5Y-f_0AcwywqBot0Jhbr07STYy9H0",
+    authDomain: "mtej-3330e.firebaseapp.com",
+    projectId: "mtej-3330e",
+    storageBucket: "mtej-3330e.appspot.com",
+    messagingSenderId: "661462042481",
+    appId: "1:661462042481:web:bc85ac14a8dc616c0618d0"
+  };
 
 import * as FirebaseInit from '/firebase/firebaseInit.js';
 

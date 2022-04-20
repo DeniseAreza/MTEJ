@@ -10,16 +10,14 @@ import { getDatabase, ref, set, push, onValue, onChildAdded} from "https://www.g
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyA1cDk1aA-T4uLkFla4k2tzP1rHvUECn7s",
-  authDomain: "moodt-journal.firebaseapp.com",
-  projectId: "moodt-journal",
-  storageBucket: "moodt-journal.appspot.com",
-  messagingSenderId: "861023847423",
-  appId: "1:861023847423:web:73f132c121e4a48c30ddca",
-  measurementId: "G-PLV0WG2PRX"
-};
+    apiKey: "AIzaSyBS7-5Y-f_0AcwywqBot0Jhbr07STYy9H0",
+    authDomain: "mtej-3330e.firebaseapp.com",
+    projectId: "mtej-3330e",
+    storageBucket: "mtej-3330e.appspot.com",
+    messagingSenderId: "661462042481",
+    appId: "1:661462042481:web:bc85ac14a8dc616c0618d0"
+  };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -43,8 +41,10 @@ FirebaseInit.checkActiveUser()
                     onChildAdded(ATJRef, (data) => {
                         var alternativeBehavior = data.val().alternativeBehavior;
                         var date = data.val().date;
-                        $('#table_body_posts').prepend('<div class="container shadow-sm p-3 mb-5 bg-white rounded""><div class="text-justify"><p class="text-muted">'+ date +'</p></div><div class="text-justify"><p class="text-justify">'+ alternativeBehavior +'</p><footer class="blockquote-footer">admin@jctm.com</footer></div></div>');
-                      });
+                        console.log(alternativeBehavior);
+                        console.log(date);
+                        $("#table_alternativeBehavior").append('<p>'+ alternativeBehavior +'</p>');
+                      })
                 }, function() {
                     console.log('No user exists'); 
                 });

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script defer src="/javascripts/loader.js"></script>
+    <script defer type="module" src="/firebase/firebaseInit.js"></script>
+    <script defer type="module" src="/firebase/firebaseATJ.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="icon" href="/bundles/undraw_mindfulness_scgo.svg">
+    <link rel="stylesheet" href="/style/main.css">
+    <title>Moodt Journal</title>
+</head>
+<body onload="loader()">
+    <!--* Loader -->
+    <div class="d-flex justify-content-center">
+        <div class="spinner-grow bg-primary mt-5" role="status" id="loader" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!--* Loader -->
+    <!-- ! Main Content -->
+        <div style="display:none;" id="allContent" class="animate">
+
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <span class="navbar-brand mb-0 h1">MTEJ</span>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                      <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="/html/mainPage.html">Home</a>
+                      </li>
+
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/html/mainPage.html">My Account</a>
+                      </li>
+                    </ul>
+                    <form class="d-flex">
+                      <button type="button" class="btn btn-primary" id="signOutBtn">Sign Out</button>
+                    </form>
+                  </div>
+                </div>
+              </nav>
+
+            <h5 class="display-3 text-center">Automatic Thought Journal</h5>
+            
+            <!-- Accordion -->
+            <div class="accordion accordion-flush" id="accordionFlushExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingOne">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                      First Question
+                    </button>
+                  </h2>
+                  <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">What was your triggering event?</div>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="triggeringEvent" style="height: 100px" required></textarea>
+                        <label for="triggeringEvent">Triggering Event</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                      Second Question
+                    </button>
+                  </h2>
+                  <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">What were your automatic thoughts?</div>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="automaticThoughts" style="height: 100px" required></textarea>
+                        <label for="automaticThoughts">Automatic Thoughts</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="flush-headingThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                      Third Question
+                    </button>
+                  </h2>
+                  <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">What were your automatic feelings?</div>
+                    <div class="form-floating">
+                        <textarea class="form-control" placeholder="Leave a comment here" id="automaticFeelings" style="height: 100px" required></textarea>
+                        <label for="automaticFeelings">Automatic Feelings</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="flush-headingThree">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
+                        Fourth Question
+                      </button>
+                    </h2>
+                    <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                      <div class="accordion-body">What was your automatic behavior?</div>
+                      <div class="form-floating">
+                          <textarea class="form-control" placeholder="Leave a comment here" id="automaticBehavior" style="height: 100px" required></textarea>
+                          <label for="automaticBehavior">Automatic Behavior</label>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="text-center">
+                    <button type="button" class="btn btn-primary m-3" id="ATJSubmit">Save Automatic Thought Journal</button>
+                </div>
+
+                <div class="text-center">
+                  <button type="button" class="btn btn-secondary m-3" id="proceedToAlternative">Proceed to Alternative Thought Entry</button>
+                </div>
+                
+                <div class="text-center">
+                    <small>Clicking this button will redirect to the alternative thought journal</small>
+                </div>
+            </div>
+            <!-- Accordion -->
+        </div>
+    <!-- ! Main Content -->
+</body>
+</html>

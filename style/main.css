@@ -12033,4 +12033,9 @@ input {
 .text-center {
   text-align: center;
 }
+
+.images {
+  border-radius: 50%;
+  height: 40%;
+}
 /*# sourceMappingURL=main.css.map */

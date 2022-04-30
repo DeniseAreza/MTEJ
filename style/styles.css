@@ -1,0 +1,201 @@
+html, body {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+}
+
+/*-----------------------------------------
+    A. NAVBAR
+-------------------------------------------*/
+nav.navbar {
+    z-index: 100;
+}
+
+nav.navbar div.container-fluid {
+    justify-content:unset;
+}
+
+nav div.navbar-right {
+    text-align: right;
+}
+
+/*-----------------------------------------
+    B. LOGIN PAGE 
+-------------------------------------------*/
+
+/* b1. container  */
+.login-container {
+    /*background-color: #feeae6;*/
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
+    top: 0; left: 0; bottom: 0; right: 0;
+    z-index: 1;
+}
+
+/* b2. image  */
+.login-container img {
+    width: 400px;
+    height: auto;
+    position: relative;
+    margin: 30px auto 30px auto; /*top, right, bottom, left*/    
+}
+
+/* b3. form container */
+.login-form-container {
+    position: relative;
+    display: inline-block;
+    max-width: fit-content; /*changes container width*/
+    width:500px;
+
+    background-color: #FFB085; /*original: FFB085*/
+    border-radius: 40px;
+    /*box-shadow: 2px 2px;*/
+    
+    padding: 20px 50px 50px 50px; /*top, right, bottom, left*/    
+    margin: 0px auto 50px auto; /*top, right, bottom, left*/    
+
+    
+}
+
+/* b5: form-button */
+.login-form-container div.form-group input { border-radius: 40px; }
+.login-form-container button.form-submit {
+    border-radius: 40px;
+    width: 100%;
+    outline: none;
+}
+
+/* b6: buttoms (submit, register, and forgot password) */
+button#submitbtnLogin {
+    background-color: #3C97B6; /*original: 90AACB*/
+    color: white;
+    outline: none;
+}
+button#submitbtnLogin:hover {
+    background-color: #26728c;
+}
+button#registerPage {
+    background-color: #F9D5A7; /*original: E59E77*/
+    color: black;
+    outline: none;
+}
+button#registerPage:hover {
+    background-color: #dbbc93;
+}
+a.forgot-password {
+    font-size: 10pt;
+    color: #595959;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+
+p a.forgot-password:hover {
+    text-decoration: underline;
+}
+
+/*-----------------------------------------
+    C. REGISTER PAGE 
+-------------------------------------------*/
+
+/* c1. container  */
+.register-container {
+    background-color: #FEF1E6;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: absolute; /*absolute: fix to bottom, relative: default*/
+    top: 50px; left: 0; bottom: 0; right: 0;
+    z-index: 1;    
+}
+
+/* c2. image  */
+.register-container img {
+    width: 100%;
+    height: auto;
+    position: relative;
+    margin: 90px auto 0px auto; /*top, right, bottom, left*/    
+}
+
+/* c3. form container */
+.register-form-container {
+    position: relative;
+    display: inline-block;
+    max-width: fit-content; /*changes container width*/
+    width:500px;
+
+    background-color: #FFB085; /*original: FFB085*/
+    border-radius: 60px;
+    /*box-shadow: 2px 2px;*/
+    
+    padding: 20px 50px 50px 50px; /*top, right, bottom, left*/
+    margin: 50px auto 50px auto; /*top, right, bottom, left*/    
+}
+
+/* c4: buttons (submit, register, and forgot password) */
+button#signUp {
+    background-color: #3C97B6; /*original: 90AACB*/
+    color: white;
+    outline: none;
+    width: 100%;
+    border-radius: 40px;
+    margin-top: 25px;
+}
+button#signUp:hover {
+    background-color: #26728c;
+}
+a.login-button {
+    font-size: 10pt;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+p a.login-button:hover {
+    text-decoration: underline;
+}
+
+/*-----------------------------------------
+    D. LOGIN & REGISTER INPUT DESIGN 
+-------------------------------------------*/
+.log-reg-input {
+    padding: 0px 10px 0px 10px; /*top, right, bottom, left*/
+    background-color: white;
+    border-radius: 20px;
+    border: 2px solid #90AACB;
+    color: #90AACB; /* change icon color */
+    white-space: nowrap; /* makes them inline */
+}
+
+.log-reg-input input,
+.log-reg-input input[type="text"]:focus,
+.log-reg-input input[type="text"]:active,
+.log-reg-input input[type="email"]:focus,
+.log-reg-input input[type="email"]:active,
+.log-reg-input input[type="password"]:focus,
+.log-reg-input input[type="password"]:active {
+    background: transparent;
+    border: none; 
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.form-group {
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+
+
+
+
+
+

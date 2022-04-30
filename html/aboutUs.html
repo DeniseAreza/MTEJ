@@ -10,20 +10,26 @@
     <script defer type="module" src="/firebase/firebaseInit.js"></script> 
     <!-- module type of script:this is the main "manager" of the scripts -->
     <!-- this module is dedicated only to this page for client inquiries -->
-    <script defer src="/javascripts/aboutUs.js"></script>
+    <script defer src="/javascripts/hyperlink.js"></script>
     <script defer src="/javascripts/validationForm.js"></script>
     <link rel="icon" href="/bundles/undraw_mindfulness_scgo.svg">
     <link rel="stylesheet" href="/style/main.css">
-    <title>MTEJ</title>
+    <link rel="stylesheet" href="/style/styles.css">
+    <title>Tungkol Sa Amin</title>
 </head>
 <body>
-    <!-- As a heading -->
-    <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1"><a href="/index.html" style="text-decoration: none; color: black;">MTEJ</a></span>
-            <button type="button" class="btn btn-primary" id="aboutUs">About Us</button>
-        </div>
-    </nav>  
+   <!-- As a heading -->
+   <nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="col">
+        <span class="navbar-brand mb-0 h1 navbar-left"><a href="/index.html" style="text-decoration: none; color: black;">MTEJ</a></span>
+      </div>
+      <div class="col navbar-right">
+        <button type="button" class="btn btn-primary float-right" id="loginPage">Login</button>
+        <button type="button" class="btn btn-primary float-right" id="aboutUs">Tungkol Sa Amin</button>
+      </div>  
+    </div>
+</nav> 
 
     <div class="container-fluid" style="background-color: #FEF1E6;">
         <div class="row">

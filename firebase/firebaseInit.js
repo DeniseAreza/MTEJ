@@ -3,7 +3,7 @@
 // Import the functions you need from the SDKs you need
 // wag mo na iimport
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
-import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
+import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
 import { getDatabase, set, ref, get} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -62,7 +62,14 @@ function signUpUser () {
           firstName: firstName,
           lastName: lastName
         })
+        // Email Verification
+        await sendEmailVerification(auth.currentUser)
+        .then(() => {
+          alert("Email Verfication Sent!");
+          console.log("Email Verification Sent")
+        });
 
+        // redirect to main page
         await redirect();
 
         console.log("Created User"); 

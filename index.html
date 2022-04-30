@@ -13,7 +13,7 @@
     <!-- this module is dedicated only to this page for client inquiries -->
     <script defer src="/javascripts/hyperlink.js"></script>
     <script defer type="module" src="/firebase/firesbaseLogIn.js"></script>
-    <script defer type= "module" src="/firebase/firebaseSignUp.js"></script>
+    <script defer type= "module" src="/firebase/firebaseHomePage.js"></script>
     <script defer src="/javascripts/validationForm.js"></script>
     <link rel="icon" href="/bundles/undraw_mindfulness_scgo.svg">
     <link rel="stylesheet" href="/style/main.css">
@@ -29,182 +29,58 @@
     </div>
     <!--* Loader -->
 
-    <!-- !Modal -->
-    <div class="modal fade" id="modalLogin" tabindex="-1" aria-labelledby="modalLoginLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="modalLoginLabel">Welcome back!</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <!-- This holds the whole form -->
-            <div class="modal-body">
-              <div class="needs-validation" novalidate>
-                <!-- * Alert triggers -->
-                <div class="alert alert-danger collapse" role="alert" id="errorAlertLogin">
-                  <strong>Error!</strong> Your Email and Password are not correct.
-                </div>
-                <div class="alert alert-success collapse" role="alert" id="successAlertLogin">
-                  You are now logged in.
-                </div>
-                <!-- * Alert triggers -->
-                <!-- Email Address -->
-                <div class="form-group">
-                  <label for="login_InputEmail">Email address</label>
-                  <input type="email" class="form-control" id="login_InputEmail" placeholder="unknown@gmail.com" required>
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
-                  <div class="invalid-feedback">
-                    Incorrect Email.
-                  </div>
-                </div>
-                <!-- Email Address -->
-
-                <!-- Password -->
-                <div class="form-group">
-                  <label for="login_InputPassword">Password</label>
-                  <input type="password" class="form-control" id="login_InputPassword" required>
-                  <div class="valid-feedback">
-                    Great!
-                  </div>
-                  <div class="invalid-feedback">
-                    Incorrect Password.
-                  </div>
-                </div>
-
-                <p id="demo"></p>
-                <!--Password -->
-
-                <!-- Buttons -->
-                <button  type="button" class="btn btn-primary" id="submitbtnLogin">Submit</button>
-                <!-- Buttons -->
-              </div>
-            </div>
-            <!-- This holds the whole form -->
-        </div>
-        </div>
-    </div>
-
-    <!-- !Modal -->
-    <div class="modal fade" id="modalSignUp" tabindex="-1" aria-labelledby="modalSignUpLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <h5 class="modal-title" id="modalSignUpLabel">Let's start your journey!</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <form class="needs-validation" novalidate>
-                <!-- * Alert triggers -->
-                <div class="alert alert-danger collapse" role="alert" id="errorAlertSignUp">
-                  <strong>Error!</strong> Use another email address or make sure that your password must be more than 6 characters.
-                </div>
-                <div class="alert alert-success collapse" role="alert" id="errorAlertSignUp">
-                  You are now logged in.
-                </div>
-                <!-- * Alert triggers -->
-                <!-- Email Address -->
-                <div class="form-group">
-                  <label for="signup_firstName">First Name</label>
-                  <input type="text" class="form-control" id="signup_firstName"required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
-
-                  <label for="signup_lastName">Last Name</label>
-                  <input type="text" class="form-control" id="signup_lastName"required>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
-
-                  <label for="signup_Email">Email address</label>
-                  <input type="email" class="form-control" id="signup_Email" placeholder="unknown@gmail.com" required>
-                  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                  <div class="valid-feedback">
-                    Looks good!
-                  </div>
-                  <div class="invalid-feedback">
-                    Incorrect Email.
-                  </div>
-                </div>
-                <!-- Email Address -->
-
-                <!-- Password -->
-                <div class="form-group">
-                  <label for="login_InputPassword">Password</label>
-                  <input type="password" class="form-control" id="signup_Password" required>
-                  <div class="valid-feedback">
-                    Great!
-                  </div>
-                  <div class="invalid-feedback">
-                    Incorrect Password.
-                  </div>
-                </div>
-
-                <p id="demo"></p>
-                <!--Password -->
-
-                <!-- Buttons -->
-                <button  type="button" class="btn btn-primary" id="signUp">Submit</button>
-                <!-- Buttons -->
-              </form>
-            </div>
-        </div>
-        </div>
-    </div>
-
     <!-- ! Main Content -->
         <!-- *Login Card -->
         <div style="display:none;" id="allContent" class="animate">
-
-            <!-- As a heading -->
-            <nav class="navbar navbar-light bg-light">
+            <!-- nav -->
+            <nav class="navbar navbar-light" style="background-color: #F9D5A7;">
                 <div class="container-fluid">
                   <div class="col">
                     <span class="navbar-brand mb-0 h1 navbar-left"><a href="/index.html" style="text-decoration: none; color: black;">MTEJ</a></span>
                   </div>
                   <div class="col navbar-right">
-                    <button type="button" class="btn btn-primary float-right" style="align-content: right;" id="loginPage">Login</button>
-                    <button type="button" class="btn btn-primary float-right" id="aboutUs">Tungkol Sa Amin</button>
+                    <button type="button" class="btn btn-primary float-right" id="aboutUsButton">Tungkol Sa Amin</button>
+                    <!--Sign Up Button-->
+                    <button class="btn btn-primary" type="button" id="registerButton">Sign Up</button>
+                    <!--Login Button-->
+                    <button class="btn btn-primary me-md-2" type="button" id="loginButton">Login</button>
                   </div>  
                 </div>
             </nav>
 
-            <!-- center cards -->
-            <div class="wrapper-horizontal">
-              <div class="horizontal">
-                <!-- *Login card -->
-                <div class="card m-5" style="width: 18rem;">
-                    <img src="/bundles/undraw_lighthouse_frb8.svg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Welcome back!</h5>
-                      <p class="card-text">Sending you a warm welcome and best wishes on your return.</p>
-                      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalLogin">
-                        Login
-                      </button>
-                    </div>
-                </div>
-              </div>
 
-              <div class="horizontal">
-                <!-- *Signup card -->
-                <div class="card m-5" style="width: 18rem;">
-                  <img src="/bundles/undraw_fingerprint_re_uf3f.svg" class="card-img-top" alt="...">
-                  <div class="card-body">
-                    <h5 class="card-title">Start your journey</h5>
-                    <p class="card-text">Welcome! Start your mood journal through signing up.</p>
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSignUp">
-                      Sign Up
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            
+      <!-- Carousel -->
+      <div id="carouselSlides" class="carousel slide" data-bs-ride="carousel" style="background-color: #FEF1E6;" >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="/bundles/undraw_notebook_re_id0r.svg" class="d-block w-100" alt="..." style="height: 300px;">
+          </div>
+          <div class="carousel-item">
+            <img src="/bundles/undraw_mindfulness_scgo.svg" class="d-block w-100" alt="..." style="height: 300px;">
+          </div>
+          <div class="carousel-item">
+            <img src="/bundles/undraw_stability_ball_b-4-ia.svg" class="d-block w-100" alt="..." style="height: 300px;">
+          </div>
+          <div class="carousel-item">
+           <img src="/bundles/undraw_wandering_mind_re_x2a3.svg" class="d-block w-100" alt="..." style="height: 300px;">
+          </div>
+       </div>
+      <!-- carousel -->  
 
-        </div>
+      <!--MTEJ Heading-->
+      <h2 style="text-align: center;" id="homepage-mtej"> MOOD THERAPY ELECTRONIC JOURNAL</h2>
+      <!--MTEJ heading-->
+
+       <!--Simulan Na Button-->
+       <div class="d-grid gap-2 col-1 mx-auto" id="simulanNaButton">
+        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalSignUp" id="signUpButton">Simulan Na!</button>
+      </div>
+      <!--Simulan Na Button-->
+
+     </div>
+    </div>
     <!-- ! Main Content -->
+
+     
 </body>
 </html>

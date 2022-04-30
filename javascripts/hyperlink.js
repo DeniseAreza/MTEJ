@@ -1,17 +1,17 @@
 // When About Us Button clicked
-$('#aboutUs').click(aboutUs);
-function aboutUs(){
+$('#aboutUsButton').click(aboutUsButton);
+function aboutUsButton(){
     window.location.href = '/html/aboutUs.html';
 }
 
 // When Login Button clicked
-$('#loginPage').click(loginPage);
-function loginPage(){
+$('#loginButton').click(loginButton);
+function loginButton(){
     window.location.href = '/html/loginPage.html';
 }
 
 // When Register Button clicked
-$('#registerPage').click(registerPage);
-function registerPage(){
+$('#registerButton').click(registerButton);
+function registerButton(){
     window.location.href = '/html/registerPage.html';
 }

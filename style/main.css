@@ -12033,4 +12033,37 @@ input {
 .text-center {
   text-align: center;
 }
+
+.images {
+  border-radius: 50%;
+  height: 200px;
+}
+
+.carousel-item{
+  margin-top: 5em;
+}
+
+#registerButton{
+  border-radius: 1em;
+  width: 10em;
+  background-color: #FFB085;
+  color: white;
+}
+
+#loginButton{
+  border-radius: 1em;
+  width: 10em;
+  background-color: white;
+  border-color: white;
+}
+
+#homepage-mtej{
+  margin-bottom: 2em;
+}
+
+#simulanNaButton{
+  padding-bottom: 8em;
+}
+
+
 /*# sourceMappingURL=main.css.map */

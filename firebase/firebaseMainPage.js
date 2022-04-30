@@ -43,7 +43,7 @@ FirebaseInit.checkActiveUser()
                         var date = data.val().date;
                         console.log(alternativeBehavior);
                         console.log(date);
-                        $("#table_alternativeBehavior").append('<p>'+ alternativeBehavior +'</p>');
+                        $("#table_alternativeBehavior").prepend('<div class="container shadow-sm p-3 mb-5 bg-white rounded""><div class="text-justify"><p class="text-muted">'+ date +'</p></div><div class="text-justify"><p class="text-justify">'+ alternativeBehavior +'</p></div></div>');
                       })
                 }, function() {
                     console.log('No user exists'); 

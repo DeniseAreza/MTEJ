@@ -12039,31 +12039,54 @@ input {
   height: 200px;
 }
 
-.carousel-item{
-  margin-top: 5em;
+.hero-1-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 50px 0 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background-color: #F9D5A7;
 }
 
-#registerButton{
-  border-radius: 1em;
-  width: 10em;
-  background-color: #FFB085;
-  color: white;
+.hero-1-container img {
+  height: 60vh;
 }
 
-#loginButton{
-  border-radius: 1em;
-  width: 10em;
-  background-color: white;
-  border-color: white;
+.title {
+  font-size: 2.7rem;
+  font-weight: bold;
+  font-family: tommy;
+  color: black;
 }
 
-#homepage-mtej{
-  margin-bottom: 2em;
+.description {
+  font-size: 1.5rem;
+  font-family: tommy;
+  color: black;
 }
 
-#simulanNaButton{
-  padding-bottom: 8em;
+.hero-2-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 50px 0 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background-color: #FEF1E6;
 }
 
-
+.hero-2-container img {
+  height: 60vh;
+}
 /*# sourceMappingURL=main.css.map */

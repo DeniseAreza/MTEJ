@@ -1,12 +1,14 @@
 import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
 
 
-var email = $("#email").val();
 
 const auth = getAuth();
-$("#reset-password-btn").click(sendPasswordResetEmail);
-sendPasswordResetEmail(auth, email)
+$("#reset-password-btn").click(resetPassword);
+function resetPassword() {
+  var email = $("#login_InputEmail").val();
+  sendPasswordResetEmail(auth, email)
   .then(() => {
+    
     window.alert("Password reset email sent successfully!");
   })
   .catch((error) => {
@@ -15,4 +17,7 @@ sendPasswordResetEmail(auth, email)
     // ..
     window.alert(errorMessage);
   });
+
+}
+
 

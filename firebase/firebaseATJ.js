@@ -49,12 +49,14 @@ function insertATJEntry() {
 
                     const postListRef = ref(database, 'users/' + user.uid +'/ATJEntries');
                     const newPostRef = push(postListRef);
+                    const postID = newPostRef.key;
                     set(newPostRef, {
                         date: date,
                         triggeringEvent: triggeringEvent,
                         automaticThoughts: automaticThoughts,
                         automaticFeelings: automaticFeelings,
-                        automaticBehavior:automaticBehavior
+                        automaticBehavior:automaticBehavior,
+                        postID: postID
                     });
 
                     alert("Successfully Uploaded")

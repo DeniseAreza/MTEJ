@@ -12054,6 +12054,29 @@ input {
   background-color: #F9D5A7;
 }
 
+nav #registerButton{
+  border-radius: 1em;
+  width: 10em;
+  /*background-color: #FFB085;
+  color: white;*/
+}
+
+nav #loginButton{
+  border-radius: 1em;
+  width: 10em;
+  /*background-color: white;
+  border-color: white;*/
+}
+
+
+#homepage-mtej{
+  margin-bottom: 2em;
+}
+
+#simulanNaButton{
+  padding-bottom: 8em;
+  white-space: nowrap;
+
 .hero-1-container img {
   height: 60vh;
 }

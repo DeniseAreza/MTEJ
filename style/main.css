@@ -12043,19 +12043,20 @@ input {
   margin-top: 5em;
 }
 
-#registerButton{
+nav #registerButton{
   border-radius: 1em;
   width: 10em;
-  background-color: #FFB085;
-  color: white;
+  /*background-color: #FFB085;
+  color: white;*/
 }
 
-#loginButton{
+nav #loginButton{
   border-radius: 1em;
   width: 10em;
-  background-color: white;
-  border-color: white;
+  /*background-color: white;
+  border-color: white;*/
 }
+
 
 #homepage-mtej{
   margin-bottom: 2em;
@@ -12063,6 +12064,8 @@ input {
 
 #simulanNaButton{
   padding-bottom: 8em;
+  white-space: nowrap;
+
 }
 
 

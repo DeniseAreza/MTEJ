@@ -19,9 +19,13 @@
     <link rel="icon" href="/bundles/undraw_mindfulness_scgo.svg">
     <link rel="stylesheet" href="/style/main.css">
     <link rel="stylesheet" href="/style/styles.css">
+    <!-- SIDEBAR & NAVBAR-->
+    <script defer src="/javascripts/sidebar.js"></script>
+    <script src="https://kit.fontawesome.com/fd64d9c49d.js" crossorigin="anonymous"></script>
+
     <title>MTEJ</title>
 </head>
-<body onload="loader()">
+<body onload="loader()" id="body-pd">
 
   
     <!--* Loader -->
@@ -33,22 +37,39 @@
     <!-- ! Main Content -->
         <!-- *Login Card -->
         <div style="display:none;" id="allContent" class="animate">
-            <!-- nav -->
-            <nav class="navbar navbar-light" style="background-color:#F9D5A7;">
-                <div class="container-fluid">
-                  <div class="col">
-                    <span class="navbar-brand mb-0 h1 navbar-left"><a href="/index.html" style="text-decoration: none; color: black;">MTEJ</a></span>
-                  </div>
-                  <div class="col navbar-right">
-                    <button type="button" class="btn btn-primary float-right" id="aboutUsButton">Tungkol Sa Amin</button>
-                    <!--Sign Up Button-->
-                    <button class="btn btn-primary" type="button" id="registerButton">Sign Up</button>
-                    <!--Login Button-->
-                    <button class="btn btn-primary me-md-2" type="button" id="loginButton">Login</button>
-                  </div>  
-                </div>
-            </nav>
 
+
+          <!-- NAVIGATION BAR -->
+          <nav class="navbar navbar-light header" style="background-color: #F9D5A7;" id="header">
+            <div class="container-fluid">
+              <div class="header_toggle navbar-left"> <i class="fa-solid fa-bars"id="header-toggle"></i></div>
+              <div class="col">
+                <span class="navbar-brand mb-0 h1 navbar-left"><a href="#" style="text-decoration: none; color: black;">ㅤMTEJ</a></span>
+              </div>
+              <!-- 
+              <div class="col navbar-right">
+                <button type="button" class="btn btn-primary float-right" id="aboutUsButton">Tungkol Sa Amin</button>
+                <button class="btn btn-primary" type="button" id="registerButton">Sign Up</button>
+                <button class="btn btn-primary me-md-2" type="button" id="loginButton">Login</button>
+              </div> -->
+            </div>
+          </nav>
+          
+           <!-- SIDE BAR -->
+          <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> 
+                    <a href="#" class="nav_logo"> <i class="fa-brands fa-modx"></i> <span class="nav_logo-name">MTEJ</span> </a>
+                    <div class="nav_list"> 
+                      <a href="#" class="nav_link active"> <i class="fa-solid fa-house"></i> <span class="nav_name">Home</span> </a> 
+                      <a href="#" class="nav_link" id="aboutUsButton"> <i class="fa-solid fa-a"></i> <span class="nav_name">About Us</span> </a> 
+                      <a href="#" class="nav_link"> <i class="fa-solid fa-face-laugh-beam"></i> <span class="nav_name">Mood Diary</span> </a> 
+                      <a href="#" class="nav_link"> <i class="fa-solid fa-book-bookmark"></i> <span class="nav_name">AT Journal</span> </a> 
+                    </div>
+                </div> <a href="#" class="nav_link" id="loginButton"> <i class="fa-solid fa-arrow-right-from-bracket"></i> <span class="nav_name">Login</span> </a>
+            </nav>
+          </div>
+        
 
       <!-- Carousel -->
       <div id="carouselSlides" class="carouselSlides" data-bs-ride="carousel" style="background-color: #FEF1E6;" >
@@ -116,6 +137,5 @@
     </div>
     <!-- ! Main Content -->
 
-     
 </body>
 </html>

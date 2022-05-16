@@ -4,7 +4,7 @@
 // wag mo na iimport
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
 import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
-import { getDatabase, set, ref, get} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
+import { getDatabase, set, ref, get, onChildAdded, onValue} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -51,6 +51,7 @@ function signUpUser () {
   let lastName = $('#signup_lastName').val();
   let email = $('#signup_Email').val();
   let password = $('#signup_Password').val();
+  let state = "user";
   console.log("Load")
     createUserWithEmailAndPassword(auth, email, password)
       .then(async(userCredential) => {
@@ -60,7 +61,8 @@ function signUpUser () {
         await set(ref(database, '/users/' + user.uid +'/Account'), {
           email: email,
           firstName: firstName,
-          lastName: lastName
+          lastName: lastName,
+          state: state
         })
         // Email Verification
         await sendEmailVerification(auth.currentUser)
@@ -116,7 +118,10 @@ export function signOutUser() {
     });
   })
 }
+// *
 
+// * Redirect to mainpage
 function redirect() {
   window.location.href = '/html/mainPage.html';
 }
+// *

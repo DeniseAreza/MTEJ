@@ -12039,8 +12039,19 @@ input {
   height: 200px;
 }
 
-.carousel-item{
-  margin-top: 5em;
+.hero-1-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 50px 0 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background-color: #F9D5A7;
 }
 
 nav #registerButton{
@@ -12066,7 +12077,39 @@ nav #loginButton{
   padding-bottom: 8em;
   white-space: nowrap;
 
+.hero-1-container img {
+  height: 60vh;
 }
 
+.title {
+  font-size: 2.7rem;
+  font-weight: bold;
+  font-family: tommy;
+  color: black;
+}
 
+.description {
+  font-size: 1.5rem;
+  font-family: tommy;
+  color: black;
+}
+
+.hero-2-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 50px 0 50px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100vh;
+  background-color: #FEF1E6;
+}
+
+.hero-2-container img {
+  height: 60vh;
+}
 /*# sourceMappingURL=main.css.map */

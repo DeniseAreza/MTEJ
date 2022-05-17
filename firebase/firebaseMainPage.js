@@ -47,6 +47,7 @@ FirebaseInit.checkActiveUser()
                       })
                 }, function() {
                     console.log('No user exists'); 
+                    window.location.href = '/';
                 });
 // * Retrieve Alternative behavior as reference 
 

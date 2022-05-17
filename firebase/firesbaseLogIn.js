@@ -7,7 +7,7 @@ FirebaseInit.checkActiveUser()
             .then(() => {
                 console.log('successfully logged in');
             }, function() {
-                console.log('No user exists'); 
+                console.log('No user exists');
             });
 
 // * Sign in of user

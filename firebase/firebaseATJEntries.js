@@ -26,6 +26,17 @@ const database = getDatabase(app);
 
 import * as FirebaseInit from '/firebase/firebaseInit.js';
 
+// *Check if there's an active user
+FirebaseInit.checkActiveUser()
+            .then((user) => {
+                console.log(user.email);
+                console.log(user.uid)
+            }, function() {
+                console.log('No user exists'); 
+                window.location.href = '/';
+            });
+// * Check if there's an active user
+
 // * Retrieve ATJ as reference
 FirebaseInit.checkActiveUser()
                 .then((user) => {

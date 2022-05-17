@@ -12088,5 +12088,10 @@ input {
 
 .hero-2-container img {
   height: 60vh;
+} 
+
+.carousel-item{
+  margin-top: 5em;
+  
 }
 /*# sourceMappingURL=main.css.map */

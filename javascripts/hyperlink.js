@@ -15,3 +15,9 @@ $('#registerButton').click(registerButton);
 function registerButton(){
     window.location.href = '/html/registerPage.html';
 }
+
+// When Simulan Na Button clicked
+$('#simulanNaButton').click(registerButton);
+function registerButton(){
+    window.location.href = '/html/registerPage.html';
+}

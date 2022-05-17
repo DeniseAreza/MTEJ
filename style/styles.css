@@ -194,8 +194,50 @@ p a.login-button:hover {
 }
 
 
+/* index page */ 
+button#loginButton{
+    border-radius: 1em;
+    width: 10em;
+    background-color: white;
+    border-color: white;
+  }
+
+button#registerButton{
+    border-radius: 1em;
+    width: 10em;
+    background-color: #FFB085;
+    color: white;
+  }
 
 
+button#simulanNaButton{
+    border-radius: 1em;
+    width: 10em;
+    background-color: #F9D5A7;
+    color: white;
+    margin-bottom: 6em;
+  }
 
 
+/* passwordReset page */
+button#reset-password-btn{
+    background-color: #3C97B6;
+    color: white;
+    outline: none;
+    width: 100%;
+    border-radius: 40px;
+    margin-top: 20px;
+}
 
+a.home-button {
+    font-size: 10pt;
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+p a.home-button:hover {
+    text-decoration: underline;
+}

@@ -3,7 +3,7 @@
 // Import the functions you need from the SDKs you need
 // wag mo na iimport
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
-import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
+import {getAuth} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
 import { getDatabase, ref, set, push, onChildAdded} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
 
 // TODO: Add SDKs for Firebase products that you want to use

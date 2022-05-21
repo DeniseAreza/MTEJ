@@ -34,6 +34,7 @@ FirebaseInit.checkActiveUser()
                 console.log(user.uid)
             }, function() {
                 console.log('No user exists'); 
+                window.location.href = '/';
             });
 // * Log out
 $('#signOutBtn').click(logOutClicked);

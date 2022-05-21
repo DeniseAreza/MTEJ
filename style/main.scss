@@ -1,3 +1,7 @@
+/*----------------------
+  1. IMPORTANT IMPORTS
+------------------------*/
+
 // ! Import Modules
 @font-face {
   font-family: 'cocosharpbold';
@@ -16,16 +20,12 @@
 @import "../node_modules/bootstrap/scss/bootstrap";
 
 // Then add additional custom code here
-// * Scroll behavior
-html{
-  scroll-behavior: smooth;
-  background-color: #fefefe;
-}
 
 
-// * Scroll behavior
 
-// * Loader: For smooth animation after loading
+/*----------------------
+  2. LOADER ANIMATION
+------------------------*/
 .animate {
   position: relative;
   -webkit-animation-name: animate;
@@ -55,81 +55,465 @@ html{
     opacity: 1;
   }
 }
-// * Loader: For smooth animation after loading
-// * Font family
-p{
-  font-family: tommy;
-}
-span{
-  font-family: tommy;
-}
-button{
-  font-family: tommy;
-}
 
-h1, h2, h3, h4, h5 {
+/*----------------------
+  3. DEFINE FONT FAMILY
+------------------------*/
+p, span, button, input {
+  font-family: tommy;
+}
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-family: cocosharpbold;
 }
 
-input{
-  font-family: tommy;
-}
 
-// * alignments
-.horizontal{
-  display: inline-block;
-}
+/*----------------------
+  3. ALIGNMENTS
+------------------------*/
+.horizontal { display: inline-block; }
+.wrapper-horizontal{ text-align: center; }
+.text-center{ text-align: center; }
 
-.wrapper-horizontal{
-  text-align: center;
-}
-
-.text-center{
-  text-align: center;
-}
-
-// *Image
+/*----------------------
+  4. IMAGES
+------------------------*/
 .images{
   border-radius: 50%;
   height: 200px;
 }
 
-//DIARY DIV
-.hero-1-container{
-  display:flex;
-  padding: 0 50px 0 50px;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color:$primary;
-
+/*------------------------
+  5. ROOT COLOR VARIABLES
+--------------------------*/
+:root {
+  --white-color: #F8F9FA;
+  --dark-color: #212529;
+  --purple-color: #4723D9; /*original: #4723D9*/
+  --yellow-color: #F9D5A7;
+  --orange-color: #FFB085;
+  --pink-color: #FC6681;
 }
+
+/*------------------------
+  6. HTML & BODY
+--------------------------*/
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  overflow-x: initial !important;
+  background-color: #fefefe; /* PAG MAY NASIRA, ITO YUN*/
+}
+
+/*-----------------------------------
+  7. ROOT VARIABLES - kayo na bahala
+-------------------------------------*/
+:root {
+  --variableName: 1px; /*sample*/
+}
+
+
+
+/*-----------------------------------------
+  A.1 HOME PAGE (YANI)
+-------------------------------------------*/
+  
+nav #registerButton{
+border-radius: 1em;
+width: 10em;
+/*background-color: #FFB085;
+color: white;*/
+}
+
+nav #loginButton{
+border-radius: 1em;
+width: 10em;
+/*background-color: white;
+border-color: white;*/
+}
+
+#homepage-mtej{
+margin-bottom: 2em;
+}
+
+#simulanNaButton{
+padding-bottom: 8em;
+white-space: nowrap;
+}
+
+/*-----------------------------------------
+  A.2 HOME PAGE (AIRONNE)
+-------------------------------------------*/
+
+.title {
+font-size: 2.7rem;
+font-weight: bold;
+font-family: tommy;
+color: black;
+}
+
+.description {
+font-size: 1.5rem;
+font-family: tommy;
+color: black;
+}
+
+.hero-1-container {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+padding: 0 50px 0 50px;
+-webkit-box-align: center;
+  -ms-flex-align: center;
+      align-items: center;
+-webkit-box-pack: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+height: 100vh;
+background-color: #F9D5A7;
+}
+
+.hero-2-container {
+display: -webkit-box;
+display: -ms-flexbox;
+display: flex;
+padding: 0 50px 0 50px;
+-webkit-box-align: center;
+  -ms-flex-align: center;
+      align-items: center;
+-webkit-box-pack: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+height: 100vh;
+background-color: #FEF1E6;
+}
+
 .hero-1-container img{
   height:60vh;
+}
+
+.hero-2-container img {
+height: 60vh;
+}
+
+
+
+/*-----------------------------------------
+  B. NAVBAR & SIDEBAR
+-------------------------------------------*/
+nav.navbar {
+  z-index: 100;
+}
+
+nav.navbar div.container-fluid {
+  justify-content:unset;
+}
+
+nav div.navbar-right {
+  text-align: right;
+}
+
+/*-----------------------------------------
+SIDEBAR
+-------------------------------------------*/
+:root {
+  --header-height: 3rem;/**/
+  --nav-width: 68px;/**/
+  --normal-font-size: 1rem;
+  --z-fixed: 100
+}
+*,::before,::after {box-sizing: border-box}
+
+body { 
+  margin: var(--header-height) 0 0 0;
+  /*padding: 0 1rem;*/
+  font-size: var(--normal-font-size);
+  transition: .5s
+}
+
+a { text-decoration: none }
+
+.header { 
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1rem;
+  background-color: var(--purple-color);
+  z-index: var(--z-fixed);transition: .5s
+}
+
+.header_toggle i { color: var(--dark-color); }
+.header_toggle { 
+  color: var(--white-color)
+  font-size: 1.5rem;
+  cursor: pointer
+}
+
+
+.header_img{ 
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  border-radius: 50%;
+  overflow: hidden
+}
+
+.header_img img {width: 40px}
+
+.l-navbar{
+  position: fixed;
+  top: 0;
+  left: -30%;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: var(--white-color);
+  padding: .5rem 1rem 0 0;
+  transition: .5s;
+  z-index: var(--z-fixed)
+}
+.nav {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden
+}
+
+.nav_logo i { color: var(--dark-color)}
+.nav_logo, .nav_link{
+  display: grid;
+  grid-template-columns: max-content max-content;
+  align-items: center;
+  column-gap: 1rem;
+  padding: .5rem 0 .5rem 1.5rem }
+.nav_logo{margin-bottom: 2rem}
+.nav_logo-icon{font-size: 1.25rem;color: var(--yellow-color)}
+.nav_logo-name{color: var(--dark-color);font-weight: 700}
+.nav_link{
+  position: relative;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem; 
+  border-radius: 1em; 
+  transition: .3s }
+.nav_link:hover{
+  background-color: var(--yellow-color);
+  border-radius: 1em;
+  color: var(--dark-color) }
+.nav_icon{font-size: 1.25rem}
+
+.show{left: 0}
+.body-pd{ padding-left: calc(var(--nav-width))} /*mobile phone*/
+
+nav .active{color: var(--pink-color)}
+nav .active::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--pink-color)
+}
+.height-100{height:100vh}
+@media screen and (min-width: 768px){
+  body{
+      margin: calc(var(--header-height) + 1rem) 0 0 0;
+      padding-left: calc(var(--nav-width));
+  }
+  .header{
+      height: calc(var(--header-height) + 1rem);
+      padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+  }
+  .header_img{width: 40px;height: 40px}
+  .header_img img{width: 45px}
+  .l-navbar{left: 0;padding: 1rem 1rem 0 0}
+  
+  .show{width: calc(var(--nav-width) + 7rem)}
+  .body-pd{padding-left: calc(var(--nav-width) + 7rem)}
+}
+
+/*-----------------------------------------
+  C. LOGIN PAGE 
+-------------------------------------------*/
+
+/* c1. container  */
+.login-container {
+  /*background-color: #feeae6;*/
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 1;
+}
+
+/* c2. image  */
+.login-container img {
+  width: 400px;
+  height: auto;
+  position: relative;
+  margin: 30px auto 30px auto; /*top, right, bottom, left*/    
+}
+
+/* c3. form container */
+.login-form-container {
+  position: relative;
+  display: inline-block;
+  max-width: fit-content; /*changes container width*/
+  width:500px;
+
+  background-color: #FFB085; /*original: FFB085*/
+  border-radius: 40px;
+  /*box-shadow: 2px 2px;*/
+  
+  padding: 20px 50px 50px 50px; /*top, right, bottom, left*/    
+  margin: 0px auto 50px auto; /*top, right, bottom, left*/    
+
   
 }
 
-.title{
-  font-size: 2.7rem;
-  font-weight: bold;
-  font-family: tommy;
-  color: black;
+/* c5: form-button */
+.login-form-container div.form-group input { border-radius: 40px; }
+.login-form-container button.form-submit {
+  border-radius: 40px;
+  width: 100%;
+  outline: none;
 }
-.description{
-  font-size: 1.5rem;
-  font-family: tommy;
-  color: black;
-}
-.hero-2-container{
-  display:flex;
-  padding: 0 50px 0 50px;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  background-color:$secondary;
 
+/* c6: buttoms (submit, register, and forgot password) */
+button#submitbtnLogin {
+  background-color: #3C97B6; /*original: 90AACB*/
+  color: white;
+  outline: none;
 }
-.hero-2-container img{
-  height:60vh;
+button#submitbtnLogin:hover {
+  background-color: #26728c;
+}
+button#registerPage {
+  background-color: #F9D5A7; /*original: E59E77*/
+  color: black;
+  outline: none;
+}
+button#registerPage:hover {
+  background-color: #dbbc93;
+}
+a.forgot-password {
+  font-size: 10pt;
+  color: #595959;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
 
+
+p a.forgot-password:hover {
+  text-decoration: underline;
 }
+
+/*-----------------------------------------
+  D. REGISTER PAGE 
+-------------------------------------------*/
+
+/* d1. container  */
+.register-container {
+  background-color: #FEF1E6;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: absolute; /*absolute: fix to bottom, relative: default*/
+  top: 50px; left: 0; bottom: 0; right: 0;
+  z-index: 1;    
+}
+
+/* d2. image  */
+.register-container img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 90px auto 0px auto; /*top, right, bottom, left*/    
+}
+
+/* d3. form container */
+.register-form-container {
+  position: relative;
+  display: inline-block;
+  max-width: fit-content; /*changes container width*/
+  width:500px;
+
+  background-color: #FFB085; /*original: FFB085*/
+  border-radius: 60px;
+  /*box-shadow: 2px 2px;*/
+  
+  padding: 20px 50px 50px 50px; /*top, right, bottom, left*/
+  margin: 50px auto 50px auto; /*top, right, bottom, left*/    
+}
+
+/* d4: buttons (submit, register, and forgot password) */
+button#signUp {
+  background-color: #3C97B6; /*original: 90AACB*/
+  color: white;
+  outline: none;
+  width: 100%;
+  border-radius: 40px;
+  margin-top: 25px;
+}
+button#signUp:hover {
+  background-color: #26728c;
+}
+a.login-button {
+  font-size: 10pt;
+  color: #ffffff;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+p a.login-button:hover {
+  text-decoration: underline;
+}
+
+/*-----------------------------------------
+  E. LOGIN & REGISTER INPUT DESIGN 
+-------------------------------------------*/
+.log-reg-input {
+  padding: 0px 10px 0px 10px; /*top, right, bottom, left*/
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid #90AACB;
+  color: #90AACB; /* change icon color */
+  white-space: nowrap; /* makes them inline */
+}
+
+.log-reg-input input,
+.log-reg-input input[type="text"]:focus,
+.log-reg-input input[type="text"]:active,
+.log-reg-input input[type="email"]:focus,
+.log-reg-input input[type="email"]:active,
+.log-reg-input input[type="password"]:focus,
+.log-reg-input input[type="password"]:active {
+  background: transparent;
+  border: none; 
+  outline: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+.form-group {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/*-----------------------------------------
+  G. ADMIN
+-------------------------------------------*/
+
+//MANAGE USERS (YANI)
+//MANAGE MOOD DIARY (KARL)

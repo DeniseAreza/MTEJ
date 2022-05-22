@@ -39,7 +39,3 @@ for (var i = 1; i <= 10; i++) {
     }
     tbody.appendChild(cell[i]); //row
 }
-
-switch {
-    #
-}

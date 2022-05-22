@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Mood Diary</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script defer src="/javascripts/loader.js"></script>
+    <script defer type="module" src="/firebase/firebaseInit.js"></script>
+    <script defer type="module" src="/firebase/firebaseATJ.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="icon" href="/bundles/undraw_mindfulness_scgo.svg">
+    <link rel="stylesheet" href="/style/main.css">
+    <!-- SIDEBAR & NAVBAR-->
+    <script defer src="/javascripts/sidebar.js"></script>
+    <script src="https://kit.fontawesome.com/fd64d9c49d.js" crossorigin="anonymous"></script>
+
+    <script defer src="/javascripts/moodDiary.js"></script>
+    
+</head>
+<body onload="loader()" id="body-pd">
+    <!--* Loader -->
+    <div class="d-flex justify-content-center">
+        <div class="spinner-grow bg-primary mt-5" role="status" id="loader" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!--* Loader -->
+    <!-- ! Main Content -->
+        <div style="display:none;" id="allContent" class="animate">
+
+        <!-- NAVIGATION BAR -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light header" id="header">
+            <div class="container-fluid">
+              <div class="header_toggle navbar-left"> <i class="fa-solid fa-bars"id="header-toggle"></i></div>
+              <span class="navbar-brand mb-0 h1">ㅤMTEJ</span>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item"><a class="nav-link" aria-current="page" href="/html/mainPage.html">Home</a></li>
+                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="/html/mainPage.html">My Account</a></li>
+                </ul>
+                <form class="d-flex">
+                  <button type="button" class="btn btn-primary" id="signOutBtn">Sign Out</button>
+                </form>
+              </div>
+            </div>
+          </nav>
+
+          <!-- SIDE BAR -->
+          <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> 
+                    <a href="#" class="nav_logo"> <i class="fa-brands fa-modx"></i> <span class="nav_logo-name">MTEJ</span> </a>
+                    <div class="nav_list"> 
+                      <a href="/html/mainPage.html" class="nav_link"> <i class="fa-solid fa-house"></i> Home </a> 
+                      <a href="/html/moodDiary.html" class="nav_link active"> <i class="fa-solid fa-calendar-plus"></i> Mood Diary </a> 
+                      <a href="/html/automaticThoughtJournal.html" class="nav_link"> <i class="fa-solid fa-pen"></i> AT Journal </a>
+                      <a href="/html/ATJEntries.html" class="nav_link"> <i class="fa-solid fa-book-open"></i> ATJ Entries </a> 
+                    </div>
+                </div> <a href="#" class="nav_link" id=""> <i class="fa-solid fa-id-card-clip"></i> My Account </a>
+            </nav>
+          </div>
+
+          <!-- A. TITLE -->
+          <h3 class="display-3 text-center titleContainer">Mood Diary</h3>
+          <div class="moodButtonContainer">
+            <button type="button" class="btn btn-primary" id=""> <i class="fa-regular fa-calendar-minus"></i> Edit </button>
+            <button type="button" class="btn btn-primary" id=""> <i class="fa-regular fa-calendar-plus"></i> Add Entry </button>
+          </div>
+            
+            
+            <!-- B. MOOD CALENDAR: MADE USING JAVASCRIPT -->
+            <div class="moodDiaryContainer">
+              <table class="moodDiaryTable" rules="all" id="moodTable">
+                
+              </table>
+            </div>
+            
+
+            <div class="text-center">
+                <button type="button" class="btn btn-primary m-3" id="ATJSubmit">Save Mood Diary</button>
+            </div>
+
+            <div class="text-center">
+              <button type="button" class="btn btn-secondary m-3" id="proceedToAlternative">Proceed to Alternative Thought Journal</button>
+            </div>
+          
+    <!-- ! Main Content -->
+</body>
+</html>

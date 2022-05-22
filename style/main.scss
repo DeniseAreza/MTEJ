@@ -89,6 +89,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   --white-color: #F8F9FA;
   --dark-color: #212529;
   --purple-color: #4723D9; /*original: #4723D9*/
+  --light-yellow-color: #FEF1E6;
   --yellow-color: #F9D5A7;
   --orange-color: #FFB085;
   --pink-color: #FC6681;
@@ -121,72 +122,77 @@ html, body {
 -------------------------------------------*/
   
 nav #registerButton{
-border-radius: 1em;
-width: 10em;
-/*background-color: #FFB085;
-color: white;*/
+  border-radius: 1em;
+  width: 10em;
+  /*background-color: #FFB085;
+  color: white;*/
 }
 
 nav #loginButton{
-border-radius: 1em;
-width: 10em;
-/*background-color: white;
-border-color: white;*/
+  border-radius: 1em;
+  width: 10em;
+  /*background-color: white;
+  border-color: white;*/
 }
 
 #homepage-mtej{
-margin-bottom: 2em;
+  margin-bottom: 2em;
 }
 
 #simulanNaButton {
   white-space: nowrap;
+}
 
+.carouselContainer {
+  background-color: var(--light-yellow-color);
+  padding-top: 5rem;
+}
 
 /*-----------------------------------------
   A.2 HOME PAGE (AIRONNE)
 -------------------------------------------*/
 
 .title {
-font-size: 2.7rem;
-font-weight: bold;
-font-family: tommy;
-color: black;
+  font-size: 2.7rem;
+  font-weight: bold;
+  font-family: tommy;
+  color: black;
 }
 
 .description {
-font-size: 1.5rem;
-font-family: tommy;
-color: black;
+  font-size: 1.5rem;
+  font-family: tommy;
+  color: black;
 }
 
 .hero-1-container {
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
-padding: 0 50px 0 50px;
--webkit-box-align: center;
-  -ms-flex-align: center;
-      align-items: center;
--webkit-box-pack: center;
-  -ms-flex-pack: center;
-      justify-content: center;
-height: 100vh;
-background-color: #F9D5A7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 50px 0 50px;
+  -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+  -webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+  height: 100vh;
+  background-color: #F9D5A7;
 }
 
 .hero-2-container {
-display: -webkit-box;
-display: -ms-flexbox;
-display: flex;
-padding: 0 50px 0 50px;
--webkit-box-align: center;
-  -ms-flex-align: center;
-      align-items: center;
--webkit-box-pack: center;
-  -ms-flex-pack: center;
-      justify-content: center;
-height: 100vh;
-background-color: #FEF1E6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 50px 0 50px;
+  -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+  -webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+  height: 100vh;
+  background-color: #FEF1E6;
 }
 
 .hero-1-container img{
@@ -194,7 +200,7 @@ background-color: #FEF1E6;
 }
 
 .hero-2-container img {
-height: 60vh;
+  height: 60vh;
 }
 
 
@@ -256,8 +262,7 @@ a { text-decoration: none }
 
 }
 
-
-.header_img{ 
+.header_img { 
   width: 35px;
   height: 35px;
   display: flex;
@@ -268,7 +273,7 @@ a { text-decoration: none }
 
 .header_img img {width: 40px}
 
-.l-navbar{
+.l-navbar {
   position: fixed;
   top: 0;
   left: -30%;
@@ -294,19 +299,23 @@ a { text-decoration: none }
   align-items: center;
   column-gap: 1rem;
   padding: .5rem 0 .5rem 1.5rem }
-.nav_logo{margin-bottom: 2rem}
-.nav_logo-icon{font-size: 1.25rem;color: var(--yellow-color)}
-.nav_logo-name{color: var(--dark-color);font-weight: 700}
-.nav_link{
+.nav_logo {margin-bottom: 2rem}
+.nav_logo-icon {font-size: 1.25rem;color: var(--yellow-color)}
+.nav_logo-name {
+  color: var(--dark-color);
+  font-weight: 700;
+}
+.nav_link {
+  //font-family: tommy;
   position: relative;
   color: var(--dark-color);
   margin-bottom: 1.5rem; 
   border-radius: 1em; 
   transition: .3s }
-.nav_link:hover{
+.nav_link:hover {
   background-color: var(--yellow-color);
   border-radius: 1em;
-  color: var(--dark-color) }
+  color: var(--dark-color); }
 .nav_icon{font-size: 1.25rem}
 
 .show{left: 0}
@@ -517,3 +526,51 @@ p a.login-button:hover {
 
 //MANAGE USERS (YANI)
 //MANAGE MOOD DIARY (KARL)
+
+/*----------------------------------------
+  H. MOOD DIARY
+----------------------------------------*/
+
+.titleContainer {
+  margin-top: 30px;
+}
+.moodButtonContainer {
+  text-align: center;
+}
+
+.moodButtonContainer i {
+  color: var(--pink-color);
+}
+
+.moodButtonContainer button {
+  background-color: var(--light-yellow-color);
+}
+
+.moodDiaryContainer {
+  margin: 50px 30px 30px 30px; /*top, right, bottom, left*/  
+  padding: 5rem; 
+  background-color: var(--light-yellow-color);
+}
+
+table.moodDiaryTable {
+  border: 3px solid var(--dark-color);
+  margin: 0 auto;
+  table-layout: fixed;
+  white-space: nowrap;
+}
+
+table.moodDiaryTable th {
+  background-color: var(--pink-color);
+  width: 50px;
+  height: 30px;
+  text-align: center;
+  border: 1px solid black;
+  table-layout: fixed;
+}
+
+table.moodDiaryTable td {
+  height: 50px;
+  border: 1px solid black;
+  table-layout: fixed;
+  overflow: hidden;
+}

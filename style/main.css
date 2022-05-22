@@ -1,3 +1,6 @@
+/*----------------------
+  1. IMPORTANT IMPORTS
+------------------------*/
 @font-face {
   font-family: 'cocosharpbold';
   src: url(/fontStyles/cocosharp/Coco-Sharp-Heavy-trial.ttf);
@@ -11966,3 +11969,618 @@ fieldset:disabled .btn {
     display: none !important;
   }
 }
+
+/*----------------------
+  2. LOADER ANIMATION
+------------------------*/
+.animate {
+  position: relative;
+  -webkit-animation-name: animate;
+  -webkit-animation-duration: 1s;
+  animation-name: animate;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes animate {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0px;
+    opacity: 1;
+  }
+}
+
+@keyframes animate {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+/*----------------------
+  3. DEFINE FONT FAMILY
+------------------------*/
+p, span, button, input {
+  font-family: tommy;
+}
+
+h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5 {
+  font-family: cocosharpbold;
+}
+
+/*----------------------
+  3. ALIGNMENTS
+------------------------*/
+.horizontal {
+  display: inline-block;
+}
+
+.wrapper-horizontal {
+  text-align: center;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/*----------------------
+  4. IMAGES
+------------------------*/
+.images {
+  border-radius: 50%;
+  height: 200px;
+}
+
+/*------------------------
+  5. ROOT COLOR VARIABLES
+--------------------------*/
+:root {
+  --white-color: #F8F9FA;
+  --dark-color: #212529;
+  --purple-color: #4723D9;
+  /*original: #4723D9*/
+  --yellow-color: #F9D5A7;
+  --orange-color: #FFB085;
+  --pink-color: #FC6681;
+}
+
+/*------------------------
+  6. HTML & BODY
+--------------------------*/
+html, body {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  height: 100%;
+  max-width: 100%;
+  width: 100%;
+  overflow-x: initial !important;
+  background-color: #fefefe;
+  /* PAG MAY NASIRA, ITO YUN*/
+}
+
+/*-----------------------------------
+  7. ROOT VARIABLES - kayo na bahala
+-------------------------------------*/
+:root {
+  --variableName: 1px;
+  /*sample*/
+}
+
+/*-----------------------------------------
+  A.1 HOME PAGE (YANI)
+-------------------------------------------*/
+nav #registerButton {
+  border-radius: 1em;
+  width: 10em;
+  /*background-color: #FFB085;
+color: white;*/
+}
+
+nav #loginButton {
+  border-radius: 1em;
+  width: 10em;
+  /*background-color: white;
+border-color: white;*/
+}
+
+#homepage-mtej {
+  margin-bottom: 2em;
+}
+
+#simulanNaButton {
+  white-space: nowrap;
+  /*-----------------------------------------
+  A.2 HOME PAGE (AIRONNE)
+-------------------------------------------*/
+  /*-----------------------------------------
+  B. NAVBAR & SIDEBAR
+-------------------------------------------*/
+  /*-----------------------------------------
+SIDEBAR
+-------------------------------------------*/
+  /*mobile phone*/
+  /*-----------------------------------------
+  C. LOGIN PAGE 
+-------------------------------------------*/
+  /* c1. container  */
+  /* c2. image  */
+  /* c3. form container */
+  /* c5: form-button */
+  /* c6: buttoms (submit, register, and forgot password) */
+  /*-----------------------------------------
+  D. REGISTER PAGE 
+-------------------------------------------*/
+  /* d1. container  */
+  /* d2. image  */
+  /* d3. form container */
+  /* d4: buttons (submit, register, and forgot password) */
+  /*-----------------------------------------
+  E. LOGIN & REGISTER INPUT DESIGN 
+-------------------------------------------*/
+}
+
+#simulanNaButton .title {
+  font-size: 2.7rem;
+  font-weight: bold;
+  font-family: tommy;
+  color: black;
+}
+
+#simulanNaButton .description {
+  font-size: 1.5rem;
+  font-family: tommy;
+  color: black;
+}
+
+#simulanNaButton .hero-1-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 50px 0 50px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #F9D5A7;
+}
+
+#simulanNaButton .hero-2-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 50px 0 50px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #FEF1E6;
+}
+
+#simulanNaButton .hero-1-container img {
+  height: 60vh;
+}
+
+#simulanNaButton .hero-2-container img {
+  height: 60vh;
+}
+
+#simulanNaButton nav.navbar {
+  z-index: 100;
+}
+
+#simulanNaButton nav.navbar div.container-fluid, #simulanNaButton nav.navbar div.container-sm, #simulanNaButton nav.navbar div.container-md, #simulanNaButton nav.navbar div.container-lg, #simulanNaButton nav.navbar div.container-xl, #simulanNaButton nav.navbar div.container-xxl {
+  -webkit-box-pack: unset;
+      -ms-flex-pack: unset;
+          justify-content: unset;
+}
+
+#simulanNaButton nav div.navbar-right {
+  text-align: right;
+}
+
+#simulanNaButton :root {
+  --header-height: 3rem;
+  /**/
+  --nav-width: 68px;
+  /**/
+  --normal-font-size: 1rem;
+  --z-fixed: 100
+;
+}
+
+#simulanNaButton *, #simulanNaButton ::before, #simulanNaButton ::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+#simulanNaButton body {
+  margin: var(--header-height) 0 0 0;
+  /*padding: 0 1rem;*/
+  font-size: var(--normal-font-size);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+#simulanNaButton a {
+  text-decoration: none;
+}
+
+#simulanNaButton .header {
+  width: 100%;
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 1rem;
+  background-color: var(--purple-color);
+  z-index: var(--z-fixed);
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+#simulanNaButton .header_toggle i {
+  color: var(--dark-color);
+}
+
+#simulanNaButton .header_toggle {
+  color: var(--white-color);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+#simulanNaButton .header_img {
+  width: 35px;
+  height: 35px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+#simulanNaButton .header_img img {
+  width: 40px;
+}
+
+#simulanNaButton .l-navbar {
+  position: fixed;
+  top: 0;
+  left: -30%;
+  width: var(--nav-width);
+  height: 100vh;
+  background-color: var(--white-color);
+  padding: .5rem 1rem 0 0;
+  -webkit-transition: .5s;
+  transition: .5s;
+  z-index: var(--z-fixed);
+}
+
+#simulanNaButton .nav {
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+}
+
+#simulanNaButton .nav_logo i {
+  color: var(--dark-color);
+}
+
+#simulanNaButton .nav_logo, #simulanNaButton .nav_link {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: max-content max-content;
+      grid-template-columns: -webkit-max-content -webkit-max-content;
+      grid-template-columns: max-content max-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 1rem;
+          column-gap: 1rem;
+  padding: .5rem 0 .5rem 1.5rem;
+}
+
+#simulanNaButton .nav_logo {
+  margin-bottom: 2rem;
+}
+
+#simulanNaButton .nav_logo-icon {
+  font-size: 1.25rem;
+  color: var(--yellow-color);
+}
+
+#simulanNaButton .nav_logo-name {
+  color: var(--dark-color);
+  font-weight: 700;
+}
+
+#simulanNaButton .nav_link {
+  position: relative;
+  color: var(--dark-color);
+  margin-bottom: 1.5rem;
+  border-radius: 1em;
+  -webkit-transition: .3s;
+  transition: .3s;
+}
+
+#simulanNaButton .nav_link:hover {
+  background-color: var(--yellow-color);
+  border-radius: 1em;
+  color: var(--dark-color);
+}
+
+#simulanNaButton .nav_icon {
+  font-size: 1.25rem;
+}
+
+#simulanNaButton .show {
+  left: 0;
+}
+
+#simulanNaButton .body-pd {
+  padding-left: calc(var(--nav-width));
+}
+
+#simulanNaButton nav .active {
+  color: var(--pink-color);
+}
+
+#simulanNaButton nav .active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 32px;
+  background-color: var(--pink-color);
+}
+
+#simulanNaButton .height-100 {
+  height: 100vh;
+}
+
+@media screen and (min-width: 768px) {
+  #simulanNaButton body {
+    margin: calc(var(--header-height) + 1rem) 0 0 0;
+    padding-left: calc(var(--nav-width));
+  }
+  #simulanNaButton .header {
+    height: calc(var(--header-height) + 1rem);
+    padding: 0 2rem 0 calc(var(--nav-width) + 2rem);
+  }
+  #simulanNaButton .header_img {
+    width: 40px;
+    height: 40px;
+  }
+  #simulanNaButton .header_img img {
+    width: 45px;
+  }
+  #simulanNaButton .l-navbar {
+    left: 0;
+    padding: 1rem 1rem 0 0;
+  }
+  #simulanNaButton .show {
+    width: calc(var(--nav-width) + 7rem);
+  }
+  #simulanNaButton .body-pd {
+    padding-left: calc(var(--nav-width) + 7rem);
+  }
+}
+
+#simulanNaButton .login-container {
+  /*background-color: #feeae6;*/
+  padding-left: 40px;
+  padding-right: 40px;
+  position: relative;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#simulanNaButton .login-container img {
+  width: 400px;
+  height: auto;
+  position: relative;
+  margin: 30px auto 30px auto;
+  /*top, right, bottom, left*/
+}
+
+#simulanNaButton .login-form-container {
+  position: relative;
+  display: inline-block;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  /*changes container width*/
+  width: 500px;
+  background-color: #FFB085;
+  /*original: FFB085*/
+  border-radius: 40px;
+  /*box-shadow: 2px 2px;*/
+  padding: 20px 50px 50px 50px;
+  /*top, right, bottom, left*/
+  margin: 0px auto 50px auto;
+  /*top, right, bottom, left*/
+}
+
+#simulanNaButton .login-form-container div.form-group input {
+  border-radius: 40px;
+}
+
+#simulanNaButton .login-form-container button.form-submit {
+  border-radius: 40px;
+  width: 100%;
+  outline: none;
+}
+
+#simulanNaButton button#submitbtnLogin {
+  background-color: #3C97B6;
+  /*original: 90AACB*/
+  color: white;
+  outline: none;
+}
+
+#simulanNaButton button#submitbtnLogin:hover {
+  background-color: #26728c;
+}
+
+#simulanNaButton button#registerPage {
+  background-color: #F9D5A7;
+  /*original: E59E77*/
+  color: black;
+  outline: none;
+}
+
+#simulanNaButton button#registerPage:hover {
+  background-color: #dbbc93;
+}
+
+#simulanNaButton a.forgot-password {
+  font-size: 10pt;
+  color: #595959;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#simulanNaButton p a.forgot-password:hover {
+  text-decoration: underline;
+}
+
+#simulanNaButton .register-container {
+  background-color: #FEF1E6;
+  padding-left: 40px;
+  padding-right: 40px;
+  position: absolute;
+  /*absolute: fix to bottom, relative: default*/
+  top: 50px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+#simulanNaButton .register-container img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  margin: 90px auto 0px auto;
+  /*top, right, bottom, left*/
+}
+
+#simulanNaButton .register-form-container {
+  position: relative;
+  display: inline-block;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  /*changes container width*/
+  width: 500px;
+  background-color: #FFB085;
+  /*original: FFB085*/
+  border-radius: 60px;
+  /*box-shadow: 2px 2px;*/
+  padding: 20px 50px 50px 50px;
+  /*top, right, bottom, left*/
+  margin: 50px auto 50px auto;
+  /*top, right, bottom, left*/
+}
+
+#simulanNaButton button#signUp {
+  background-color: #3C97B6;
+  /*original: 90AACB*/
+  color: white;
+  outline: none;
+  width: 100%;
+  border-radius: 40px;
+  margin-top: 25px;
+}
+
+#simulanNaButton button#signUp:hover {
+  background-color: #26728c;
+}
+
+#simulanNaButton a.login-button {
+  font-size: 10pt;
+  color: #ffffff;
+  text-decoration: none;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+#simulanNaButton p a.login-button:hover {
+  text-decoration: underline;
+}
+
+#simulanNaButton .log-reg-input {
+  padding: 0px 10px 0px 10px;
+  /*top, right, bottom, left*/
+  background-color: white;
+  border-radius: 20px;
+  border: 2px solid #90AACB;
+  color: #90AACB;
+  /* change icon color */
+  white-space: nowrap;
+  /* makes them inline */
+}
+
+#simulanNaButton .log-reg-input input,
+#simulanNaButton .log-reg-input input[type="text"]:focus,
+#simulanNaButton .log-reg-input input[type="text"]:active,
+#simulanNaButton .log-reg-input input[type="email"]:focus,
+#simulanNaButton .log-reg-input input[type="email"]:active,
+#simulanNaButton .log-reg-input input[type="password"]:focus,
+#simulanNaButton .log-reg-input input[type="password"]:active {
+  background: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  -webkit-box-shadow: none;
+  display: inline-block;
+  margin-right: 30px;
+}
+
+#simulanNaButton .form-group {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+/*-----------------------------------------
+  G. ADMIN
+-------------------------------------------*/
+/*# sourceMappingURL=main.css.map */

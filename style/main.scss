@@ -140,7 +140,7 @@ margin-bottom: 2em;
 
 #simulanNaButton {
   white-space: nowrap;
-
+}
 
 /*-----------------------------------------
   A.2 HOME PAGE (AIRONNE)
@@ -337,6 +337,27 @@ nav .active::before{
   
   .show{width: calc(var(--nav-width) + 7rem)}
   .body-pd{padding-left: calc(var(--nav-width) + 7rem)}
+}
+
+
+/*-----------------------------------------
+  C. EMAIL CONFIRMATION PAGE 
+-------------------------------------------*/
+/* c1. container  */
+
+.email-confirmation-container {
+  padding-left: 40px;
+  padding-right: 40px;
+  justify-content:center;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 1;
+}
+/* c2. image  */
+.email-confirmation-container img {
+  width: 400px;
+  height: auto;
+  position: relative;
+  margin: 30px auto 30px auto; /*top, right, bottom, left*/    
 }
 
 /*-----------------------------------------

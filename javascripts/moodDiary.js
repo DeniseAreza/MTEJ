@@ -35,7 +35,7 @@ for (var i = 1; i <= 10; i++) {
     for (var j = 1; j <= daysInMonth+1; j++) {
         cell[i][j] = document.createElement('td'); //data
         cell[i][j].innerHTML = ""; //data
-        cell[i].appendChild(cell[i][j]) //row
+        cell[i].appendChild(cell[i][j]).setAttribute('id', 'row'+i+'day'+j); //row
     }
     tbody.appendChild(cell[i]); //row
 }

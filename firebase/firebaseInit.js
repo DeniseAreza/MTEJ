@@ -69,6 +69,7 @@ function signUpUser () {
         .then(() => {
           alert("Email Verfication Sent!");
           console.log("Email Verification Sent")
+          // pwede mo ilagay dito yung redirect sa log in  
         });
 
         // redirect to main page

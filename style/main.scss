@@ -597,3 +597,15 @@ table.moodDiaryTable td {
   table-layout: fixed;
   overflow: hidden;
 }
+
+/*----------------------------------------
+  I. FORGOT PASSWORD PAGE
+----------------------------------------*/
+button#reset-password-btn{
+  background-color: #3C97B6;
+  color: white;
+  outline: none;
+  width: 100%;
+  border-radius: 40px;
+  margin-top: 2px;
+}

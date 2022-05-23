@@ -67,13 +67,11 @@ function signUpUser () {
         // Email Verification
         await sendEmailVerification(auth.currentUser)
         .then(() => {
-          alert("Email Verfication Sent!");
           console.log("Email Verification Sent")
-          // pwede mo ilagay dito yung redirect sa log in  
         });
 
         // redirect to main page
-        await redirect();
+        await redirectEmailConfirmation();
 
         console.log("Created User"); 
         // ...
@@ -124,5 +122,11 @@ export function signOutUser() {
 // * Redirect to mainpage
 function redirect() {
   window.location.href = '/html/mainPage.html';
+}
+// *
+
+// * Redirect to email confirmation page
+function redirectEmailConfirmation() {
+  window.location.href = '/html/emailConfirmation.html';
 }
 // *

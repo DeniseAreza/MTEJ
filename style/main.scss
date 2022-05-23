@@ -148,6 +148,7 @@ nav #loginButton{
   padding-top: 5rem;
 }
 
+
 /*-----------------------------------------
   A.2 HOME PAGE (AIRONNE)
 -------------------------------------------*/
@@ -346,6 +347,27 @@ nav .active::before{
   
   .l-navbar.show{width: calc(var(--nav-width) + 7rem)} /*modal*/
   .body-pd{padding-left: calc(var(--nav-width) + 7rem)}
+}
+
+
+/*-----------------------------------------
+  C. EMAIL CONFIRMATION PAGE 
+-------------------------------------------*/
+/* c1. container  */
+
+.email-confirmation-container {
+  padding-left: 40px;
+  padding-right: 40px;
+  justify-content:center;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: 1;
+}
+/* c2. image  */
+.email-confirmation-container img {
+  width: 400px;
+  height: auto;
+  position: relative;
+  margin: 30px auto 30px auto; /*top, right, bottom, left*/    
 }
 
 /*-----------------------------------------
@@ -604,3 +626,14 @@ div.dropdown-menu {
   width: 100%;
 }
 
+/*----------------------------------------
+  I. FORGOT PASSWORD PAGE
+----------------------------------------*/
+button#reset-password-btn{
+  background-color: #3C97B6;
+  color: white;
+  outline: none;
+  width: 100%;
+  border-radius: 40px;
+  margin-top: 2px;
+}

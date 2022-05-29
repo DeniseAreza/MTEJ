@@ -47,7 +47,8 @@ FirebaseInit.checkActiveUser()
                         var automaticBehavior = data.val().automaticBehavior;
                         var date = data.val().date;
                         var postID = data.val().postID;
-                        $("#table_ATJ").prepend('<div class="container shadow-sm p-3 mb-5 bg-white rounded""><div class="text-justify"><p class="text-muted">'+ date +'</p></div><div class="text-justify"><h3>Automatic Thoughts</h3><p class="text-justify">'+ automaticThoughts +'</p><h3>Automatic Feelings</h3><p class="text-justify">'+ automaticFeelings +'</p><h3>Automatic Behavior</h3><p class="text-justify">'+ automaticBehavior +'</p><h5>Post ID</h5><p class="text-justify">'+ postID +'</p></div></div>');
+                        $("#table_ATJ").prepend(
+                            '<div class="container shadow-sm p-3 mb-5 bg-white rounded""><div class="text-justify"><p class="text-muted">'+ date +'</p></div><div class="text-justify"><h3>Automatic Thoughts</h3><p class="text-justify">'+ automaticThoughts +'</p><h3>Automatic Feelings</h3><p class="text-justify">'+ automaticFeelings +'</p><h3>Automatic Behavior</h3><p class="text-justify">'+ automaticBehavior +'</p><h5>Post ID</h5><p class="text-justify">'+ postID +'</p></div></div>');
                       });
                 }, function() {
                     console.log('No user exists'); 

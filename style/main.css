@@ -12332,7 +12332,7 @@ a {
   font-size: 1.25rem;
 }
 
-.show {
+.l-navbar.show {
   left: 0;
 }
 
@@ -12378,9 +12378,10 @@ nav .active::before {
     left: 0;
     padding: 1rem 1rem 0 0;
   }
-  .show {
+  .l-navbar.show {
     width: calc(var(--nav-width) + 7rem);
   }
+  /*modal*/
   .body-pd {
     padding-left: calc(var(--nav-width) + 7rem);
   }
@@ -12662,6 +12663,120 @@ table.moodDiaryTable td {
   border: 1px solid black;
   table-layout: fixed;
   overflow: hidden;
+}
+
+.modal-content {
+  background-color: var(--white-color);
+}
+
+.modal button.btn-secondary {
+  background-color: var(--yellow-color);
+}
+
+.modal button.btn-primary {
+  background-color: var(--pink-color);
+}
+
+.modal .modal-content button i {
+  color: var(--dark-color);
+}
+
+.modal .modal-content button {
+  color: var(--dark-color);
+}
+
+.modal .modal-body img {
+  display: block;
+}
+
+.modal .moodPicker {
+  margin-top: 30px;
+}
+
+:root {
+  --mood0: #FF0000;
+  --mood1: #C00000;
+  --mood2: #FFCC00;
+  --mood3: #BF9000;
+  --mood4: #FF9C19;
+  --mood5: #00B050;
+  --mood6: #06BDD0;
+  --mood7: #0070C0;
+  --mood8: #7030A0;
+  --mood9: #203864;
+  --mood10: #000000;
+}
+
+.mood0.btn:hover, .mood0.btn:focus {
+  background-color: var(--mood0);
+  color: var(--white-color);
+}
+
+.mood1.btn:hover, .mood1.btn:focus {
+  background-color: var(--mood1);
+  color: var(--white-color);
+}
+
+.mood2.btn:hover, .mood2.btn:focus {
+  background-color: var(--mood2);
+  color: var(--white-color);
+}
+
+.mood3.btn:hover, .mood3.btn:focus {
+  background-color: var(--mood3);
+  color: var(--white-color);
+}
+
+.mood4.btn:hover, .mood4.btn:focus {
+  background-color: var(--mood4);
+  color: var(--white-color);
+}
+
+.mood5.btn:hover, .mood5.btn:focus {
+  background-color: var(--mood5);
+  color: var(--white-color);
+}
+
+.mood6.btn:hover, .mood6.btn:focus {
+  background-color: var(--mood6);
+  color: var(--white-color);
+}
+
+.mood7.btn:hover, .mood7.btn:focus {
+  background-color: var(--mood7);
+  color: var(--white-color);
+}
+
+.mood8.btn:hover, .mood8.btn:focus {
+  background-color: var(--mood8);
+  color: var(--white-color);
+}
+
+.mood9.btn:hover, .mood9.btn:focus {
+  background-color: var(--mood9);
+  color: var(--white-color);
+}
+
+.mood10.btn:hover, .mood10.btn:focus {
+  background-color: var(--mood10);
+  color: var(--white-color);
+}
+
+div.dropdown-menu {
+  top: 170px !important;
+}
+
+@media screen and (min-width: 768px) {
+  div.dropdown-menu {
+    top: 200px !important;
+  }
+}
+
+/*----------------------------------------
+  I. ATJ Entry
+----------------------------------------*/
+.accordion-collapse {
+  width: 100%;
 }
 
 /*----------------------------------------

@@ -56,7 +56,7 @@ const ATJRef = ref(database, 'users/');
                         var email = data.val().Account.email;
                         var state = data.val().Account.state;
 
-                        $("#table_allUsers").append("<tr><td>"+ uid +"</td><td>"+ firstName +"</td><td>"+ lastName +"</td><td>"+ email +"</td><td>"+ state +"</td><td><button type='button' class='btn btn-danger' id='deleteUserBtn' data-uid-type="+ uid +">Danger</button></td></tr>");
+                        $("#table_allUsers").append("<tr><td>"+ uid +"</td><td>"+ firstName +"</td><td>"+ lastName +"</td><td>"+ email +"</td><td>"+ state +"</td><td><button type='button' class='btn btn-danger' id='deleteUserBtn' data-uid-type="+ uid +">Delete</button></td></tr>");
                         
                       })
 // * Delete User funtion

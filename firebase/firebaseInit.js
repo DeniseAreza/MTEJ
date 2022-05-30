@@ -62,7 +62,8 @@ function signUpUser () {
           email: email,
           firstName: firstName,
           lastName: lastName,
-          state: state
+          state: state,
+          uid: user.uid
         })
         // Email Verification
         await sendEmailVerification(auth.currentUser)
@@ -130,3 +131,8 @@ function redirectEmailConfirmation() {
   window.location.href = '/html/emailConfirmation.html';
 }
 // *
+
+$('#showUID').click(deleteUser);
+function deleteUser(){
+  alert("I am working");
+}

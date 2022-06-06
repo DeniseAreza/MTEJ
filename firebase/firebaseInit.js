@@ -4,7 +4,7 @@
 // wag mo na iimport
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
 import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
-import { getDatabase, set, ref, get, onChildAdded, onValue} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
+import { getDatabase, set, ref, get, onChildAdded, onValue, push} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -119,7 +119,15 @@ export function signOutUser() {
   })
 }
 // *
-
+export function getFirebaseConfig() {
+  return { 
+    database,
+    ref,
+    get,
+    set,
+    push
+  };
+}
 // * Redirect to mainpage
 function redirect() {
   window.location.href = '/html/mainPage.html';
@@ -131,6 +139,8 @@ function redirectEmailConfirmation() {
   window.location.href = '/html/emailConfirmation.html';
 }
 // *
+
+
 
 $('#showUID').click(deleteUser);
 function deleteUser(){

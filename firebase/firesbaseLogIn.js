@@ -20,8 +20,11 @@ function signIn () {
                     window.location.href = "/html/mainPage.html";
                     console.log("Logged in");
                 }, function() {
-                    $('#errorAlertLogin').show();
-                    console.log('failed to log in');
-                })
+                    if (userEmail === '' || userPassword === '') {
+                        $('#errorAlertNullField').show();
+                    }else{
+                        $('#errorAlertLogin').show();
+                    }
+                });
     
 }

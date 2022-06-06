@@ -58,12 +58,19 @@
             <form class="login-form-container needs-validation" novalidate>
                 
                 <!-- * Alert triggers -->
-                <div class="alert alert-danger collapse" role="alert" id="errorAlertLogin">
+                <div class="alert alert-danger alert-dismissible collapse" role="alert" id="errorAlertLogin">
                   <strong>Error!</strong> Your Email and Password is incorrect.
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
-                <div class="alert alert-success collapse" role="alert" id="successAlertLogin">
+                <div class="alert alert-success alert-dismissible collapse" role="alert" id="successAlertLogin">
                   You are now logged in.
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
+                <div class="alert alert-danger alert-dismissible collapse" role="alert" id="errorAlertNullField">
+                  Please fill in email or password.
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+
                 <!-- * Alert triggers -->
                 
                 <!-- A. Email Address -->

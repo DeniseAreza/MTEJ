@@ -5,18 +5,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
     <script defer src="/javascripts/loader.js"></script>
+    <!-- FIREBASE-->
     <script defer type="module" src="/firebase/firebaseInit.js"></script>
-    <script defer type="module" src="/firebase/firebaseATJ.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- WEBSITE ICON -->
     <link rel="icon" href="/bundles/undraw_mindfulness_scgo.svg">
+    <!-- jQuery & DatePicker -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+    <!-- STYLES & BOOTSTRAP-->
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/style/main.css">
-    <!-- SIDEBAR & NAVBAR-->
+    <!-- SIDEBAR/NAVBAR & FONT AWESOME-->
     <script defer src="/javascripts/sidebar.js"></script>
     <script src="https://kit.fontawesome.com/fd64d9c49d.js" crossorigin="anonymous"></script>
+    <!-- Include Moment.js and chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js"></script>
+    <!-- Include Bootstrap DateTimePicker CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js"></script>
+    
+    <!--Scripts-->
+    <script defer type="module" src="/javascripts/moodDiary/DataCollection.js"></script>
+    <script defer type="module" src="/javascripts/moodDiary/Chart.js"></script>
+    <script defer type="module" src="/javascripts/moodDiary/MoodDiary.js"></script>
+    <!--
+      <script defer type="module" src="/javascripts/moodDiary.js"></script>
 
-    <script defer src="/javascripts/moodDiary.js"></script>
+    -->
+
     
 </head>
 <body onload="loader()" id="body-pd">
@@ -26,67 +46,155 @@
     </div>
     <!--* Loader -->
     <!-- ! Main Content -->
-        <div style="display:none;" id="allContent" class="animate">
+    <div style="display:none;" id="allContent" class="animate">
 
-        <!-- NAVIGATION BAR -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light header" id="header">
-            <div class="container-fluid">
-              <div class="header_toggle navbar-left"> <i class="fa-solid fa-bars"id="header-toggle"></i></div>
-              <span class="navbar-brand mb-0 h1">ㅤMTEJ</span>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                  <li class="nav-item"><a class="nav-link" aria-current="page" href="/html/mainPage.html">Home</a></li>
-                  <li class="nav-item"><a class="nav-link active" aria-current="page" href="/html/mainPage.html">My Account</a></li>
-                </ul>
-                <form class="d-flex">
-                  <button type="button" class="btn btn-primary" id="signOutBtn">Sign Out</button>
-                </form>
-              </div>
+      <!-- NAVIGATION BAR -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light header" id="header">
+          <div class="container-fluid">
+            <div class="header_toggle navbar-left"> <i class="fa-solid fa-bars"id="header-toggle"></i></div>
+            <span class="navbar-brand mb-0 h1">ㅤMTEJ</span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link" aria-current="page" href="/html/mainPage.html">Home</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="/html/mainPage.html">My Account</a></li>
+              </ul>
+              <form class="d-flex">
+                <button type="button" class="btn btn-primary" id="signOutBtn">Sign Out</button>
+              </form>
             </div>
-          </nav>
-
-          <!-- SIDE BAR -->
-          <div class="l-navbar" id="nav-bar">
-            <nav class="nav">
-                <div> 
-                    <a href="#" class="nav_logo"> <i class="fa-brands fa-modx"></i> <span class="nav_logo-name">MTEJ</span> </a>
-                    <div class="nav_list"> 
-                      <a href="/html/mainPage.html" class="nav_link"> <i class="fa-solid fa-house"></i> Home </a> 
-                      <a href="/html/moodDiary.html" class="nav_link active"> <i class="fa-solid fa-calendar-plus"></i> Mood Diary </a> 
-                      <a href="/html/automaticThoughtJournal.html" class="nav_link"> <i class="fa-solid fa-pen"></i> AT Journal </a>
-                      <a href="/html/ATJEntries.html" class="nav_link"> <i class="fa-solid fa-book-open"></i> ATJ Entries </a> 
-                    </div>
-                </div> <a href="#" class="nav_link" id=""> <i class="fa-solid fa-id-card-clip"></i> My Account </a>
-            </nav>
           </div>
+      </nav>
 
-          <!-- A. TITLE -->
-          <h3 class="display-3 text-center titleContainer">Mood Diary</h3>
-          <div class="moodButtonContainer">
-            <button type="button" class="btn btn-primary" id=""> <i class="fa-regular fa-calendar-minus"></i> Edit </button>
-            <button type="button" class="btn btn-primary" id=""> <i class="fa-regular fa-calendar-plus"></i> Add Entry </button>
-          </div>
+      <!-- SIDE BAR -->
+      <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> 
+                <a href="#" class="nav_logo"> <i class="fa-brands fa-modx"></i> <span class="nav_logo-name">MTEJ</span> </a>
+                <div class="nav_list"> 
+                  <a href="/html/mainPage.html" class="nav_link"> <i class="fa-solid fa-house"></i> Home </a> 
+                  <a href="/html/moodDiary.html" class="nav_link active"> <i class="fa-solid fa-calendar-plus"></i> Mood Diary </a> 
+                  <a href="/html/automaticThoughtJournal.html" class="nav_link"> <i class="fa-solid fa-pen"></i> AT Journal </a>
+                  <a href="/html/ATJEntries.html" class="nav_link"> <i class="fa-solid fa-book-open"></i> ATJ Entries </a> 
+                </div>
+            </div> <a href="#" class="nav_link" id=""> <i class="fa-solid fa-id-card-clip"></i> My Account </a>
+        </nav>
+      </div>
+
+      <!-- A. TITLE -->
+      <h3 class="display-3 text-center titleContainer">Mood Diary</h3>
+      <div class="moodButtonContainer">
+        <button type="button" class="btn btn-primary" id=""> <i class="fa-regular fa-calendar-minus"></i> Edit </button>
+        <button type="button" class="btn btn-primary" id="" data-bs-toggle="modal" data-bs-target="#addMoodEntryModal"> <i class="fa-regular fa-calendar-plus"></i> Add Entry </button>
+      </div>
             
             
-            <!-- B. MOOD CALENDAR: MADE USING JAVASCRIPT -->
-            <div class="moodDiaryContainer">
-              <table class="moodDiaryTable" rules="all" id="moodTable">
-                
-              </table>
-            </div>
-            
-
-            <div class="text-center">
-                <button type="button" class="btn btn-primary m-3" id="ATJSubmit">Save Mood Diary</button>
-            </div>
-
-            <div class="text-center">
-              <button type="button" class="btn btn-secondary m-3" id="proceedToAlternative">Proceed to Alternative Thought Journal</button>
-            </div>
+      <!-- B. MOOD CALENDAR: MADE USING JAVASCRIPT -->
+      <!-- <div class="moodDiaryContainer">
+        <table class="moodDiaryTable" rules="all" id="moodTable">
           
-    <!-- ! Main Content -->
+        </table>
+      </div> -->
+
+      
+      <div id="moodDiaryChart">
+        <canvas id="myChart" width="400" height="400">
+        </canvas>
+      </div>
+
+      <!-- C. MOOD ENTRY: MODAL -->
+      <div class="modal fade" id="addMoodEntryModal" tabindex="-1" role="dialog" aria-labelledby="addEntry" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+          <!-- Modal Content-->
+          <div class="modal-content">
+            <!-- A. Header-->
+            <div class="modal-header">
+              <h1 class="modal-title">How are you feeling? :)</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <!-- B. Body-->
+            <div class="modal-body">
+              <!-- FIRST ROW: DATE & TIME PICKER -->
+              <div class="row">
+                <div class="col-md-6">
+                    <!-- DATE PICKER -->
+                    <label for="date" class="col-sm-1 col-form-label">Date</label>
+                    <div class="input-group date">
+                      <input type="text" class="form-control" id="datepicker">
+                      <span class="input-group-append">
+                        <span class="input-group-text bg-white d-block"><i class="fa fa-calendar-days"></i></span>
+                      </span>
+                    </div>
+                        
+                </div>
+                <div class="col-md-6">
+                    <!-- TIME  PICKER -->
+                    <label for="date" class="col-sm-1 col-form-label">Time</label>
+                    <div class="input-group date" style="position: relative">
+                        <input type="text" class="form-control" id="timepicker"/>
+                      <span class="input-group-append">
+                        <span class="input-group-text bg-white d-block"><i class="fa fa-clock"></i></span>
+                      </span>
+                    </div>
+                </div>
+              </div>
+              
+              <!-- SECOND ROW: MOOD PICKER -->
+              <div id="moodEntry">
+                <div class="row text-center moodPicker">
+                  <div class="col mood" value="3"><button class="btn mo   od" value="3"><img src="/bundles/mood3_happy.svg">Happy</button></div>
+                  <div class="col mood" value="4"><button class="btn mood" value="4"><img src="/bundles/mood4_content.svg">Content</button></div>
+                  <div class="col mood" value="5"><button class="btn mood" value="5"><img src="/bundles/mood5_good.svg">Good</button></div>
+                  <div class="col mood" value="6"><button class="btn mood" value="6"><img src="/bundles/mood6_meh.svg">Meh</button></div>
+                  <div class="col mood" value="7"><button class="btn mood" value="7"><img src="/bundles/mood7_feeling_low.svg">Low</button></div>
+                </div>
+                <div class="row text-center">
+                  <div class="col mood" value="1"><button class="btn mood" value="1"><img src="/bundles/mood1_euphoric.svg">Euphoric</button></div>
+                  <div class="col mood" value="2"><button class="btn mood" value="2"><img src="/bundles/mood2_blissful.svg">Blissful</button></div>
+                  <div class="col"></div>
+                  <div class="col mood" value="8"><button class="btn mood" value="8"><img src="/bundles/mood8_sad.svg">Sad</button></div>
+                  <div class="col mood" value="9"><button class="btn mood" value="9"><img src="/bundles/mood9_depressed.svg">Depressed</button></div>
+                </div>
+                <div class="row text-center">
+                  <div class="col"></div>
+                  <div class="col mood" value="0"><button class="btn mood" value="0"><img src="/bundles/mood0_elevated.svg">Elevated</button></div>
+                  <div class="col"></div>
+                  <div class="col mood" value="10"><button class="btn mood" value="10"><img src="/bundles/mood10_worst.svg">Worst</button></div>
+                  <div class="col"></div>
+                </div>
+
+                <div>
+                  <h4>Mood Level: <span id="moodLevel" value = ""></span></h4>
+                </div>
+              </div>
+              
+              
+            </div>
+            
+         
+
+            <!-- C. Footer-->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <i class="fa-solid fa-ban"></i> Cancel</button>
+              <button type="button" class="btn btn-primary" id="moodEntryUser" data-bs-toggle="modal" data-bs-target="#addMoodEntryModal"> <i class="fa-solid fa-plus"></i> Add New Entry </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- D. Footer Buttons -->
+      <div class="text-center">
+          <button type="button" class="btn btn-primary m-3" id="ATJSubmit">Save Mood Diary</button>
+      </div>
+
+      <div class="text-center">
+        <button type="button" class="btn btn-secondary m-3" id="proceedToAlternative">Proceed to Alternative Thought Journal</button>
+      </div>
+
+    </div>  <!-- ! Main Content -->
+   
 </body>
 </html>

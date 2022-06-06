@@ -4,7 +4,7 @@
 // wag mo na iimport
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
 import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
-import { getDatabase, set, ref, get, onChildAdded, onValue} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
+import { getDatabase, set, ref, get, onChildAdded, onValue, push} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -62,18 +62,17 @@ function signUpUser () {
           email: email,
           firstName: firstName,
           lastName: lastName,
-          state: state
+          state: state,
+          uid: user.uid
         })
         // Email Verification
         await sendEmailVerification(auth.currentUser)
         .then(() => {
-          alert("Email Verfication Sent!");
           console.log("Email Verification Sent")
-          // pwede mo ilagay dito yung redirect sa log in  
         });
 
         // redirect to main page
-        await redirect();
+        await redirectEmailConfirmation();
 
         console.log("Created User"); 
         // ...
@@ -120,9 +119,30 @@ export function signOutUser() {
   })
 }
 // *
-
+export function getFirebaseConfig() {
+  return { 
+    database,
+    ref,
+    get,
+    set,
+    push
+  };
+}
 // * Redirect to mainpage
 function redirect() {
   window.location.href = '/html/mainPage.html';
 }
 // *
+
+// * Redirect to email confirmation page
+function redirectEmailConfirmation() {
+  window.location.href = '/html/emailConfirmation.html';
+}
+// *
+
+
+
+$('#showUID').click(deleteUser);
+function deleteUser(){
+  alert("I am working");
+}

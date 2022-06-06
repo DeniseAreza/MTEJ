@@ -96,12 +96,45 @@ $('#timepicker').datetimepicker({
 
 document.getElementById('timepicker').value = time;
 
+// * Read Mood Level
+$("#moodEntry").on("click",".mood",function(){
+    var mood= $(this).attr('value');
+    document.getElementById("moodLevel").innerHTML = mood;
+    document.getElementById("moodLevel").setAttribute("value", mood);
+ });
 
+// *Add values to firebase
+ $("#moodEntryUser").click(moodEntry);
+function moodEntry() {
+    FirebaseInit.checkActiveUser()
+                .then((user) => {
+                    var date = document.getElementById("datepicker").value;
+                    var time = document.getElementById("timepicker").value;
+                    // get value of mood level
+                    var moodID = document.getElementById("moodLevel");
+                    let moodLevel = moodID.getAttribute("value");
 
+                    const postListRef = ref(database, 'users/' + user.uid +'/MoodEntry');
+                    const newPostRef = push(postListRef);
+                    const postID = newPostRef.key;
+                    set(newPostRef, {
+                        date: date,
+                        time: time,
+                        moodLevel: moodLevel,
+                        postID: postID
+                    });
+                    alert("Successfully Uploaded")
+                    location.reload();
+                }, function() {
+                    console.log('No user exists');
+                });
+}
 
+// * Read Values
+const moodDiaryRef = ref(database, 'users/');
+                    onChildAdded(moodDiaryRef, (value) => {
 
-
-
+                    })
 
 
 

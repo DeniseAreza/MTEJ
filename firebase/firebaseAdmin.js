@@ -4,7 +4,7 @@
 // wag mo na iimport
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
 import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
-import { getDatabase, ref, set, push, onValue, onChildAdded} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
+import { getDatabase, ref, set, push, onValue, onChildAdded, remove} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -46,21 +46,29 @@ function logOutClicked() {
             });
 }
 
-
 // * manage users retrieval
-const ATJRef = ref(database, 'users/');
-                    onChildAdded(ATJRef, (data) => {
+const UsersRef = ref(database, 'users/');
+                    onChildAdded(UsersRef, (data) => {
                         var uid = data.val().Account.uid;
                         var firstName = data.val().Account.firstName;
                         var lastName = data.val().Account.lastName;
                         var email = data.val().Account.email;
                         var state = data.val().Account.state;
 
-                        $("#table_allUsers").append("<tr><td>"+ uid +"</td><td>"+ firstName +"</td><td>"+ lastName +"</td><td>"+ email +"</td><td>"+ state +"</td><td><button type='button' class='btn btn-danger' id='deleteUserBtn' data-uid-type="+ uid +">Delete</button></td></tr>");
-                        
+                        $("#table_allUsers").prepend("<tr><td>"+ uid +"</td><td>"+ firstName +"</td><td>"+ lastName +"</td><td>"+ email +"</td><td>"+ state +"</td></tr>");
                       })
-// * Delete User funtion
-$('body').on('click', '#deleteUserBtn', function () {
-    const uid = document.getElementById('deleteUserBtn');
-    alert(uid.getAttribute('data-uid-type'));
-});
+                      
+// * Just in case you need this code
+// $("#table_allUsers").on("click",".delete_user",function(){
+//     var uid= $(this).attr('id'); // get uid through using id attribute
+
+     // remove(ref(database, 'users/' + uid))
+     // .then(() => {
+     //     alert("Data removed");
+     //     location.reload();
+     // })
+     // .catch((error) => {
+     //     alert(error);
+     // });
+//  });
+

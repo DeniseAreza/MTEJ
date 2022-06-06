@@ -12155,10 +12155,7 @@ nav #loginButton {
 
 .hero-2-container img {
   height: 40vh;
-
 }
-
-
 
 /*-----------------------------------------
   B. NAVBAR & SIDEBAR
@@ -12335,11 +12332,7 @@ a {
   font-size: 1.25rem;
 }
 
-
-.show {
-
 .l-navbar.show {
-
   left: 0;
 }
 
@@ -12385,11 +12378,6 @@ nav .active::before {
     left: 0;
     padding: 1rem 1rem 0 0;
   }
-
-  .show {
-    width: calc(var(--nav-width) + 7rem);
-  }
-
   .l-navbar.show {
     width: calc(var(--nav-width) + 7rem);
   }
@@ -12677,7 +12665,6 @@ table.moodDiaryTable td {
   overflow: hidden;
 }
 
-
 .modal-content {
   background-color: var(--white-color);
 }
@@ -12803,5 +12790,4 @@ button#reset-password-btn {
   border-radius: 40px;
   margin-top: 2px;
 }
-
 /*# sourceMappingURL=main.css.map */

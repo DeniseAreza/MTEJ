@@ -12,7 +12,6 @@
     <!-- this module is dedicated only to this page for client inquiries -->
     <script defer src="/javascripts/hyperlink.js"></script>
     <script defer src="/javascripts/validationForm.js"></script>
-    <script defer src="/javascripts/password_validation.js"></script>
     <link rel="icon" href="/bundles/undraw_mindfulness_scgo.svg">
     <link rel="stylesheet" href="/style/main.css">
     <script src="https://kit.fontawesome.com/fd64d9c49d.js" crossorigin="anonymous"></script>
@@ -55,11 +54,26 @@
           <form name="registerForm" id="register" class="register-form-container needs-validation" novalidate>
             
             <!-- * Alert triggers -->
-            <div class="alert alert-danger collapse" role="alert" id="errorAlertSignUp">
-              <strong>Error!</strong> Use another email address or make sure that your password must be more than 6 characters.
+            <div class="alert alert-danger collapse" role="alert" id="email-already-in-use">
+              <strong>Error!</strong> email is already registered
             </div>
-            <div class="alert alert-success collapse" role="alert" id="errorAlertSignUp">
+            <div class="alert alert-danger collapse" role="alert" id="invalid-email">
+              <strong>Error!</strong> The email address is badly formatted.
+            </div>
+            <div class="alert alert-success collapse" role="alert" id="successAlertSignUp">
               You are now logged in.
+            </div>
+            <div class="alert alert-danger alert-dismissible collapse" role="alert" id="errorAlertWeakPassword">
+              The password must be 6 characters long or more.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-danger alert-dismissible collapse" role="alert" id="errorAlertNullField">
+              Please fill out all the required fields.
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <div class="alert alert-danger alert-dismissible collapse" role="alert" id="errorAlertPasword">
+              passwords do not match
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             <!-- * Alert triggers -->
         
@@ -133,11 +147,11 @@
                 </div>
               </div>
             </div>
-              
+            
             <p id="demo"></p>
 
             <!-- Buttons -->
-            <button type="button" class="btn btn-primary form-submit" onsubmit="return validateForm()" id="signUp">Register</button>
+            <button type="button" class="btn btn-primary form-submit" id="signUp">Register</button>
             <p><a class="login-button" href="/html/loginPage.html" >Meron ka na bang account? Mag-sign in!</a></p>
             <!-- Buttons -->
           </form>

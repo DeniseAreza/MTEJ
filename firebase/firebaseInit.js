@@ -51,8 +51,17 @@ function signUpUser () {
   let lastName = $('#signup_lastName').val();
   let email = $('#signup_Email').val();
   let password = $('#signup_Password').val();
+  let confirmPassword = $('#signup_confirmPassword').val();
   let state = "user";
+
   console.log("Load")
+  if (firstName === '' || lastName === '' || email === '' || password === '' || confirmPassword === '') {
+    $('#errorAlertNullField').show();
+  }
+  else if (password !== confirmPassword) {
+    $('#errorAlertPasword').show();
+  } else{
+
     createUserWithEmailAndPassword(auth, email, password)
       .then(async(userCredential) => {
         // Signed in 
@@ -78,12 +87,16 @@ function signUpUser () {
         // ...
       })
       .catch(function(error) {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.log('failed to create user');
-        $('#errorAlertSignUp').show();
-        // ..
-      });
+        if (error.code === 'auth/email-already-in-use') {
+          $('#email-already-in-use').show();
+        } else if (error.code === 'auth/invalid-email') {
+          $('#invalid-email').show();
+        }
+        else if (error.code === 'auth/weak-password') {
+          $('#errorAlertCreatePassword').show();
+        }
+      });    
+    }
 }
 // *
 

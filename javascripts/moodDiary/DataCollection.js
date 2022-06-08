@@ -35,9 +35,6 @@ export async function addMoodEntry(date, time, moodLevel) {
     const reference = firebase.ref(firebase.database, 'users/' + user.uid + node);
     const newPostRef = await firebase.push(reference);
     const postID = newPostRef.key;
-
-    // Ask mo lang me kung may magulong part
-    // Yan nalang for now ahahaha
     
     return firebase.set(newPostRef, {
                 date: date,

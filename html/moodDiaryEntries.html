@@ -7,7 +7,7 @@
     <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
     <script defer src="/javascripts/loader.js"></script>
     <script defer type="module" src="/firebase/firebaseInit.js"></script>
-    <script defer type="module" src="/firebase/firebaseATJEntries.js"></script>
+    <script defer type="module" src="/firebase/firebaseMoodEntriesRetrieval.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <link rel="icon" href="/bundles/undraw_mindfulness_scgo.svg">
     <link rel="stylesheet" href="/style/main.css">
@@ -55,8 +55,8 @@
                     <a href="/html/mainPage.html" class="nav_link"> <i class="fa-solid fa-house"></i> Home </a> 
                     <a href="/html/moodDiary.html" class="nav_link"> <i class="fa-solid fa-calendar-plus"></i> Mood Diary </a> 
                     <a href="/html/automaticThoughtJournal.html" class="nav_link"> <i class="fa-solid fa-pen"></i> AT Journal </a>
-                    <a href="/html/ATJEntries.html" class="nav_link active"> <i class="fa-solid fa-book-open"></i> ATJ Entries </a> 
-                    <a href="/html/moodDiaryEntries.html" class="nav_link"> <i class="fa-solid fa-book-open"></i> Mood Diary Entries </a> 
+                    <a href="/html/ATJEntries.html" class="nav_link"> <i class="fa-solid fa-book-open"></i> ATJ Entries </a>
+                    <a href="/html/moodDiaryEntries.html" class="nav_link active"> <i class="fa-solid fa-book-open"></i> Mood Diary Entries </a> 
                   </div>
               </div> <a href="#" class="nav_link" id=""> <i class="fa-solid fa-id-card-clip"></i> My Account </a>
           </nav>
@@ -64,9 +64,9 @@
 
               
 
-              <h1 style="text-align: center;">Automatic Thought Entries</h1>
+              <h1 style="text-align: center;">Mood Diary Entries</h1>
               <!-- Contents from the database -->
-              <div id="table_ATJ"></div>
+              <div id="table_MoodDiaryEntries"></div>
               <!-- Contents from the database -->
         </div>
     <!-- ! Main Content -->

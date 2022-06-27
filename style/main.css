@@ -12613,6 +12613,12 @@ p a.login-button:hover {
   margin-bottom: 12px;
 }
 
+.alert-danger {
+  background-color: var(--pink-color);
+  color: var(--white-color);
+  border: none;
+}
+
 /*-----------------------------------------
   G. ADMIN
 -------------------------------------------*/

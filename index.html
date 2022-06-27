@@ -27,117 +27,122 @@
 </head>
 <body onload="loader()" id="body-pd">
 
-  
-    <!--* Loader -->
-    <div class="d-flex justify-content-center">
+     <!--* Loader -->
+     <div class="d-flex justify-content-center">
         <div class="spinner-grow bg-primary mt-5" role="status" id="loader" style="width: 3rem; height: 3rem;"></div>
     </div>
     <!--* Loader -->
 
     <!-- ! Main Content -->
-        <!-- *Login Card -->
-        <div style="display:none;" id="allContent" class="animate">
+         <!-- *Login Card -->
+         <div style="display:none;" id="allContent" class="animate">
 
+    <!-- ! Main Content -->
 
-          <!-- NAVIGATION BAR -->
-          <nav class="navbar navbar-light header" style="background-color: #F9D5A7;" id="header">
-            <div class="container-fluid">
-              <div class="header_toggle navbar-left"> <i class="fa-solid fa-bars"id="header-toggle"></i></div>
-              <div class="col">
-                <span class="navbar-brand mb-0 h1 navbar-left"><a href="#" style="text-decoration: none; color: black;">ㅤMTEJ</a></span>
-              </div>
-              <!-- 
-              <div class="col navbar-right">
-                <button type="button" class="btn btn-primary float-right" id="aboutUsButton">Tungkol Sa Amin</button>
-                <button class="btn btn-primary" type="button" id="registerButton">Sign Up</button>
-                <button class="btn btn-primary me-md-2" type="button" id="loginButton">Login</button>
-              </div> -->
+     <!-- NAVIGATION BAR -->
+     <nav class="navbar navbar-light header" style="background-color: #F9D5A7;" id="header">
+        <div class="container-fluid">
+          <div class="header_toggle navbar-left"> <i class="fa-solid fa-bars"id="header-toggle"></i></div>
+          <div class="col">
+            <span class="navbar-brand mb-0 h1 navbar-left"><a href="#" style="text-decoration: none; color: black;">ㅤMTEJ</a></span>
+          </div>
+        </div>
+    </nav>
+    <!--NAV-->
+
+     <!-- SIDE BAR -->
+     <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> 
+                <a href="#" class="nav_logo"> <i class="fa-brands fa-modx"></i> <span class="nav_logo-name">MTEJ</span> </a>
+                <div class="nav_list"> 
+                  <a href="#" class="nav_link active"> <i class="fa-solid fa-house"></i> <span class="nav_name">Home</span> </a> 
+                  <a href="#" class="nav_link" id="aboutUsButton"> <i class="fa-solid fa-a"></i> <span class="nav_name">About Us</span> </a> 
+                  <a href="#" class="nav_link"> <i class="fa-solid fa-face-laugh-beam"></i> <span class="nav_name">Mood Diary</span> </a> 
+                  <a href="#" class="nav_link"> <i class="fa-solid fa-book-bookmark"></i> <span class="nav_name">AT Journal</span> </a> 
+                </div>
+            </div> <a href="#" class="nav_link" id="loginButton"> <i class="fa-solid fa-arrow-right-from-bracket"></i> <span class="nav_name">Login</span> </a>
+        </nav>
+     </div>
+     <!-- SIDE BAR -->
+
+     <!-- CAROUSEL -->
+      <div class="container-fluid">
+        <div class="row">
+            <div id="carouselSlides" class="carouselSlides carouselContainer" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="/bundles/undraw_notebook_re_id0r.svg" class="d-block w-100" alt="..." style="height: 300px;">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/bundles/undraw_mindfulness_scgo.svg" class="d-block w-100" alt="..." style="height: 300px;">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/bundles/undraw_stability_ball_b-4-ia.svg" class="d-block w-100" alt="..." style="height: 300px;">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="/bundles/undraw_wandering_mind_re_x2a3.svg" class="d-block w-100" alt="..." style="height: 300px;">
+                   </div>
+               </div>
+               <h2 style="text-align: center;" id="homepage-mtej"> MOOD THERAPY ELECTRONIC JOURNAL</h2>
             </div>
-          </nav>
-          
-           <!-- SIDE BAR -->
-          <div class="l-navbar" id="nav-bar">
-            <nav class="nav">
-                <div> 
-                    <a href="#" class="nav_logo"> <i class="fa-brands fa-modx"></i> <span class="nav_logo-name">MTEJ</span> </a>
-                    <div class="nav_list"> 
-                      <a href="#" class="nav_link active"> <i class="fa-solid fa-house"></i> <span class="nav_name">Home</span> </a> 
-                      <a href="#" class="nav_link" id="aboutUsButton"> <i class="fa-solid fa-a"></i> <span class="nav_name">About Us</span> </a> 
-                      <a href="#" class="nav_link"> <i class="fa-solid fa-face-laugh-beam"></i> <span class="nav_name">Mood Diary</span> </a> 
-                      <a href="#" class="nav_link"> <i class="fa-solid fa-book-bookmark"></i> <span class="nav_name">AT Journal</span> </a> 
-                    </div>
-                </div> <a href="#" class="nav_link" id="loginButton"> <i class="fa-solid fa-arrow-right-from-bracket"></i> <span class="nav_name">Login</span> </a>
-            </nav>
-          </div>
-        
+        </div>
+    </div>
+    <!-- CAROUSEL -->
 
-      <!-- Carousel -->
-      <div id="carouselSlides" class="carouselSlides carouselContainer" data-bs-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="/bundles/undraw_notebook_re_id0r.svg" class="d-block w-100" alt="..." style="height: 300px;">
+     <!-- hero section container -->
+     <div class="hero-container">
+        <div class="row">
+          <div class="col">
+            <p class="title">
+            MTEJ
+            </h1>
+            <p class="description">Ang MTEJ ay isang electronic journal kung saan maaring masubaybayan at pagkunan ng kabuuang interpretasyon ang pagkakaiba ng mood ng mga user sa araw-araw. Mas maiintindihan din ang pangaklahatang kalagayan ng user sa paraan ng pag-obserba sa naging triggering event para sa kanilang kasalukuyang mood.
+            </h2>
+            </p>
+            <button class="btn btn-primary" type="button" id="simulanNaButton">Simulan Na!</button>
           </div>
-          <div class="carousel-item">
-            <img src="/bundles/undraw_mindfulness_scgo.svg" class="d-block w-100" alt="..." style="height: 300px;">
+          <div class="col">
+              <img src="bundles/undraw_personal_documents_re_vcf2.svg" alt="" >
           </div>
-          <div class="carousel-item">
-            <img src="/bundles/undraw_stability_ball_b-4-ia.svg" class="d-block w-100" alt="..." style="height: 300px;">
-          </div>
-          <div class="carousel-item">
-           <img src="/bundles/undraw_wandering_mind_re_x2a3.svg" class="d-block w-100" alt="..." style="height: 300px;">
-          </div>
-       </div>
-      <!-- carousel -->  
-
-      <!--MTEJ Heading-->
-      <h2 style="text-align: center;" id="homepage-mtej"> MOOD THERAPY ELECTRONIC JOURNAL</h2>
-      <!--MTEJ heading-->
-      
-       <!--Simulan Na Button-->
-       <div class="d-grid gap-2 col-1 mx-auto mb-5" id="simulanNa">
-        <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#modalSignUp" id="simulanNaButton">Simulan Na!</button>
+        </div>
       </div>
-      <!--Simulan Na Button-->
+     <!-- hero section container -->
 
-      <!-- hero section 1 Container -->
-       <div class="hero-1-container ">
-         <div class="row">
-           <div class="col">
-             <img src="bundles/undraw_diary_re_4jpc.svg" alt="">
-           </div>
-           <div class="col">
+     <!-- hero section 1 Container -->
+     <div class="hero-1-container ">
+        <div class="row">
+          <div class="col">
+            <img src="bundles/undraw_diary_re_4jpc.svg" alt="">
+          </div>
+          <div class="col">
+            <p class="title">
+              Lumikha ng sariling personalized diary 
+            </h1>
+            <p class="description">
+              Makatutulong ang MTEJ Application sa pagkaroon ng personalized diary kung saan mayroong sariling personal account ang mga users.
+            </h2>
+          </div>
+        </div>
+      </div>
+
+      <!-- hero section 2 Container -->
+      <div class="hero-2-container ">
+        <div class="row">
+         <div class="col">
+           <div class="hero-details container">
              <p class="title">
-               Lumikha ng sariling personalized diary 
+               Subaybayan at tignan ang pag-unlad ng iyong mood
              </h1>
              <p class="description">
-               Makatutulong ang MTEJ Application sa pagkaroon ng sariling personalized diary kung saan mayroong sariling personal account ang mga users.
+               Ang application na ito ay maaaring makatulong sa mga users na subaybayan ang pag-unlad ng kanilang mga mood kung saan makikita nila ito sa pamamagitan ng mga graph analytics .
              </h2>
            </div>
          </div>
-       </div>
-       <!-- hero section 2 Container -->
-       <div class="hero-2-container ">
-         <div class="row">
-          <div class="col">
-            <div class="hero-details container">
-              <p class="title">
-                Subaybayan at tignan ang pag-unlad ng iyong mood
-              </h1>
-              <p class="description">
-                Ang application na ito ay maaaring makatulong sa mga users na subaybayan ang pag-unlad ng kanilang mga mood sa pamamagitan ng mga graph analytics kung saan dito nila maaring tignan.
-              </h2>
-            </div>
-          </div>
-          <div class="col">
-            <img src="bundles/undraw_charts_re_5qe9.svg" alt="">
-          </div>    
-      </div>
-        
-      </div>
-
+         <div class="col">
+           <img src="bundles/undraw_charts_re_5qe9.svg" alt="">
+         </div>    
+        </div>  
      </div>
-    </div>
-    <!-- ! Main Content -->
-
 </body>
 </html>

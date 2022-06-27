@@ -78,7 +78,7 @@
                   <a href="/html/moodDiary.html" class="nav_link active"> <i class="fa-solid fa-calendar-plus"></i> Mood Diary </a> 
                   <a href="/html/automaticThoughtJournal.html" class="nav_link"> <i class="fa-solid fa-pen"></i> AT Journal </a>
                   <a href="/html/ATJEntries.html" class="nav_link"> <i class="fa-solid fa-book-open"></i> ATJ Entries </a>
-                  <a href="/html/moodDiaryEntries.html" class="nav_link"> <i class="fa-regular fa-calendar-check"></i> Mood Diary Entries </a>  
+                  <a href="/html/moodDiaryEntries.html" class="nav_link"> <i class="fa-solid fa-book-open"></i> Mood Diary Entries </a>  
                 </div>
             </div> <a href="#" class="nav_link" id=""> <i class="fa-solid fa-id-card-clip"></i> My Account </a>
         </nav>
@@ -87,7 +87,7 @@
       <!-- A. TITLE -->
       <h3 class="display-3 text-center titleContainer">Mood Diary</h3>
       <div class="moodButtonContainer">
-        <button type="button" class="btn btn-primary" id="" onclick="location.href='/html/moodDiaryEntries.html'"> <i class="fa-regular fa-calendar-minus"></i> View Entries </button>
+        <button type="button" class="btn btn-primary" id=""> <i class="fa-regular fa-calendar-minus"></i> Edit </button>
         <button type="button" class="btn btn-primary" id="" data-bs-toggle="modal" data-bs-target="#addMoodEntryModal"> <i class="fa-regular fa-calendar-plus"></i> Add Entry </button>
       </div>
             
@@ -101,7 +101,7 @@
 
       
       <div id="moodDiaryChart">
-        <canvas id="myChart" width="1000" height="400">
+        <canvas id="myChart" width="400" height="400">
         </canvas>
       </div>
 
@@ -112,7 +112,7 @@
           <div class="modal-content">
             <!-- A. Header-->
             <div class="modal-header">
-              <h1 class="modal-title">How are you feeling? :)</h1>
+              <h1 class="modal-title">Kumusta ang pakiramdam mo? :)</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
@@ -168,7 +168,7 @@
                 </div>
 
                 <div>
-                  <h4>Mood Level: <span id="moodLevel" value = ""></span></h4>
+                  <h4>Antas ng Mood: <span id="moodLevel" value = ""></span></h4>
                 </div>
               </div>
               
@@ -179,20 +179,20 @@
 
             <!-- C. Footer-->
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <i class="fa-solid fa-ban"></i> Cancel</button>
-              <button type="button" class="btn btn-primary" id="moodEntryUser" data-bs-toggle="modal" data-bs-target="#addMoodEntryModal"> <i class="fa-solid fa-plus"></i> Add New Entry </button>
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <i class="fa-solid fa-ban"></i> Kanselahin</button>
+              <button type="button" class="btn btn-primary" id="moodEntryUser" data-bs-toggle="modal" data-bs-target="#addMoodEntryModal"> <i class="fa-solid fa-plus"></i> Magdagdag ng Bagong Entry </button>
             </div>
           </div>
         </div>
       </div>
       
-      <!-- D. Footer Buttons 
+      <!-- D. Footer Buttons -->
       <div class="text-center">
-          <button type="button" class="btn btn-primary m-3" id="ATJSubmit">Save Mood Diary</button>
-      </div> -->
+          <button type="button" class="btn btn-primary m-3" id="ATJSubmit">I-save ang Mood Diary</button>
+      </div>
 
       <div class="text-center">
-        <button type="button" class="btn btn-primary m-3" id="proceedToAlternative" onclick="location.href='/html/automaticThoughtJournal.html'">Proceed to Alternative Thought Journal</button>
+        <button type="button" class="btn btn-secondary m-3" id="proceedToAlternative">Magpatuloy sa Alternative Thought Journal</button>
       </div>
 
     </div>  <!-- ! Main Content -->

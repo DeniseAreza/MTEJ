@@ -141,13 +141,61 @@ nav #loginButton{
 
 #simulanNaButton {
   white-space: nowrap;
+  background-color: #F8A825 ;
 }
 
 .carouselContainer {
-  background-color: var(--light-yellow-color);
+  background-color: var( --light-yellow-color);
   padding-top: 5rem;
 }
 
+.carousel-item{
+  padding-bottom: 5rem;
+}
+
+#tungkolSaMtej{
+  height: 100vh;
+  padding: 0 50px 0 50px;
+}
+
+#tungkolSaMtej img{
+  height: 40vh;
+  margin-top: 3em;
+}
+
+.hero-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 50px 0 50px;
+  -webkit-box-align: center;
+    -ms-flex-align: center;
+        align-items: center;
+  -webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+  height: 100vh;
+  background-color: #F9D5A7;
+}
+
+.hero-container .title {
+  font-size: 2.7rem;
+  font-weight: bold;
+  font-family: tommy;
+  color: black;
+}
+
+.hero-container .description {
+  font-size: 1.5rem;
+  font-family: tommy;
+  color: black;
+  text-align: justify;
+}
+
+.hero-container img{
+  height:40vh;
+  margin-left: 10em;
+}
 
 /*-----------------------------------------
   A.2 HOME PAGE (AIRONNE)
@@ -164,6 +212,7 @@ nav #loginButton{
   font-size: 1.5rem;
   font-family: tommy;
   color: black;
+  text-align: justify;
 }
 
 .hero-1-container {
@@ -178,7 +227,7 @@ nav #loginButton{
     -ms-flex-pack: center;
         justify-content: center;
   height: 100vh;
-  background-color: #F9D5A7;
+  background-color: #FEF1E6;
 }
 
 .hero-2-container {
@@ -193,7 +242,7 @@ nav #loginButton{
     -ms-flex-pack: center;
         justify-content: center;
   height: 100vh;
-  background-color: #FEF1E6;
+  background-color: #F9D5A7;
 }
 
 .hero-1-container img{

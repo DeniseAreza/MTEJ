@@ -5,7 +5,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
 import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
 import { getDatabase, ref, set, push, onValue, onChildAdded, remove} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
-import { paginate } from ' https://cdn.jsdelivr.net/npm/alga-js/array@0.1.0-wood-5';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -59,7 +59,7 @@ const UsersRef = ref(database, 'users/');
 
                         $("#table_allUsers").prepend("<tr><td>"+ uid +"</td><td>"+ firstName +"</td><td>"+ lastName +"</td><td>"+ email +"</td><td>"+ state +"</td></tr>");
                       })
-
+                      
 // * Just in case you need this code
 // $("#table_allUsers").on("click",".delete_user",function(){
 //     var uid= $(this).attr('id'); // get uid through using id attribute

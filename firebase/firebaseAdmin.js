@@ -46,16 +46,17 @@ function logOutClicked() {
             });
 }
 
+
+
 // * manage users retrieval
 const UsersRef = ref(database, 'users/');
                     onChildAdded(UsersRef, (data) => {
-                        var uid = data.val().Account.uid;
                         var firstName = data.val().Account.firstName;
                         var lastName = data.val().Account.lastName;
                         var email = data.val().Account.email;
                         var state = data.val().Account.state;
 
-                        $("#table_allUsers").prepend("<tr><td>"+ uid +"</td><td>"+ firstName +"</td><td>"+ lastName +"</td><td>"+ email +"</td><td>"+ state +"</td></tr>");
+                        $("#table_allUsers").prepend("</td><td>"+ firstName +"</td><td>"+ lastName +"</td><td>"+ email +"</td><td>"+ state +"</td></tr>");
                       })
                       
 // * Just in case you need this code

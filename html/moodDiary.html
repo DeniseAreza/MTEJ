@@ -78,7 +78,7 @@
                   <a href="/html/moodDiary.html" class="nav_link active"> <i class="fa-solid fa-calendar-plus"></i> Mood Diary </a> 
                   <a href="/html/automaticThoughtJournal.html" class="nav_link"> <i class="fa-solid fa-pen"></i> AT Journal </a>
                   <a href="/html/ATJEntries.html" class="nav_link"> <i class="fa-solid fa-book-open"></i> ATJ Entries </a>
-                  <a href="/html/moodDiaryEntries.html" class="nav_link"> <i class="fa-solid fa-book-open"></i> Mood Diary Entries </a>  
+                  <a href="/html/moodDiaryEntries.html" class="nav_link"> <i class="fa-regular fa-calendar-check"></i> Mood Diary Entries </a>  
                 </div>
             </div> <a href="#" class="nav_link" id=""> <i class="fa-solid fa-id-card-clip"></i> My Account </a>
         </nav>
@@ -87,7 +87,7 @@
       <!-- A. TITLE -->
       <h3 class="display-3 text-center titleContainer">Mood Diary</h3>
       <div class="moodButtonContainer">
-        <button type="button" class="btn btn-primary" id=""> <i class="fa-regular fa-calendar-minus"></i> Edit </button>
+        <button type="button" class="btn btn-primary" id="" onclick="location.href='/html/moodDiaryEntries.html'"> <i class="fa-regular fa-calendar-minus"></i> View Entries </button>
         <button type="button" class="btn btn-primary" id="" data-bs-toggle="modal" data-bs-target="#addMoodEntryModal"> <i class="fa-regular fa-calendar-plus"></i> Add Entry </button>
       </div>
             
@@ -101,7 +101,7 @@
 
       
       <div id="moodDiaryChart">
-        <canvas id="myChart" width="400" height="400">
+        <canvas id="myChart" width="1000" height="400">
         </canvas>
       </div>
 
@@ -186,13 +186,13 @@
         </div>
       </div>
       
-      <!-- D. Footer Buttons -->
+      <!-- D. Footer Buttons 
       <div class="text-center">
           <button type="button" class="btn btn-primary m-3" id="ATJSubmit">Save Mood Diary</button>
-      </div>
+      </div> -->
 
       <div class="text-center">
-        <button type="button" class="btn btn-secondary m-3" id="proceedToAlternative">Proceed to Alternative Thought Journal</button>
+        <button type="button" class="btn btn-primary m-3" id="proceedToAlternative" onclick="location.href='/html/automaticThoughtJournal.html'">Proceed to Alternative Thought Journal</button>
       </div>
 
     </div>  <!-- ! Main Content -->

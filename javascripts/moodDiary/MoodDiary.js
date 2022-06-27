@@ -1,3 +1,18 @@
+import * as FirebaseInit from '/firebase/firebaseInit.js';
+
+// * Log out
+$('#signOutBtn').click(logOutClicked);
+function logOutClicked() {
+    FirebaseInit.signOutUser()
+            .then(() => {
+                window.location.href = '/';
+                console.log('signed out')
+            }, function() {
+                console.log('not yet signed out');
+            });
+}
+// * Log out
+
 import { addMoodEntry, collectMoodEntries } from "./DataCollection.js";
 import { ChartJS } from "./Chart.js";
 // Eto ung Add Entry na button
@@ -102,4 +117,6 @@ function displayChart() {
 
 // Eto dito ko sinet
 $(document).ready(init);
+
+
 

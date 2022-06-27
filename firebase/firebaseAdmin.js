@@ -46,6 +46,8 @@ function logOutClicked() {
             });
 }
 
+
+
 // * manage users retrieval
 const UsersRef = ref(database, 'users/');
                     onChildAdded(UsersRef, (data) => {

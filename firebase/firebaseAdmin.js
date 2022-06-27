@@ -46,9 +46,12 @@ function logOutClicked() {
             });
 }
 
+
+
 // * manage users retrieval
 const UsersRef = ref(database, 'users/');
                     onChildAdded(UsersRef, (data) => {
+                        var uid = data.val().Account.uid;
                         var firstName = data.val().Account.firstName;
                         var lastName = data.val().Account.lastName;
                         var email = data.val().Account.email;

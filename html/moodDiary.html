@@ -32,6 +32,7 @@
     <script defer type="module" src="/javascripts/moodDiary/DataCollection.js"></script>
     <script defer type="module" src="/javascripts/moodDiary/Chart.js"></script>
     <script defer type="module" src="/javascripts/moodDiary/MoodDiary.js"></script>
+
     <!--
       <script defer type="module" src="/javascripts/moodDiary.js"></script>
 
@@ -39,7 +40,7 @@
 
     
 </head>
-<body onload="loader()" id="body-pd">
+<body onload="loader()" id="body-pd" onload="displayChart()">
     <!--* Loader -->
     <div class="d-flex justify-content-center">
         <div class="spinner-grow bg-primary mt-5" role="status" id="loader" style="width: 3rem; height: 3rem;"></div>
@@ -100,10 +101,10 @@
       </div> -->
 
       
-      <div id="moodDiaryChart">
-        <canvas id="myChart" width="400" height="130">
-        </canvas>
-      </div>
+      
+      <canvas id="myChart" width="400" height="130">
+        <p>Mood Dashboard</p>
+      </canvas>
 
       <!-- C. MOOD ENTRY: MODAL -->
       <div class="modal fade" id="addMoodEntryModal" tabindex="-1" role="dialog" aria-labelledby="addEntry" aria-hidden="true">

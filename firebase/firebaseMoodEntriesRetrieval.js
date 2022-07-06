@@ -97,7 +97,7 @@ FirebaseInit.checkActiveUser()
                         }
                         $("#table_MoodDiaryEntries").prepend(
                             '<div class="container shadow-sm p-3 mb-5 bg-white rounded""><div class="text-justify"><p class="text-muted"><span>Date:</span> '+ date +'</p></div><div class="text-justify"><p class="text-muted"><span>Time:</span> '+ time +'</p><h3>Mood Level</h3><p class="text-justify">'+ moodLevel +'</p><h3>Mood Level Description</h3><p class="text-justify">'+ moodLevelDescription +'</p><h5>Post ID</h5><p class="text-justify">'+ postID +'</p></div></div>');
-                      });
+                        });
                 }, function() {
                     console.log('No user exists'); 
                 });

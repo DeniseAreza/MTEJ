@@ -1,3 +1,28 @@
+// ! Do not copy paste to another project
+// ! This initialization is only for this project
+// Import the functions you need from the SDKs you need
+// wag mo na iimport
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
+import {getAuth} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
+import { getDatabase, ref, set, push, onChildAdded, onValue} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
+
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyBS7-5Y-f_0AcwywqBot0Jhbr07STYy9H0",
+    authDomain: "mtej-3330e.firebaseapp.com",
+    projectId: "mtej-3330e",
+    storageBucket: "mtej-3330e.appspot.com",
+    messagingSenderId: "661462042481",
+    appId: "1:661462042481:web:bc85ac14a8dc616c0618d0"
+  };
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const database = getDatabase(app);
 import * as FirebaseInit from '/firebase/firebaseInit.js';
 
 // * Log out
@@ -28,7 +53,7 @@ var moodLevel = null;
  * @description Initialize lahat ng mangyayari sa umpisa dito
  */
 
-// Eto areza ung mga mangyayari sa umpisa
+// Eto ung mga mangyayari sa umpisa
 function init() {
     //eto naman ung iseset ung time ngaun sa input field
     const hourToday = new Date().getHours();
@@ -56,7 +81,7 @@ function init() {
  * @description Kapag pumile yung user sa mood picker
  */
 
-// Try mo mag add ng mood
+
 function onMoodPick(event) {
     const mood = event.currentTarget.attributes.value.value;
     // Iseset ung moodLevel sa taas na variable into kung anong pinile ng user
@@ -78,41 +103,112 @@ async function onEntryAdded() {
 }
 
 
+// * Read Mood Level
+$("#moodEntry").on("click",".mood",function(){
+    var mood= $(this).attr('value');
+    document.getElementById("moodLevel").innerHTML = mood;
+    document.getElementById("moodLevel").setAttribute("value", mood);
+ });
+ 
 /**
  * @description Display the Mood Chart
  */
+
+
 function displayChart() {
-    
-    // Sample
-    // Etong data na to is ung nasa baba ng chart
-    const labels = [
-        'January',
-        'February',
-        'March',
-        'April',
-        'May',
-        'June',
-    ];
+    // * Read Values
 
-    // Eto naman is yung buong chart
-    const datasets = [
-    {
-        label: 'My First dataset', // Eto ung label sa taas 
-        backgroundColor: 'rgb(255, 99, 132)', //Eto ung color ng mga bilog sa chart
-        borderColor: 'rgb(255, 99, 132)', // Eto ung color ng line sa chart
-        data: [0, 10, 5, 2, 20, 30, 45], // tas eto ung mga data na ipapasok mo sa chart
-    },
-    {
-        label: 'My Second dataset',
-        backgroundColor: 'black',
-        borderColor: 'black',
-        data: [0, 1, 5, 2, 10, 6, 21],
-    }]
+    FirebaseInit.checkActiveUser()
+                .then((user) =>{
+                    const moodDiaryRef = ref(database, 'users/' + user.uid  + '/MoodEntry');
+                    onChildAdded(moodDiaryRef, (value) => {
+                        var moodLevel = value.val().moodLevel;
+                        var date = value.val().date;
+                        // var time = value.val().time;
 
-    const appendTo = document.getElementById("myChart");
-    // ayun ahahhaha nasobrahan lang pala sa p xD
-    ChartJS(labels, datasets, "line", appendTo);
 
+                        var moodChart = [];
+                        for (var i = 0; i < moodLevel.length; i++){
+                            moodChart = moodLevel[i];
+                        }
+
+                        // //setup
+                        // const data = {
+                        //     labels: [date],
+                        //     datasets: [{
+                        //         label: 'My Mood',
+                        //         data: [],
+                        //         backgroundColor: [
+                        //             'rgba(255, 99, 132, 0.2)',
+                        //             'rgba(54, 162, 235, 0.2)',
+                        //             'rgba(255, 206, 86, 0.2)',
+                        //             'rgba(75, 192, 192, 0.2)',
+                        //             'rgba(153, 102, 255, 0.2)',
+                        //             'rgba(255, 159, 64, 0.2)'
+                        //         ],
+                        //         borderColor: [
+                        //             'rgba(255, 99, 132, 1)',
+                        //             'rgba(54, 162, 235, 1)',
+                        //             'rgba(255, 206, 86, 1)',
+                        //             'rgba(75, 192, 192, 1)',
+                        //             'rgba(153, 102, 255, 1)',
+                        //             'rgba(255, 159, 64, 1)'
+                        //         ],
+                        //         borderWidth: 1
+                        //     }]
+                        // };
+                        // //config block
+                        // const config = {
+                        //     type: 'line',
+                        //     data
+                        // };
+                        //init block
+                        // const myChart = new Chart(document.getElementById('myChart'), config)
+
+                        //array of months
+
+
+                        const ctx = document.getElementById('myChart');
+                        const myChart = new Chart(ctx, {
+                            type: 'line',
+                            data: {
+                                labels: [date],
+                                datasets: [{
+                                    label: 'Level of Mood',
+                                    data: [10,12,14,16,1,11,12,20,21,33],
+                                    backgroundColor: [
+                                        'rgba(255, 99, 132, 0.2)',
+                                        'rgba(54, 162, 235, 0.2)',
+                                        'rgba(255, 206, 86, 0.2)',
+                                        'rgba(75, 192, 192, 0.2)',
+                                        'rgba(153, 102, 255, 0.2)',
+                                        'rgba(255, 159, 64, 0.2)'
+                                    ],
+                                    borderColor: [
+                                        'rgba(255, 99, 132, 1)',
+                                        'rgba(54, 162, 235, 1)',
+                                        'rgba(255, 206, 86, 1)',
+                                        'rgba(75, 192, 192, 1)',
+                                        'rgba(153, 102, 255, 1)',
+                                        'rgba(255, 159, 64, 1)'
+                                    ],
+                                    borderWidth: 1
+                                }]
+                            },
+                            options: {
+                                scales: {
+                                    y: {
+                                        beginAtZero: false
+                                    }
+                                }
+                            }
+                        });
+                        
+                    //    myChart.destroy();
+
+                    //    myChart = new Chart(document.getElementById('myChart'), config)
+                    })
+                })
 }
 
 // Eto dito ko sinet

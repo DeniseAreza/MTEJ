@@ -130,35 +130,7 @@ function moodEntry() {
                 });
 }
 
-// * Read Values
-const moodDiaryRef = ref(database, 'users/');
-                    onChildAdded(moodDiaryRef, (value) => {
-
-                    })
 
 
 
-/*
-entry1 = 5
-entry2 = 4
-entry3 = 6
-entry4 = 5
-totalEntry = (entry1 + entry2 + entry3 + entry 4)
 
-numberOfEntries = 4 //nakadepende sa how many entries yung computation
-average = totalEntry / 4;
-
-#row[average]day[day] = backgroundColor(row0Color);
-
-for (var i = 0; i <= 10; i++) {
-    parang hahanapin niya sa cell
-    
-    for (var j = 1; j <= daysInMonth+1; j++) {
-        cell[i][j].innerHTML = ""; //data
-        cell[i].appendChild(cell[i][j]).setAttribute('id', 'row'+i+'day'+j); //row
-    }
-    tbody.appendChild(cell[i]); //row
-}
-
-row0Color = darkest red;
-row1Color = dark red*/

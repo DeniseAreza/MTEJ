@@ -170,7 +170,6 @@ FirebaseInit.checkActiveUser()
                                         display: true,
                                         text: 'Mood Level'
                                     },
-                                    //reverse: true 
                                 }, 
                                 x: {
                                     title: {
@@ -228,7 +227,7 @@ FirebaseInit.checkActiveUser()
                         //E. Populate Chart Data by updating
                         addData(myChart, moodDate, moodLevel);     
 
-                        //switch mood level description
+                        //TESTIIIIIIIIIIING
                         switch(moodLevel) {
                             case "10": moodLevelDescription = "Elevated"; break;
                             case "9": moodLevelDescription = "Euphoric"; break;
@@ -242,6 +241,14 @@ FirebaseInit.checkActiveUser()
                             case "1": moodLevelDescription = "Depressed"; break;
                             case "0": moodLevelDescription = "Worst"; break;
                         }
+                        
+                        //Populate Table
+                        $('#table_moodDiary').prepend('<tr>'
+                        + '<td>'+ moodDate +'</td>'
+                        + '<td>'+ moodTime +'</td>'
+                        + '<td>'+ moodLevel + " – " + moodLevelDescription + '</td>'
+                        + '</tr>'              
+                        );
 
                     });
                 }, function() {

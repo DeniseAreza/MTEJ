@@ -53,47 +53,25 @@ FirebaseInit.checkActiveUser()
 // * Retrieve Mood Diary Entries as reference
 FirebaseInit.checkActiveUser()
                 .then((user) => {
-                    const ATJRef = ref(database, 'users/' + user.uid  + '/MoodEntry');
-                    onChildAdded(ATJRef, (data) => {
+                    const MDRef = ref(database, 'users/' + user.uid  + '/MoodEntry');
+                    onChildAdded(MDRef, (data) => {
                         var moodLevel = data.val().moodLevel; 
                         var time = data.val().time;
                         var date = data.val().date;
                         var postID = data.val().postID;
                         var moodLevelDescription;
                         switch(moodLevel) {
-                            case "0":
-                                moodLevelDescription = "Elevated";
-                                break;
-                            case "1":
-                                moodLevelDescription = "Euphoric";
-                                break;
-                            case "2":
-                                moodLevelDescription = "Blissful";
-                                break;
-                            case "3":
-                                moodLevelDescription = "Happy";
-                                break;
-                            case "4":
-                                moodLevelDescription = "Content";
-                                break;
-                            case "5":
-                                moodLevelDescription = "Good";
-                                break;
-                            case "6":
-                                moodLevelDescription = "Meh";
-                                break;
-                            case "7":
-                                moodLevelDescription = "Low";
-                                break;
-                            case "8":
-                                moodLevelDescription = "Sad";
-                                break;
-                            case "9":
-                                moodLevelDescription = "Depressed";
-                                break;
-                            case "10":
-                                moodLevelDescription = "Worst";
-                                break;
+                            case "10": moodLevelDescription = "Elevated"; break;
+                            case "9": moodLevelDescription = "Euphoric"; break;
+                            case "8": moodLevelDescription = "Blissful"; break;
+                            case "7": moodLevelDescription = "Happy"; break;
+                            case "6": moodLevelDescription = "Content"; break;
+                            case "5": moodLevelDescription = "Good"; break;
+                            case "4": moodLevelDescription = "Meh"; break;
+                            case "3": moodLevelDescription = "Low"; break;
+                            case "2": moodLevelDescription = "Sad"; break;
+                            case "1": moodLevelDescription = "Depressed"; break;
+                            case "0": moodLevelDescription = "Worst"; break;
                         }
                         $("#table_MoodDiaryEntries").prepend(
                             '<div class="container shadow-sm p-3 mb-5 bg-white rounded""><div class="text-justify"><p class="text-muted"><span>Date:</span> '+ date +'</p></div><div class="text-justify"><p class="text-muted"><span>Time:</span> '+ time +'</p><h3>Mood Level</h3><p class="text-justify">'+ moodLevel +'</p><h3>Mood Level Description</h3><p class="text-justify">'+ moodLevelDescription +'</p><h5>Post ID</h5><p class="text-justify">'+ postID +'</p></div></div>');

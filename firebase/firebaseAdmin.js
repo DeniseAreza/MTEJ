@@ -76,8 +76,6 @@ const UsersRef = ref(database, 'users/');
                         + '<input type="text" class="form-control" id="view_email" placeholder="'+ email +'" readonly></div><div class="col-md-6"><label for="state" class="col-sm-3 col-form-label">State</label>'
                         + '<input type="text" class="form-control" id="view_state" placeholder="'+ state +'" readonly></div></div></div>'
                         + '<div class="modal-footer"><button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-ban"></i> Close </button></div></div></div></div>');
-                        
-                         
                       })
 
 

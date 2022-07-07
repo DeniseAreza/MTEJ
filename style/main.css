@@ -12851,7 +12851,9 @@ button#reset-password-btn {
   K. ADMIN: TABLES
 ----------------------------------------*/
 .table-container {
-  margin: 20px;
-  padding: 20px;
+  margin: 20px 20px 0px 20px;
+  /*top, right, bottom, left*/
+  padding: 0px 50px 0px 20px;
+  /*top, right, bottom, left*/
 }
 /*# sourceMappingURL=main.css.map */

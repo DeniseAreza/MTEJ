@@ -59,13 +59,10 @@ var moodLevel = null;
 
 // Eto ung mga mangyayari sa umpisa
 function init() {
-    //eto naman ung iseset ung time ngaun sa input field
-    const hourToday = new Date().getHours();
-    const minuteToday = new Date().getMinutes();
 
     // Set Time Picker
-    timePicker.datetimepicker({ format: 'hh:mm a'}); //hh:mm:ss when clicking
-    timePicker.val(hourToday + ":" + minuteToday);  //automatically
+    timePicker.datetimepicker({ format: 'hh:mm A'}); //hh:mm:ss when clicking
+    timePicker.val(moment(new Date()).format('hh:mm A'));  //automatically
     
     // Set Date Picker
     datePicker.datepicker(); //use date picker
@@ -138,25 +135,25 @@ FirebaseInit.checkActiveUser()
                         datasets: [{
                             label: 'Mood Level',
                             data: [],
-                            backgroundColor: [
-                                'rgba(255, 99, 132, 0.2)',
-                                'rgba(54, 162, 235, 0.2)',
-                                'rgba(255, 206, 86, 0.2)',
-                                'rgba(75, 192, 192, 0.2)',
-                                'rgba(153, 102, 255, 0.2)',
-                                'rgba(255, 159, 64, 0.2)'
-                            ],
-                            borderColor: [
-                                'rgba(255, 99, 132, 1)',
-                                'rgba(54, 162, 235, 1)',
-                                'rgba(255, 206, 86, 1)',
-                                'rgba(75, 192, 192, 1)',
-                                'rgba(153, 102, 255, 1)',
-                                'rgba(255, 159, 64, 1)'
-                            ],
-                            borderWidth: 5
+                            borderWidth: 5,
+                            segment: {
+                                //change color depending on mood
+                                borderColor: ctx => ctx.p1.parsed.y == 10 ? 'rgba(255, 0, 0, 1)' : undefined
+                                                ||  ctx.p1.parsed.y == 9 ? 'rgba(192, 0, 0, 1)' : undefined
+                                                ||  ctx.p1.parsed.y == 8 ? 'rgba(255, 204, 0, 1)' : undefined
+                                                ||  ctx.p1.parsed.y == 7 ? 'rgba(191, 144, 0, 1)' : undefined
+                                                ||  ctx.p1.parsed.y == 6 ? 'rgba(255, 156, 25, 1)' : undefined
+                                                ||  ctx.p1.parsed.y == 5 ? 'rgba(0, 176, 80, 1)' : undefined
+                                                ||  ctx.p1.parsed.y == 4 ? 'rgba(6, 189, 208, 1)' : undefined
+                                                ||  ctx.p1.parsed.y == 3 ? 'rgba(0, 112, 192, 1)' : undefined
+                                                ||  ctx.p1.parsed.y == 2 ? 'rgba(112, 48, 160, 1)' : undefined
+                                                ||  ctx.p1.parsed.y == 1 ? 'rgba(32, 56, 100, 1)' : undefined
+                                                ||  ctx.p1.parsed.y == 0 ? 'rgba(0, 0, 0, 1)' : undefined
+                            }
                         }]
                     }
+
+                    
 
                     /*-------------------------------------
                         C. CREATE CHART AND LABEL OPTIONS
@@ -231,7 +228,28 @@ FirebaseInit.checkActiveUser()
                         //E. Populate Chart Data by updating
                         addData(myChart, moodDate, moodLevel);     
 
+                        //switch mood level description
+                        switch(moodLevel) {
+                            case "10": moodLevelDescription = "Elevated"; break;
+                            case "9": moodLevelDescription = "Euphoric"; break;
+                            case "8": moodLevelDescription = "Blissful"; break;
+                            case "7": moodLevelDescription = "Happy"; break;
+                            case "6": moodLevelDescription = "Content"; break;
+                            case "5": moodLevelDescription = "Good"; break;
+                            case "4": moodLevelDescription = "Meh"; break;
+                            case "3": moodLevelDescription = "Low"; break;
+                            case "2": moodLevelDescription = "Sad"; break;
+                            case "1": moodLevelDescription = "Depressed"; break;
+                            case "0": moodLevelDescription = "Worst"; break;
+                        }
                         
+                        //Populate Table
+                        $('#table_moodDiary').prepend('<tr>'
+                        + '<td>'+ moodDate +'</td>'
+                        + '<td>'+ moodTime +'</td>'
+                        + '<td>'+ moodLevel + " – " + moodLevelDescription + '</td>'
+                        + '</tr>'              
+                        );
 
                     });
                 }, function() {

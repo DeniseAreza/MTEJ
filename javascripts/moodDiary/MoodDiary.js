@@ -242,14 +242,6 @@ FirebaseInit.checkActiveUser()
                             case "1": moodLevelDescription = "Depressed"; break;
                             case "0": moodLevelDescription = "Worst"; break;
                         }
-                        
-                        //Populate Table
-                        $('#table_moodDiary').prepend('<tr>'
-                        + '<td>'+ moodDate +'</td>'
-                        + '<td>'+ moodTime +'</td>'
-                        + '<td>'+ moodLevel + " – " + moodLevelDescription + '</td>'
-                        + '</tr>'              
-                        );
 
                     });
                 }, function() {

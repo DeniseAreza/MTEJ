@@ -40,12 +40,14 @@
 
     
 </head>
-<body onload="loader()" id="body-pd" onload="displayChart()">
+  <body onload="loader()" id="body-pd">
     <!--* Loader -->
     <div class="d-flex justify-content-center">
         <div class="spinner-grow bg-primary mt-5" role="status" id="loader" style="width: 3rem; height: 3rem;"></div>
     </div>
     <!--* Loader -->
+    
+    
     <!-- ! Main Content -->
     <div style="display:none;" id="allContent" class="animate">
 
@@ -85,6 +87,8 @@
         </nav>
       </div>
 
+      
+      
       <!-- A. TITLE -->
       <h3 class="display-3 text-center titleContainer">Mood Diary</h3>
       <div class="moodButtonContainer">
@@ -102,9 +106,12 @@
 
       
       
+      <!-- B. MOOD DIARY: MADE USING CHART.JS -->
       <canvas id="myChart" width="400" height="130">
         <p>Mood Dashboard</p>
       </canvas>
+
+      
 
       <!-- C. MOOD ENTRY: MODAL -->
       <div class="modal fade" id="addMoodEntryModal" tabindex="-1" role="dialog" aria-labelledby="addEntry" aria-hidden="true">
@@ -125,7 +132,7 @@
                     <!-- DATE PICKER -->
                     <label for="date" class="col-sm-1 col-form-label">Date</label>
                     <div class="input-group date">
-                      <input type="text" class="form-control" id="datepicker">
+                      <input type="text" class="form-control" id="datepicker" required>
                       <span class="input-group-append">
                         <span class="input-group-text bg-white d-block"><i class="fa fa-calendar-days"></i></span>
                       </span>
@@ -136,7 +143,7 @@
                     <!-- TIME  PICKER -->
                     <label for="date" class="col-sm-1 col-form-label">Time</label>
                     <div class="input-group date" style="position: relative">
-                        <input type="text" class="form-control" id="timepicker"/>
+                        <input type="text" class="form-control" id="timepicker" required/>
                       <span class="input-group-append">
                         <span class="input-group-text bg-white d-block"><i class="fa fa-clock"></i></span>
                       </span>
@@ -147,24 +154,24 @@
               <!-- SECOND ROW: MOOD PICKER -->
               <div id="moodEntry">
                 <div class="row text-center moodPicker">
-                  <div class="col mood" value="3"><button class="btn mood3" value="3"><img src="/bundles/mood3_happy.svg">Happy</button></div>
-                  <div class="col mood" value="4"><button class="btn mood4" value="4"><img src="/bundles/mood4_content.svg">Content</button></div>
-                  <div class="col mood" value="5"><button class="btn mood5" value="5"><img src="/bundles/mood5_good.svg">Good</button></div>
-                  <div class="col mood" value="6"><button class="btn mood6" value="6"><img src="/bundles/mood6_meh.svg">Meh</button></div>
-                  <div class="col mood" value="7"><button class="btn mood7" value="7"><img src="/bundles/mood7_feeling_low.svg">Low</button></div>
+                  <div class="col mood" value="7"><button class="btn mood3"><img src="/bundles/mood3_happy.svg">Happy</button></div>
+                  <div class="col mood" value="6"><button class="btn mood4"><img src="/bundles/mood4_content.svg">Content</button></div>
+                  <div class="col mood" value="5"><button class="btn mood5"><img src="/bundles/mood5_good.svg">Good</button></div>
+                  <div class="col mood" value="4"><button class="btn mood6"><img src="/bundles/mood6_meh.svg">Meh</button></div>
+                  <div class="col mood" value="3"><button class="btn mood7"><img src="/bundles/mood7_feeling_low.svg">Low</button></div>
                 </div>
                 <div class="row text-center">
-                  <div class="col mood" value="1"><button class="btn mood1" value="1"><img src="/bundles/mood1_euphoric.svg">Euphoric</button></div>
-                  <div class="col mood" value="2"><button class="btn mood2" value="2"><img src="/bundles/mood2_blissful.svg">Blissful</button></div>
+                  <div class="col mood" value="9"><button class="btn mood1"><img src="/bundles/mood1_euphoric.svg">Euphoric</button></div>
+                  <div class="col mood" value="8"><button class="btn mood2"><img src="/bundles/mood2_blissful.svg">Blissful</button></div>
                   <div class="col"></div>
-                  <div class="col mood" value="8"><button class="btn mood8" value="8"><img src="/bundles/mood8_sad.svg">Sad</button></div>
-                  <div class="col mood" value="9"><button class="btn mood9" value="9"><img src="/bundles/mood9_depressed.svg">Depressed</button></div>
+                  <div class="col mood" value="2"><button class="btn mood8"><img src="/bundles/mood8_sad.svg">Sad</button></div>
+                  <div class="col mood" value="1"><button class="btn mood9"><img src="/bundles/mood9_depressed.svg">Depressed</button></div>
                 </div>
                 <div class="row text-center">
                   <div class="col"></div>
-                  <div class="col mood" value="0"><button class="btn mood0" value="0"><img src="/bundles/mood0_elevated.svg">Elevated</button></div>
+                  <div class="col mood" value="10"><button class="btn mood0"><img src="/bundles/mood0_elevated.svg">Elevated</button></div>
                   <div class="col"></div>
-                  <div class="col mood" value="10"><button class="btn mood10" value="10"><img src="/bundles/mood10_worst.svg">Worst</button></div>
+                  <div class="col mood" value="0"><button class="btn mood10"><img src="/bundles/mood10_worst.svg">Worst</button></div>
                   <div class="col"></div>
                 </div>
 
@@ -198,5 +205,5 @@
 
     </div>  <!-- ! Main Content -->
    
-</body>
+  </body>
 </html>

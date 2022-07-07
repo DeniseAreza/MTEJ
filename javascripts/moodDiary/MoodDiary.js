@@ -38,8 +38,12 @@ function logOutClicked() {
 }
 // * Log out
 
+
 import { addMoodEntry, collectMoodEntries } from "./DataCollection.js";
 import { ChartJS } from "./Chart.js";
+
+
+
 // Eto ung Add Entry na button
 // Lahat ng basic functions na iinitiate dito
 const addEntryBtn = $("#moodEntryUser");
@@ -60,13 +64,12 @@ function init() {
     const minuteToday = new Date().getMinutes();
 
     // Set Time Picker
-    timePicker.datetimepicker({
-        format: 'hh:mm a' //hh:mm:ss a
-    })
-    timePicker.val(hourToday + ":" + minuteToday);
+    timePicker.datetimepicker({ format: 'hh:mm a'}); //hh:mm:ss when clicking
+    timePicker.val(hourToday + ":" + minuteToday);  //automatically
+    
     // Set Date Picker
-    datePicker.datepicker();
-    datePicker.val(new Date().toLocaleDateString());
+    datePicker.datepicker(); //use date picker
+    datePicker.val(new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'numeric', year: 'numeric'})); //automatic set
 
     // OnClick Functions
     // Eto naman pagclinick yung Add Entry
@@ -109,110 +112,141 @@ $("#moodEntry").on("click",".mood",function(){
     document.getElementById("moodLevel").innerHTML = mood;
     document.getElementById("moodLevel").setAttribute("value", mood);
  });
+
+ // Eto dito ko sinet
+$(document).ready(init);
  
-/**
- * @description Display the Mood Chart
- */
 
 
-function displayChart() {
-    // * Read Values
 
-    FirebaseInit.checkActiveUser()
-                .then((user) =>{
-                    const moodDiaryRef = ref(database, 'users/' + user.uid  + '/MoodEntry');
-                    onChildAdded(moodDiaryRef, (value) => {
-                        var moodLevel = value.val().moodLevel;
-                        var date = value.val().date;
-                        // var time = value.val().time;
+/****************************
+ * Display the Mood Chart
+ ---------------------------*/
+FirebaseInit.checkActiveUser()
+                .then((user) => {
 
+                    /*------------------------
+                        A. Reference Chart ID
+                     ------------------------*/
+                    const ctx = document.getElementById('myChart').getContext('2d');
 
-                        var moodChart = [];
-                        for (var i = 0; i < moodLevel.length; i++){
-                            moodChart = moodLevel[i];
-                        }
+                    /*------------------------
+                        B. Fill Data
+                     ------------------------*/
+                    const moodData = {
+                        labels: [],
+                        datasets: [{
+                            label: 'Mood Level',
+                            data: [],
+                            backgroundColor: [
+                                'rgba(255, 99, 132, 0.2)',
+                                'rgba(54, 162, 235, 0.2)',
+                                'rgba(255, 206, 86, 0.2)',
+                                'rgba(75, 192, 192, 0.2)',
+                                'rgba(153, 102, 255, 0.2)',
+                                'rgba(255, 159, 64, 0.2)'
+                            ],
+                            borderColor: [
+                                'rgba(255, 99, 132, 1)',
+                                'rgba(54, 162, 235, 1)',
+                                'rgba(255, 206, 86, 1)',
+                                'rgba(75, 192, 192, 1)',
+                                'rgba(153, 102, 255, 1)',
+                                'rgba(255, 159, 64, 1)'
+                            ],
+                            borderWidth: 5
+                        }]
+                    }
 
-                        // //setup
-                        // const data = {
-                        //     labels: [date],
-                        //     datasets: [{
-                        //         label: 'My Mood',
-                        //         data: [],
-                        //         backgroundColor: [
-                        //             'rgba(255, 99, 132, 0.2)',
-                        //             'rgba(54, 162, 235, 0.2)',
-                        //             'rgba(255, 206, 86, 0.2)',
-                        //             'rgba(75, 192, 192, 0.2)',
-                        //             'rgba(153, 102, 255, 0.2)',
-                        //             'rgba(255, 159, 64, 0.2)'
-                        //         ],
-                        //         borderColor: [
-                        //             'rgba(255, 99, 132, 1)',
-                        //             'rgba(54, 162, 235, 1)',
-                        //             'rgba(255, 206, 86, 1)',
-                        //             'rgba(75, 192, 192, 1)',
-                        //             'rgba(153, 102, 255, 1)',
-                        //             'rgba(255, 159, 64, 1)'
-                        //         ],
-                        //         borderWidth: 1
-                        //     }]
-                        // };
-                        // //config block
-                        // const config = {
-                        //     type: 'line',
-                        //     data
-                        // };
-                        //init block
-                        // const myChart = new Chart(document.getElementById('myChart'), config)
-
-                        //array of months
-
-
-                        const ctx = document.getElementById('myChart');
-                        const myChart = new Chart(ctx, {
-                            type: 'line',
-                            data: {
-                                labels: [date],
-                                datasets: [{
-                                    label: 'Level of Mood',
-                                    data: [10,12,14,16,1,11,12,20,21,33],
-                                    backgroundColor: [
-                                        'rgba(255, 99, 132, 0.2)',
-                                        'rgba(54, 162, 235, 0.2)',
-                                        'rgba(255, 206, 86, 0.2)',
-                                        'rgba(75, 192, 192, 0.2)',
-                                        'rgba(153, 102, 255, 0.2)',
-                                        'rgba(255, 159, 64, 0.2)'
-                                    ],
-                                    borderColor: [
-                                        'rgba(255, 99, 132, 1)',
-                                        'rgba(54, 162, 235, 1)',
-                                        'rgba(255, 206, 86, 1)',
-                                        'rgba(75, 192, 192, 1)',
-                                        'rgba(153, 102, 255, 1)',
-                                        'rgba(255, 159, 64, 1)'
-                                    ],
-                                    borderWidth: 1
-                                }]
-                            },
-                            options: {
-                                scales: {
-                                    y: {
-                                        beginAtZero: false
+                    /*-------------------------------------
+                        C. CREATE CHART AND LABEL OPTIONS
+                     --------------------------------------*/
+                    const myChart = new Chart(ctx, {
+                        type: 'line',
+                        data: moodData,
+                        options: { 
+                            scales: { 
+                                y: { 
+                                    suggestedMin: 0, 
+                                    suggestedMax: 10,
+                                    title: {
+                                        display: true,
+                                        text: 'Mood Level'
+                                    },
+                                    //reverse: true 
+                                }, 
+                                x: {
+                                    title: {
+                                        display: true,
+                                        text: 'Date Created'
+                                    }
+                                },
+                                description: {
+                                    suggestedMin: 0, 
+                                    suggestedMax: 10,
+                                    position: 'right',
+                                    title: {
+                                        display: true,
+                                        text: 'Mood Description'
+                                    },
+                                    ticks: {
+                                        callback: function(value,index) {
+                                            console.log(this.getLabelForValue(value))
+                                            
+                                            switch(this.getLabelForValue(value)) {
+                                                case "10": return "Elevated"; break;
+                                                case "9": return "Euphoric"; break;
+                                                case "8": return "Blissful"; break;
+                                                case "7": return "Happy"; break;
+                                                case "6": return "Content"; break;
+                                                case "5": return "Good"; break;
+                                                case "4": return "Meh"; break;
+                                                case "3": return "Low"; break;
+                                                case "2": return "Sad"; break;
+                                                case "1": return "Depressed"; break;
+                                                case "0": return "Worst"; break;
+                                            }
+                                        }
                                     }
                                 }
-                            }
-                        });
+                                
+                            } 
+                        }
+                    });
+
+
+                    /*------------------------
+                        D. RETRIEVE DATA
+                     ------------------------*/
+                    const moodDiaryRef = ref(database, 'users/' + user.uid  + '/MoodEntry');
+                    onChildAdded(moodDiaryRef, (data) => {
+
+                        //instantiate variables
+                        var moodLevel = data.val().moodLevel; 
+                        var moodTime = data.val().time;
+                        var moodDate = data.val().date;
+                        var postID = data.val().postID;
+                        var moodLevelDescription;
+
+                        //E. Populate Chart Data by updating
+                        addData(myChart, moodDate, moodLevel);     
+
                         
-                    //    myChart.destroy();
 
-                    //    myChart = new Chart(document.getElementById('myChart'), config)
-                    })
-                })
+                    });
+                }, function() {
+                    console.log('No user exists'); 
+                });
+// * Retrieve  ATJ as reference
+
+
+/****************************
+ *  E. UPDATE CHART DATA    *
+ *--------------------------*/
+function addData(myChart, moodDate, moodLevel) {
+    myChart.data.labels.push(moodDate);
+    myChart.data.datasets.forEach((dataset) => {
+        dataset.data.push(moodLevel);
+    });
+    myChart.update();
 }
-
-// Eto dito ko sinet
-$(document).ready(init);
-
-
-

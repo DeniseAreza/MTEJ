@@ -88,6 +88,7 @@ function returnToHomePage() {
 // * return to homepage
 // * Log out
 $('#signOutBtn').click(logOutClicked);
+$('#signOutSidebarBtn').click(logOutClicked);
 function logOutClicked() {
     FirebaseInit.signOutUser()
             .then(() => {

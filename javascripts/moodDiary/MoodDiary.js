@@ -27,6 +27,7 @@ import * as FirebaseInit from '/firebase/firebaseInit.js';
 
 // * Log out
 $('#signOutBtn').click(logOutClicked);
+$('#signOutSidebarBtn').click(logOutClicked);
 function logOutClicked() {
     FirebaseInit.signOutUser()
             .then(() => {
@@ -66,7 +67,7 @@ function init() {
     
     // Set Date Picker
     datePicker.datepicker({ format: 'yyyy/mm/dd', endDate: new Date(), startDate: new Date(2021, 12, 1) }); //use date picker (end date & startdate for limitations)
-    datePicker.val(new Date().toLocaleDateString('en-ZA')); //automatic set (e.g. "2012/12/20") (en-GB if "12/20/2012")
+    datePicker.val(new Date().toLocaleDateString('en-ZA')); //automatic set (ja-JP "2012/4/20") (en-ZA "2012/04/20") (en-GB if "04/20/2012") 
 
     // BTN OnClick Functions: 
     addEntryBtn.click(onEntryAdded); //eto naman pagclinick yung Add Entry
@@ -155,9 +156,9 @@ function initializeChart(chartID) {
     }
 
 
-    /*-------------------------------------
+    /*----------------------------------------
         C. CREATE CHART, FILL LABEL OPTIONS
-    --------------------------------------*/
+    ------------------------------------------*/
     const myChart = new Chart(ctx, {
         type: 'line',
         data: moodData,
@@ -167,27 +168,18 @@ function initializeChart(chartID) {
                 y: { 
                     suggestedMin: 0, 
                     suggestedMax: 10,
-                    title: {
-                        display: true,
-                        text: 'Mood Level'
-                    },
+                    title: { display: true, text: 'Mood Level' },
                 }, 
                 //FILL X-AXIS DESCRIPTION
                 x: {
-                    title: {
-                        display: true,
-                        text: 'Date Created'
-                    }
+                    title: { display: true, text: 'Date Created' }
                 },
                 //FILL Y-AXIS (RIGHT) DESCRIPTION
                 description: {
                     suggestedMin: 0, 
                     suggestedMax: 10,
                     position: 'right',
-                    title: {
-                        display: true,
-                        text: 'Mood Description'
-                    },
+                    title: { display: true, text: 'Mood Description' },
                     ticks: {
                         callback: function(value,index) {
                             console.log(this.getLabelForValue(value))

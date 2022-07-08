@@ -54,3 +54,17 @@ FirebaseInit.checkActiveUser()
                     console.log('No user exists'); 
                 });
 // * Retrieve  ATJ as reference
+
+// * Log out
+$('#signOutBtn').click(logOutClicked);
+$('#signOutSidebarBtn').click(logOutClicked);
+function logOutClicked() {
+    FirebaseInit.signOutUser()
+            .then(() => {
+                window.location.href = '/';
+                console.log('signed out')
+            }, function() {
+                console.log('not yet signed out');
+            });
+}
+// * Log out

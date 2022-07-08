@@ -12049,6 +12049,7 @@ h1, .h1, .h1, h2, .h2, .h2, h3, .h3, .h3, h4, .h4, .h4, h5, .h5, .h5 {
   --yellow-color: #F9D5A7;
   --orange-color: #FFB085;
   --pink-color: #FC6681;
+  --light-pink-color: #FEEAE6;
 }
 
 /*------------------------
@@ -12063,6 +12064,14 @@ html, body {
   overflow-x: initial !important;
   background-color: #fefefe;
   /* PAG MAY NASIRA, ITO YUN*/
+}
+
+body.bodyColor {
+  background-color: var(--light-yellow-color);
+}
+
+nav.navColor {
+  background-color: var(--light-yellow-color);
 }
 
 /*-----------------------------------
@@ -12282,7 +12291,11 @@ a {
 
 .header_toggle {
   color: var(--white-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 5%;
   font-size: 1.5rem;
+  line-height: 1;
+  padding: 0.25rem 0.75rem;
   cursor: pointer;
 }
 
@@ -12468,7 +12481,7 @@ nav .active::before {
 -------------------------------------------*/
 /* c1. container  */
 .login-container {
-  /*background-color: #feeae6;*/
+  background-color: var(--light-yellow-color);
   padding-left: 40px;
   padding-right: 40px;
   position: relative;
@@ -12481,7 +12494,7 @@ nav .active::before {
 
 /* c2. image  */
 .login-container img {
-  width: 400px;
+  width: 30%;
   height: auto;
   position: relative;
   margin: 30px auto 30px auto;
@@ -12928,9 +12941,9 @@ button#reset-password-btn {
   K. ADMIN: TABLES
 ----------------------------------------*/
 .table-container {
-  margin: 20px 20px 0px 20px;
+  margin: 20px 20px 20px 20px;
   /*top, right, bottom, left*/
-  padding: 0px 50px 0px 20px;
+  padding: 0px 50px 20px 20px;
   /*top, right, bottom, left*/
 }
 /*# sourceMappingURL=main.css.map */

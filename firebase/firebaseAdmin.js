@@ -36,6 +36,7 @@ FirebaseInit.checkActiveUser()
 
 // * Log out
 $('#signOutBtn').click(logOutClicked);
+$('#signOutSidebarBtn').click(logOutClicked);
 function logOutClicked() {
     FirebaseInit.signOutUser()
             .then(() => {
@@ -45,6 +46,7 @@ function logOutClicked() {
                 console.log('not yet signed out');
             });
 }
+// * Log out
 
 
 

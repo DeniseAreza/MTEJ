@@ -5,7 +5,13 @@ function aboutUsButton(){
 }
 
 // When Login Button clicked
-$('#loginButton').click(loginButton);
+$('#loginSidebarButton').click(loginButton);
+function loginButton(){
+    window.location.href = '/html/loginPage.html';
+}
+
+// When Login Navbar button clicked
+$('#loginNavbarButton').click(loginButton);
 function loginButton(){
     window.location.href = '/html/loginPage.html';
 }
@@ -24,8 +30,8 @@ function registerButton(){
 }
 
 // When Home Button clicked
-$('#homeLoggedOutButton').click(homeLoggedOutButton);
-function registerhomeLoggedOutButtonButton(){
+$('#indexHomepageButton').click(indexHomepageButton);
+function indexHomepageButton(){
     window.location.href = '/index.html';
 }
 

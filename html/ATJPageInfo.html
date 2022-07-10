@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" referrerpolicy="no-referrer"></script>
+    <script defer type="module" src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script defer type="module" src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script defer type="module" src="/firebase/firebaseInit.js"></script> 
+    <!-- module type of script:this is the main "manager" of the scripts -->
+    <!-- this module is dedicated only to this page for client inquiries -->
+    <script defer src="/javascripts/hyperlink.js"></script>
+    <script defer src="/javascripts/validationForm.js"></script>
+    <link rel="icon" href="/bundles/undraw_mindfulness_scgo.svg">
+    <link rel="stylesheet" href="/style/main.css">
+    <!-- SIDEBAR -->
+    <script defer src="/javascripts/sidebar.js"></script>
+    <script src="https://kit.fontawesome.com/fd64d9c49d.js" crossorigin="anonymous"></script>
+    
+    <title>ATJ Page Info</title>
+</head>
+<body id="body-pd">
+   <!-- As a heading -->
+        <!-- NAVIGATION BAR -->
+        <nav class="navbar navbar-light header" style="background-color: #F9D5A7;" id="header">
+        <div class="container-fluid">
+            <div class="header_toggle navbar-left"> <i class="fa-solid fa-bars"id="header-toggle"></i></div>
+            <div class="col">
+            <span class="navbar-brand mb-0 h1 navbar-left"><a href="#" style="text-decoration: none; color: black;">ㅤMTEJ</a></span>
+            </div>
+        </div>
+        </nav>
+        
+        <!-- SIDE BAR -->
+        <div class="l-navbar" id="nav-bar">
+        <nav class="nav">
+            <div> 
+                <a href="#" class="nav_logo"> <i class="fa-brands fa-modx"></i> <span class="nav_logo-name">MTEJ</span> </a>
+                <div class="nav_list"> 
+                    <a href="/index.html" class="nav_link"> <i class="fa-solid fa-house"></i> <span class="nav_name">Home</span> </a> 
+                    <a href="#" class="nav_link" id="aboutUsButton"> <i class="fa-solid fa-a"></i> <span class="nav_name">About Us</span> </a> 
+                    <a href="#" class="nav_link"> <i class="fa-solid fa-face-laugh-beam"></i> <span class="nav_name">Mood Diary</span> </a> 
+                    <a href="#" class="nav_link active" id="ATJournalButton"> <i class="fa-solid fa-book-bookmark"></i> <span class="nav_name">AT Journal</span></a> 
+                </div>
+            </div> <a href="#" class="nav_link" id="loginButton"> <i class="fa-solid fa-arrow-right-from-bracket"></i> <span class="nav_name">Login</span> </a>
+        </nav>
+        </div>
+
+        <div class="section-one" id="ATJ-section">
+            <div class="container-one">
+                <div class="contentOne-section">
+                    <div class="containerOne-title">
+                        <h2>AUTOMATIC THOUGHT JOURNAL</h2>
+                    </div>
+                    <div class="containerOne-content">
+                        <p>Ang Automatic Thought Journal ay isang feature kung saan sistematikong tinatanong ang mga users tungkol sa kanilang mga iniisip gamit ang gabay ng mga serye ng mga tanong. Nagbibigay-daan din ito sa mga users na pamahalaan ang kanilang interpretasyon ng mood at kung paano lulutasin ang kanilang mga triggering events. Ang journal ay isang tool na tumutulong sa pagtukoy sa mga automatic negative thoughts na lumilikha ng mood swings at pinoproseso ang kanilang mga damdamin sa pamamagitan ng gabay ng mga tanong. Ang mga tanong ay nakaayos sa paraan na makatutulong sa madaliang pag-unawa sa paraan ng kanilang pag-iisip at pagproseso sa kanilang mga damdamin.  </p>
+                    </div>
+                </div>
+                <div class="containerOne-image-section">
+                    <img src="/bundles/undraw_key_points_re_u903.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div class="section-two" id="ATJ-section">
+            <div class="container-two">
+                <div class="contentTwo-section">
+                    <div class="containerTwo-title">
+                        <h2>PAANO GAMITIN ANG AUTOMATIC THOUGHT JOURNAL?</h2>
+                    </div>
+                    <div class="containerTwo-content">
+                        <p>Upang higit na maunawaan ang paggamit ng Automatic Thought Journal, tatanungin ng aplikasyon ang mga users ang kanilang mga naging Negative Triggering Event, Automatic Thoughts, Automatic Feelings, at ang kanilang naging Resulting Behavior. Pagkatapos sagutan at mga hininging impormasyon, tatanungin ng web application ang mga user para naman sa kanilang mga Alternative Thought, Alternative Feeling, at Alternative Behavior, kung saan magpapatuloy ito sa pag-save sa database pagkatapos ng entry ng mga users. Gayunpaman, kung hindi nakaranas ng anumang triggering even and user, maaring nang tapusin ang proseso ng web application.  </p>
+                    </div>
+                </div>
+                <div class="containerTwo-image-section">
+                    <img src="/bundles/undraw_note_list_re_r4u9.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+
+</body>
+</html>

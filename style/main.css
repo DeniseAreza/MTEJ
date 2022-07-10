@@ -12846,4 +12846,103 @@ button#reset-password-btn {
   border-radius: 40px;
   margin-top: 2px;
 }
+
+/*----------------------------------------
+  ATJ PAGE INFORMATION 
+----------------------------------------*/
+.section-one {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--light-yellow-color);
+}
+
+.section-two {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--orange-color);
+}
+
+.container-one,
+.container-two {
+  width: 80%;
+  display: block;
+  margin: auto;
+  padding-top: 100px;
+}
+
+.contentOne-section {
+  float: left;
+  width: 55%;
+}
+
+.contentTwo-section {
+  float: right;
+  width: 55%;
+}
+
+.contentOne-section .containerOne-content p,
+.contentTwo-section .containerTwo-content p {
+  margin-top: 15px;
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: justify;
+}
+
+.contentOne-section .title,
+.contentTwo-section .title {
+  font-size: 28px;
+  margin-top: 15px;
+}
+
+.containerOne-image-section {
+  float: right;
+  width: 40%;
+}
+
+.containerTwo-image-section {
+  float: left;
+  width: 40%;
+}
+
+.containerOne-image-section img,
+.containerTwo-image-section img {
+  width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .container-one,
+  .container-two {
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 50px;
+  }
+  .contentOne-section,
+  .contentTwo-section {
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .containerOne-image-section,
+  .containerTwo-image-section {
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+  }
+  .containerOne-image-section img,
+  .containerTwo-image-section img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+  }
+  .contentOne-section .title,
+  .contentTwo-section .title {
+    text-align: center;
+    font-size: 19px;
+  }
+}
 /*# sourceMappingURL=main.css.map */

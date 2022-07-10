@@ -29,3 +29,8 @@ function registerhomeLoggedOutButtonButton(){
     window.location.href = '/index.html';
 }
 
+//When AT Journal Button clicked
+$('#ATJournalButton').click(ATJournalButton);
+function ATJournalButton(){
+    window.location.href = '/html/ATJPageInfo.html';
+}

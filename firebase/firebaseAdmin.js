@@ -24,6 +24,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const database = getDatabase(app);
 
+
 import * as FirebaseInit from '/firebase/firebaseInit.js';
 
 // *Check if there's an active user
@@ -81,22 +82,79 @@ const UsersRef = ref(database, 'users/');
                       })
 
 
+// * manage users retrieval
+const MoodUsersRef = ref(database, 'users/');
+                    onChildAdded(MoodUsersRef, (data) => {
+                        var uid = data.val().Account.uid;
+                        var firstName = data.val().Account.firstName;
+                        var lastName = data.val().Account.lastName;
+                        var email = data.val().Account.email;
+                        var state = data.val().Account.state;
 
-deleteUserBtn.addEventListener('click', DeleteData)
+                        const MDRef = ref(database, 'users/' + uid + '/MoodEntry');
+                                    onChildAdded(MDRef, (data) => {
+                                    var moodLevel = data.val().moodLevel; 
+                                    var time = data.val().time;
+                                    var date = data.val().date;
+                                    var postID = data.val().postID;
+                                    var moodLevelDescription;
 
 
+                                    switch(moodLevel) {
+                                        case "10": moodLevelDescription = "Elevated"; break;
+                                        case "9": moodLevelDescription = "Euphoric"; break;
+                                        case "8": moodLevelDescription = "Blissful"; break;
+                                        case "7": moodLevelDescription = "Happy"; break;
+                                        case "6": moodLevelDescription = "Content"; break;
+                                        case "5": moodLevelDescription = "Good"; break;
+                                        case "4": moodLevelDescription = "Meh"; break;
+                                        case "3": moodLevelDescription = "Low"; break;
+                                        case "2": moodLevelDescription = "Sad"; break;
+                                        case "1": moodLevelDescription = "Depressed"; break;
+                                        case "0": moodLevelDescription = "Worst"; break;
+                                    }
 
-// * Just in case you need this code
-// $("#table_allUsers").on("click",".delete_user",function(){
+                                    //Populate Table
+                                    $('#retrieveMoodDiaryUsers').prepend('<tr>'
+                                    + '<td>'+ firstName +' '+ lastName +'</td>'
+                                    + '<td>'+ email +'</td>'
+                                    + '<td>'+ moodLevel +'</td>'
+                                    + '<td>'+ moodLevelDescription +'</td>'
+                                    + '<td>'+ date +'</td>'
+                                    + '<td>'+ time +'</td>'
+                                    + '<td> <button type="button" class="btn btn-outline-success" id="#viewUserModal" data-bs-toggle="modal" data-bs-target="#view' + uid + 'Modal"> <i class="fa-regular fa-eye"></i>  </button> '
+                                    + '</tr>'              
+                                    );
+
+                                    //View Modal
+                                    $('#retrieveMoodDiaryUsers').prepend(''
+                                    + '<div class="modal fade" id="view' + uid + 'Modal" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h1 class="modal-title">View Mood Entry Details</h1><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">'
+                                    + '<div class="mb-3">'
+                                    + '<label for="Name" class="form-label">Name</label>'
+                                    + '<input type="ext" class="form-control" id="Name" placeholder="'+ firstName +' '+ lastName +'" readonly>'
+                                    + '</div>'
+                                    + '<div class="mb-3">'
+                                    + '<label for="Name" class="form-label">Email</label>'
+                                    + '<input type="ext" class="form-control" id="Name" placeholder="'+ email +'" readonly>'
+                                    + '</div>'
+                                    + '<div class="row"><div class="col-md-6"><label for="firstName" class="col-sm-3 col-form-label">Mood Level</label>'
+                                    + '<input type="text" class="form-control" id="view_firstName" placeholder="'+ moodLevel +'" readonly></div><div class="col-md-6"><label for="lastName" class="col-sm-3 col-form-label">Description</label>'
+                                    + '<input type="text" class="form-control" id="view_lastName" placeholder="'+ moodLevelDescription +'" readonly></div></div><div class="row"><div class="col-md-6"><label for="email" class="col-sm-3 col-form-label">Date</label>'
+                                    + '<input type="text" class="form-control" id="view_email" placeholder="'+ date +'" readonly></div><div class="col-md-6"><label for="state" class="col-sm-3 col-form-label">Time</label>'
+                                    + '<input type="text" class="form-control" id="view_state" placeholder="'+ time +'" readonly></div></div></div>'
+                                    + '<div class="modal-footer"><button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-ban"></i> Close </button></div></div></div></div>');
+                                })
+
+                        
+                    });
+                      
+// * Getting the UID per button
+// $("#retrieveUsers").on("click",".timeUser",function(event){
 //     var uid= $(this).attr('id'); // get uid through using id attribute
+//     // window.location = "/html/adminMoodDiaryEntries.html?redirect=true";
+//     uniqueID = uid;
+// })
 
-     // remove(ref(database, 'users/' + uid))
-     // .then(() => {
-     //     alert("Data removed");
-     //     location.reload();
-     // })
-     // .catch((error) => {
-     //     alert(error);
-     // });
-//  });
+
+
 

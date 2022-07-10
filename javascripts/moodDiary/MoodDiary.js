@@ -95,12 +95,29 @@ async function onEntryAdded() {
     // Dito yung mga magaganap pag nag add ka
     // Etong addMoodEntry na function nakuha ko sa DataCollection.js na file
     // Try mo CTRL+Click yung addMoodEntry
-    if (moodLevel == null) {
-        alert("Error: May laman dapat ang mood level.");
-    } else {
+    function onlySpaces(val) {
+        return /^\s*$/.test(val);
+      }
+    
+    if(onlySpaces(date) === true){
+        alert("Error: Hindi dapat bakante ang petsa.");
+    } else if (onlySpaces(time) === true){
+        alert("Error: Hindi dapat bakante ang oras.");
+    } else if (moodLevel === null || onlySpaces(moodLevel) == true){
+        alert("Error: Hindi dapat bakante ang antas ng mood.");
+    } else if (onlySpaces(time) === true && onlySpaces(date) === true){
+        alert("Error: Hindi dapat bakante ang petsa at oras.");
+    } else if (onlySpaces(time) === true && moodLevel === null){
+        alert("Error: Hindi dapat bakante ang oras at antas ng mood.");
+    } else if (onlySpaces(date) === true && moodLevel === null){
+        alert("Error: Hindi dapat bakante ang date at antas ng mood.");
+    } else if(onlySpaces(date) === true && moodLevel === null && onlySpaces(time) === true){
+        alert("Error: Hindi dapat bakante ang petsa, oras at antas ng mood.");
+    } else{
         const snapshot = await addMoodEntry(date, time, moodLevel);
-        alert("Successfully Uploaded");
+        alert("Matagumpay na nailagay ang iyong entry sa database.");
     }
+      
 }
 
 

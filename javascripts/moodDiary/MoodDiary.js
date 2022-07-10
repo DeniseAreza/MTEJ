@@ -95,8 +95,12 @@ async function onEntryAdded() {
     // Dito yung mga magaganap pag nag add ka
     // Etong addMoodEntry na function nakuha ko sa DataCollection.js na file
     // Try mo CTRL+Click yung addMoodEntry
-    const snapshot = await addMoodEntry(date, time, moodLevel);
-    alert("Successfully Uploaded");
+    if (moodLevel == null) {
+        alert("Error: May laman dapat ang mood level.");
+    } else {
+        const snapshot = await addMoodEntry(date, time, moodLevel);
+        alert("Successfully Uploaded");
+    }
 }
 
 
@@ -109,16 +113,6 @@ $("#moodEntry").on("click",".mood",function(){
 
  // Eto dito ko sinet
 $(document).ready(init);
-
-
-
-
-
-
-
-
-
-
 
 /**********************************************************************
     A. Initilize chart function: CHART LOGISTICS STARTS HERE!!! 

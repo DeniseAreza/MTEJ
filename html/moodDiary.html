@@ -161,31 +161,33 @@
               </div>
               
               <!-- SECOND ROW: MOOD PICKER -->
-              <div id="moodEntry">
-                <div class="row text-center moodPicker">
-                  <div class="col mood" value="7"> <input type="radio" class="btn-check" name="mood-option" id="mood7"> <label class="btn mood7" for="mood7"><img src="/bundles/mood7_happy.svg">Happy</label> </div>
-                  <div class="col mood" value="6"> <input type="radio" class="btn-check" name="mood-option" id="mood6"> <label class="btn mood6" for="mood6"><img src="/bundles/mood6_content.svg">Content</label> </div>
-                  <div class="col mood" value="5"> <input type="radio" class="btn-check" name="mood-option" id="mood5"> <label class="btn mood5" for="mood5"><img src="/bundles/mood5_good.svg">Good</label> </div>
-                  <div class="col mood" value="4"> <input type="radio" class="btn-check" name="mood-option" id="mood4"> <label class="btn mood4" for="mood4"><img src="/bundles/mood4_meh.svg">Meh</label> </div>
-                  <div class="col mood" value="3"> <input type="radio" class="btn-check" name="mood-option" id="mood3"> <label class="btn mood3" for="mood3"><img src="/bundles/mood3_feeling_low.svg">Low</label> </div>                  
-                </div>
-                <div class="row text-center">
-                  <div class="col mood" value="9"> <input type="radio" class="btn-check" name="mood-option" id="mood9"> <label class="btn mood9" for="mood9"><img src="/bundles/mood9_euphoric.svg">Euphoric</label> </div>
-                  <div class="col mood" value="8"> <input type="radio" class="btn-check" name="mood-option" id="mood8"> <label class="btn mood8" for="mood8"><img src="/bundles/mood8_blissful.svg">Blissful</label> </div>
-                  <div class="col"></div>
-                  <div class="col mood" value="2"> <input type="radio" class="btn-check" name="mood-option" id="mood2"> <label class="btn mood2" for="mood2"><img src="/bundles/mood2_sad.svg">Sad</label> </div>
-                  <div class="col mood" value="1"> <input type="radio" class="btn-check" name="mood-option" id="mood1"> <label class="btn mood1" for="mood1"><img src="/bundles/mood1_depressed.svg">Depressed</label> </div>
-                </div>
-                <div class="row text-center">
-                  <div class="col"></div>
-                  <div class="col mood" value="10"> <input type="radio" class="btn-check" name="mood-option" id="mood10"> <label class="btn mood10" for="mood10"><img src="/bundles/mood10_elevated.svg">Elevated</label> </div>
-                  <div class="col"></div>
-                  <div class="col mood" value="0"> <input type="radio" class="btn-check" name="mood-option" id="mood0"> <label class="btn mood0" for="mood0"><img src="/bundles/mood0_worst.svg">Worst</label> </div>
-                  <div class="col"></div>
-                </div>
-
-                <!-- THIRD ROW: Show mood value -->
-                <div> <h4>Antas ng Mood: <span id="moodLevel" value = ""></span></h4> </div>
+              <form action="" id="moodForm">
+                <div id="moodEntry">
+                  <div class="row text-center moodPicker">
+                    <div class="col mood" value="7"> <input type="radio" class="btn-check" name="mood-option" id="mood7"> <label class="btn mood7" for="mood7"><img src="/bundles/mood7_happy.svg">Happy</label> </div>
+                    <div class="col mood" value="6"> <input type="radio" class="btn-check" name="mood-option" id="mood6"> <label class="btn mood6" for="mood6"><img src="/bundles/mood6_content.svg">Content</label> </div>
+                    <div class="col mood" value="5"> <input type="radio" class="btn-check" name="mood-option" id="mood5"> <label class="btn mood5" for="mood5"><img src="/bundles/mood5_good.svg">Good</label> </div>
+                    <div class="col mood" value="4"> <input type="radio" class="btn-check" name="mood-option" id="mood4"> <label class="btn mood4" for="mood4"><img src="/bundles/mood4_meh.svg">Meh</label> </div>
+                    <div class="col mood" value="3"> <input type="radio" class="btn-check" name="mood-option" id="mood3"> <label class="btn mood3" for="mood3"><img src="/bundles/mood3_feeling_low.svg">Low</label> </div>                  
+                  </div>
+                  <div class="row text-center">
+                    <div class="col mood" value="9"> <input type="radio" class="btn-check" name="mood-option" id="mood9"> <label class="btn mood9" for="mood9"><img src="/bundles/mood9_euphoric.svg">Euphoric</label> </div>
+                    <div class="col mood" value="8"> <input type="radio" class="btn-check" name="mood-option" id="mood8"> <label class="btn mood8" for="mood8"><img src="/bundles/mood8_blissful.svg">Blissful</label> </div>
+                    <div class="col"></div>
+                    <div class="col mood" value="2"> <input type="radio" class="btn-check" name="mood-option" id="mood2"> <label class="btn mood2" for="mood2"><img src="/bundles/mood2_sad.svg">Sad</label> </div>
+                    <div class="col mood" value="1"> <input type="radio" class="btn-check" name="mood-option" id="mood1"> <label class="btn mood1" for="mood1"><img src="/bundles/mood1_depressed.svg">Depressed</label> </div>
+                  </div>
+                  <div class="row text-center">
+                    <div class="col"></div>
+                    <div class="col mood" value="10"> <input type="radio" class="btn-check" name="mood-option" id="mood10"> <label class="btn mood10" for="mood10"><img src="/bundles/mood10_elevated.svg">Elevated</label> </div>
+                    <div class="col"></div>
+                    <div class="col mood" value="0"> <input type="radio" class="btn-check" name="mood-option" id="mood0"> <label class="btn mood0" for="mood0"><img src="/bundles/mood0_worst.svg">Worst</label> </div>
+                    <div class="col"></div>
+                  </div>
+  
+                  <!-- THIRD ROW: Show mood value -->
+                  <div><h4>Antas ng Mood: <span id="moodLevel" value = ""></span></h4> </div>
+             
               
               </div>
             </div>
@@ -195,6 +197,7 @@
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> <i class="fa-solid fa-ban"></i> Kanselahin</button>
               <button type="button" class="btn btn-primary" id="moodEntryUser" data-bs-toggle="modal" data-bs-target="#addMoodEntryModal"> <i class="fa-solid fa-plus"></i> Magdagdag ng Bagong Entry </button>
             </div>
+          </form>
           </div>
         </div>
       </div>

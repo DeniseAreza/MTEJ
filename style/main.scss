@@ -755,8 +755,17 @@ button#reset-password-btn {
 }
 
 /*----------------------------------------
+  K. ADMIN: TABLES
+----------------------------------------*/
 
-  ATJ PAGE INFORMATION 
+.table-container {
+  margin: 20px 20px 20px 20px; /*top, right, bottom, left*/  
+  padding: 0px 50px 20px 20px; /*top, right, bottom, left*/
+
+}
+
+/*----------------------------------------
+  L. ATJ PAGE INFORMATION 
 ----------------------------------------*/
 .section-one{
   width: 100%;
@@ -791,7 +800,7 @@ button#reset-password-btn {
 .contentOne-section .containerOne-content p,
 .contentTwo-section .containerTwo-content p{
   margin-top: 15px;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.5;
   text-align: justify;
 }
@@ -857,13 +866,4 @@ button#reset-password-btn {
    text-align: center;
    font-size: 19px;
   }
-
-/*----------------------------------------
-  K. ADMIN: TABLES
-----------------------------------------*/
-
-.table-container {
-  margin: 20px 20px 20px 20px; /*top, right, bottom, left*/  
-  padding: 0px 50px 20px 20px; /*top, right, bottom, left*/
-
 }

@@ -45,17 +45,35 @@ function insertAlternativeJEntry() {
                     // date
                     var today = new Date();
                     var date = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
-
-                    const postListRef = ref(database, 'users/' + user.uid +'/AlternativeJournalEntries');
-                    const newPostRef = push(postListRef);
-                    set(newPostRef, {
-                        date: date,
-                        alternativeThoughts: alternativeThoughts,
-                        alternativeFeelings: alternativeFeelings,
-                        alternativeBehavior:alternativeBehavior
-                    });
-
-                    alert("Successfully Uploaded")
+                    function onlySpaces(val) {
+                        return /^\s*$/.test(val);
+                      }
+                    
+                    if (onlySpaces(alternativeThoughts) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(alternativeFeelings) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(alternativeBehavior) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(alternativeThoughts) === true && onlySpaces(alternativeFeelings) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(alternativeThoughts) === true && onlySpaces(alternativeBehavior) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(alternativeThoughts) === true && onlySpaces(alternativeFeelings) === true && onlySpaces(alternativeBehavior)){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else{
+                        const postListRef = ref(database, 'users/' + user.uid +'/AlternativeJournalEntries');
+                        const newPostRef = push(postListRef);
+                        set(newPostRef, {
+                            date: date,
+                            alternativeThoughts: alternativeThoughts,
+                            alternativeFeelings: alternativeFeelings,
+                            alternativeBehavior:alternativeBehavior
+                        });
+    
+                        alert("Matagumpay na nailagy nasa database ang iyong entry.")
+                    }
+                    
                 }, function() {
                     console.log('No user exists'); 
                 });

@@ -3,5 +3,27 @@
     "@mapbox/node-pre-gyp": "^1.0.9",
     "bootstrap": "^5.1.3",
     "firebase": "^9.6.9"
-  }
+  },
+  "name": "mtej",
+  "description": "For thesis project in Software Engineering.",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeniseAreza/MTEJ.git"
+  },
+  "keywords": [
+    "Mood",
+    "diary"
+  ],
+  "author": "MTEJ Group",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DeniseAreza/MTEJ/issues"
+  },
+  "homepage": "https://github.com/DeniseAreza/MTEJ"
 }

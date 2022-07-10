@@ -56,6 +56,8 @@ function insertATJEntry() {
                     var today = new Date();
                     var date = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
 
+                    if
+
                     const postListRef = ref(database, 'users/' + user.uid +'/ATJEntries');
                     const newPostRef = push(postListRef);
                     const postID = newPostRef.key;

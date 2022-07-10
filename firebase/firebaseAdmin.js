@@ -77,7 +77,8 @@ const UsersRef = ref(database, 'users/');
                         + '<input type="text" class="form-control" id="view_firstName" placeholder="'+ firstName +'" readonly></div><div class="col-md-6"><label for="lastName" class="col-sm-3 col-form-label">Last Name</label>'
                         + '<input type="text" class="form-control" id="view_lastName" placeholder="'+ lastName +'" readonly></div></div><div class="row"><div class="col-md-6"><label for="email" class="col-sm-3 col-form-label">Email</label>'
                         + '<input type="text" class="form-control" id="view_email" placeholder="'+ email +'" readonly></div><div class="col-md-6"><label for="state" class="col-sm-3 col-form-label">State</label>'
-                        + '<input type="text" class="form-control" id="view_state" placeholder="'+ state +'" readonly></div></div></div>'
+                        + '<input type="text" class="form-control" id="view_state" placeholder="'+ state +'" readonly></div><div class="col-md-12"><label for="state" class="col-sm-3 col-form-label">Unique Identifier (UID)</label>'
+                        + '<input type="text" class="form-control" id="view_state" placeholder="'+ uid +'" readonly></div></div></div>'
                         + '<div class="modal-footer"><button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-ban"></i> Close </button></div></div></div></div>');
                       })
 
@@ -93,6 +94,7 @@ const MoodUsersRef = ref(database, 'users/');
 
                         const MDRef = ref(database, 'users/' + uid + '/MoodEntry');
                                     onChildAdded(MDRef, (data) => {
+                                    var uid = data.val().uid
                                     var moodLevel = data.val().moodLevel; 
                                     var time = data.val().time;
                                     var date = data.val().date;
@@ -122,13 +124,13 @@ const MoodUsersRef = ref(database, 'users/');
                                     + '<td>'+ moodLevelDescription +'</td>'
                                     + '<td>'+ date +'</td>'
                                     + '<td>'+ time +'</td>'
-                                    + '<td> <button type="button" class="btn btn-outline-success" id="#viewUserModal" data-bs-toggle="modal" data-bs-target="#view' + uid + 'Modal"> <i class="fa-regular fa-eye"></i>  </button> '
+                                    + '<td> <button type="button" class="btn btn-outline-success" id="#viewUserModal" data-bs-toggle="modal" data-bs-target="#view' + postID + 'Modal"> <i class="fa-regular fa-eye"></i>  </button> '
                                     + '</tr>'              
                                     );
                                     
                                     //View Modal
                                     $('#retrieveMoodDiaryUsers').prepend(''
-                                    + '<div class="modal fade" id="view' + uid + 'Modal" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h1 class="modal-title">View Mood Entry Details</h1><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">'
+                                    + '<div class="modal fade" id="view' + postID + 'Modal" tabindex="-1" role="dialog" aria-hidden="true"><div class="modal-dialog modal-lg"><div class="modal-content"><div class="modal-header"><h1 class="modal-title">View Mood Entry Details</h1><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div><div class="modal-body">'
                                     + '<div class="mb-3">'
                                     + '<label for="Name" class="form-label">Name</label>'
                                     + '<input type="ext" class="form-control" id="Name" placeholder="'+ firstName +' '+ lastName +'" readonly>'
@@ -154,7 +156,3 @@ const MoodUsersRef = ref(database, 'users/');
 //     // window.location = "/html/adminMoodDiaryEntries.html?redirect=true";
 //     uniqueID = uid;
 // })
-
-
-
-

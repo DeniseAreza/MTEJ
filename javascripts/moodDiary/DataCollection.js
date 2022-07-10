@@ -36,7 +36,7 @@ export async function addMoodEntry(date, time, moodLevel) {
     const newPostRef = await firebase.push(reference);
     const postID = newPostRef.key;
     if (moodLevel == null) {
-        alert("I am working")
+        alert("moodLevel is null")
     } else {
         return firebase.set(newPostRef, {
             date: date,

@@ -3,8 +3,8 @@
 // Import the functions you need from the SDKs you need
 // wag mo na iimport
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.9/firebase-app.js";
-import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
-import { getDatabase, ref, set, push, onValue, onChildAdded} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
+import {getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signOut, deleteUser} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-auth.js";
+import { getDatabase, ref, set, push, onValue, onChildAdded, remove} from "https://www.gstatic.com/firebasejs/9.6.9/firebase-database.js"
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -30,6 +30,32 @@ FirebaseInit.checkActiveUser()
             .then((user) => {
                 console.log(user.email);
                 console.log(user.uid)
+                console.log(user.emailVerified)
+                if (user.emailVerified == false) {
+                    logOutClicked();
+                    alert('Please confirm your email');
+
+                    setTimeout(() => {
+                        alert("Tapos na ang limang minuto at hindi pa rin nakakapag-log in ang user sa website. Buburahin na ang registered account mula sa auth table ng database. Mangyaring mag-register muli at i-verify ang account at mag-log in")
+                        
+                        remove(ref(database, 'users/' + user.uid))
+                        .then(() => {
+                            console.log("Data removed successfully.")
+                        })
+                        .catch((error) => {
+                            console.log("Error message:" + error)
+                        })
+                        
+                        deleteUser(user).then(() => {
+                            // User deleted.
+                            console.log("Deleted User")
+                          }).catch((error) => {
+                            // An error ocurred
+                            // ...
+                          });
+                      }, "300000")
+                    
+                }
             }, function() {
                 console.log('No user exists'); 
             });

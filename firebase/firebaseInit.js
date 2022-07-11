@@ -75,14 +75,15 @@ function signUpUser () {
           uid: user.uid
         })
         // Email Verification
-        await sendEmailVerification(auth.currentUser)
-        .then(() => {
-          console.log("Email Verification Sent")
-        });
-
+        const auth = getAuth();
+        sendEmailVerification(auth.currentUser)
+          .then(() => {
+            // Email verification sent!
+            alert("Nagpadala na kami ng link")
+          });
         // redirect to main page
         await redirectEmailConfirmation();
-
+        
         console.log("Created User"); 
         // ...
       })

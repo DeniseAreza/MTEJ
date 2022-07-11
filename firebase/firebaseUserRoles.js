@@ -32,7 +32,7 @@ FirebaseInit.checkActiveUser()
                     onValue(ATJRef, (data) => {
                         var state = data.val().state; 
                         if (state == "user") {
-                          redirect();
+                          console.log("user")
                         } else if (state == "admin") {
                           window.location.href = '/html/admin.html';
                         }

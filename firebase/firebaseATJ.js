@@ -56,19 +56,47 @@ function insertATJEntry() {
                     var today = new Date();
                     var date = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
 
-                    const postListRef = ref(database, 'users/' + user.uid +'/ATJEntries');
-                    const newPostRef = push(postListRef);
-                    const postID = newPostRef.key;
-                    set(newPostRef, {
-                        date: date,
-                        triggeringEvent: triggeringEvent,
-                        automaticThoughts: automaticThoughts,
-                        automaticFeelings: automaticFeelings,
-                        automaticBehavior:automaticBehavior,
-                        postID: postID
-                    });
+                    function onlySpaces(val) {
+                        return /^\s*$/.test(val);
+                      }
+                    
+                    if(onlySpaces(triggeringEvent) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(automaticThoughts) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(automaticFeelings) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(automaticBehavior) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(triggeringEvent) === true && onlySpaces(automaticThoughts) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(triggeringEvent) === true && onlySpaces(automaticFeelings) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(triggeringEvent) === true && onlySpaces(automaticBehavior) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(automaticThoughts) === true && onlySpaces(automaticFeelings) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(automaticThoughts) === true && onlySpaces(automaticBehavior) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(automaticFeelings) === true && onlySpaces(automaticBehavior) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else if(onlySpaces(automaticFeelings) === true && onlySpaces(automaticBehavior) === true && onlySpaces(automaticThoughts) === true && onlySpaces(triggeringEvent) === true){
+                        alert("Error: Hindi pwedeng may bakante sa iyong entry.");
+                    } else{
+                        const postListRef = ref(database, 'users/' + user.uid +'/ATJEntries');
+                        const newPostRef = push(postListRef);
+                        const postID = newPostRef.key;
+                        set(newPostRef, {
+                            date: date,
+                            triggeringEvent: triggeringEvent,
+                            automaticThoughts: automaticThoughts,
+                            automaticFeelings: automaticFeelings,
+                            automaticBehavior:automaticBehavior,
+                            postID: postID
+                        });
 
-                    alert("Successfully Uploaded")
+                        alert("Matagumpay na nailagy nasa database ang iyong entry.")
+                    }
                 }, function() {
                     console.log('No user exists');
                 });
@@ -77,6 +105,7 @@ function insertATJEntry() {
 
 // * Log out
 $('#signOutBtn').click(logOutClicked);
+$('#signOutSidebarBtn').click(logOutClicked);
 function logOutClicked() {
     FirebaseInit.signOutUser()
             .then(() => {

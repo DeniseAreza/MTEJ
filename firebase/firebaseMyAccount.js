@@ -38,6 +38,7 @@ FirebaseInit.checkActiveUser()
             });
 // * Log out
 $('#signOutBtn').click(logOutClicked);
+$('#signOutSidebarBtn').click(logOutClicked);
 function logOutClicked() {
     FirebaseInit.signOutUser()
             .then(() => {

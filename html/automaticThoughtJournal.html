@@ -28,15 +28,12 @@
         <!-- NAVIGATION BAR -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light header" id="header">
           <div class="container-fluid">
-            <div class="header_toggle navbar-left"> <i class="fa-solid fa-bars"id="header-toggle"></i></div>
+            <div class="header_toggle navbar-left" id="header-toggle"> <i class="fa-solid fa-bars"></i></div>
             <span class="navbar-brand mb-0 h1">ㅤMTEJ</span>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link" aria-current="page" href="/html/mainPage.html">Home</a></li>
-                <li class="nav-item"><a class="nav-link" aria-current="page" href="/html/mainPage.html">My Account</a></li>
+                <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">ATJournal</a></li>
               </ul>
               <form class="d-flex">
                 <button type="button" class="btn btn-primary" id="signOutBtn">Sign Out</button>
@@ -55,9 +52,10 @@
                     <a href="/html/moodDiary.html" class="nav_link"> <i class="fa-solid fa-calendar-plus"></i> Mood Diary </a> 
                     <a href="/html/automaticThoughtJournal.html" class="nav_link active"> <i class="fa-solid fa-pen"></i> AT Journal </a>
                     <a href="/html/ATJEntries.html" class="nav_link"> <i class="fa-solid fa-book-open"></i> ATJ Entries </a> 
+                    <a href="/html/moodDiaryEntries.html" class="nav_link"> <i class="fa-solid fa-calendar-check"></i> MD Entries </a> 
                   </div>
-              </div> <a href="#" class="nav_link" id=""> <i class="fa-solid fa-id-card-clip"></i> My Account </a>
-          </nav>
+                </div> <a href="#" class="nav_link" id="signOutSidebarBtn"> <i class="fa-solid fa-arrow-right-from-bracket"></i> Sign Out </a>
+              </nav>
         </div>
 
 
@@ -68,11 +66,11 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="flush-headingOne">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                      First Question
+                      Unang Tanong
                     </button>
                   </h2>
                   <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">What was your triggering event?</div>
+                    <div class="accordion-body">Ano ang iyong triggering event?</div>
                     <div class="form-floating">
                         <textarea class="form-control" id="triggeringEvent" style="height: 100px" required></textarea>
                         <label for="triggeringEvent">Triggering Event</label>
@@ -82,11 +80,11 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="flush-headingTwo">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                      Second Question
+                      Ikalawang Tanong
                     </button>
                   </h2>
                   <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">What were your automatic thoughts?</div>
+                    <div class="accordion-body">Ano ang iyong mga awtomatikong naiisip?</div>
                     <div class="form-floating">
                         <textarea class="form-control" id="automaticThoughts" style="height: 100px" required></textarea>
                         <label for="automaticThoughts">Automatic Thoughts</label>
@@ -96,11 +94,11 @@
                 <div class="accordion-item">
                   <h2 class="accordion-header" id="flush-headingThree">
                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                      Third Question
+                      Ikatlong Tanong
                     </button>
                   </h2>
                   <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                    <div class="accordion-body">What were your automatic feelings?</div>
+                    <div class="accordion-body">Ano ang iyong awtomatikong naramdaman?</div>
                     <div class="form-floating">
                         <textarea class="form-control" id="automaticFeelings" style="height: 100px" required></textarea>
                         <label for="automaticFeelings">Automatic Feelings</label>
@@ -110,11 +108,11 @@
                 <div class="accordion-item">
                     <h2 class="accordion-header" id="flush-headingThree">
                       <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseFour" aria-expanded="false" aria-controls="flush-collapseThree">
-                        Fourth Question
+                        Ikaapat na Tanong
                       </button>
                     </h2>
                     <div id="flush-collapseFour" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                      <div class="accordion-body">What was your automatic behavior?</div>
+                      <div class="accordion-body">Ano ang iyong awtomatikong pag-uugali?</div>
                       <div class="form-floating">
                           <textarea class="form-control" id="automaticBehavior" style="height: 100px" required></textarea>
                           <label for="automaticBehavior">Automatic Behavior</label>
@@ -123,15 +121,15 @@
                 </div>
 
                 <div class="text-center">
-                    <button type="button" class="btn btn-primary m-3" id="ATJSubmit">Save Automatic Thought Journal</button>
+                    <button type="button" class="btn btn-primary m-3" id="ATJSubmit">I-save ang Automatic Thought Journal</button>
                 </div>
 
                 <div class="text-center">
-                  <button type="button" class="btn btn-secondary m-3" id="proceedToAlternative">Proceed to Alternative Thought Entry</button>
+                  <button type="button" class="btn btn-secondary m-3" id="proceedToAlternative">Magpatuloy sa Alternative Thought Entry</button>
                 </div>
                 
                 <div class="text-center">
-                    <small>Clicking this button will redirect to the alternative thought journal</small>
+                    <small>Ang pag-click sa button na ito ay magre-redirect sa alternatibong thought journal</small>
                 </div>
             </div>
             <!-- Accordion -->

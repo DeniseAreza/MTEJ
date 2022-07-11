@@ -359,3 +359,27 @@ function testTable(moodDate, moodTime, moodLevel) {
     + '</tr>'              
     );
 }
+
+/****************************
+ *  H. SAVE CHART AS IMAGE         *
+ *--------------------------*/
+
+$("#saveImageChartDaytoDay").click(saveChartAsImageDaytoDay);
+function saveChartAsImageDaytoDay() {
+    const imageLink = document.createElement('a');
+    const canvas = document.getElementById('moodDayChart');
+    imageLink.download = 'MoodDiaryDaytoDay.jpg'
+    imageLink.href = canvas.toDataURL('image/jpeg', 1);
+
+    imageLink.click();
+}
+
+$("#saveImageAllEntries").click(saveChartAsImageAllEntries);
+function saveChartAsImageAllEntries() {
+    const imageLink = document.createElement('a');
+    const canvas = document.getElementById('moodAllChart');
+    imageLink.download = 'MoodDiaryAllEntries.jpg'
+    imageLink.href = canvas.toDataURL('image/jpeg', 1);
+
+    imageLink.click();
+}

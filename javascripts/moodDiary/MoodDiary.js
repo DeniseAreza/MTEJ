@@ -138,10 +138,23 @@ function initializeChart(chartID) {
     
     //get HTML element ID to instantiate chart ctx
     const ctx = document.getElementById(chartID).getContext('2d');
-
+    // set the fill color to white
+    
     /*------------------------
         B. Fill Data
     ------------------------*/
+    const plugin = {
+        id: 'custom_canvas_background_color',
+        beforeDraw: (chart) => {
+          const ctx = chart.canvas.getContext('2d');
+          ctx.save();
+          ctx.globalCompositeOperation = 'destination-over';
+          ctx.fillStyle = 'white';
+          ctx.fillRect(0, 0, chart.width, chart.height);
+          ctx.restore();
+        }
+    };
+
     const moodData = {
         labels: [],
         datasets: [{
@@ -149,7 +162,7 @@ function initializeChart(chartID) {
             data: [],
             borderWidth: 5,
             segment: {
-                //change borline line color depending on mood
+                //change borline line color depending on mood    
                 borderColor: 
                         ctx => ctx.p1.parsed.y == 10 ? 'rgba(255, 0, 0, 1)' : undefined
                     ||  ctx.p1.parsed.y == 9 ? 'rgba(192, 0, 0, 1)' : undefined
@@ -173,6 +186,7 @@ function initializeChart(chartID) {
     const myChart = new Chart(ctx, {
         type: 'line',
         data: moodData,
+        plugins: [plugin],
         options: { 
             scales: { 
                 //FILL Y-AXIS (LEFT) DESCRIPTION

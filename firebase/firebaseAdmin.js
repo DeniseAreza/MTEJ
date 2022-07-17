@@ -59,7 +59,7 @@ const UsersRef = ref(database, 'users/');
                         var lastName = data.val().Account.lastName;
                         var email = data.val().Account.email;
                         var state = data.val().Account.state;
-
+										
                         //Populate Table
                         $('#table_allUsers').prepend('<tr>'
                          + '<td>'+ firstName +'</td>'

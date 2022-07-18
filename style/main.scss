@@ -917,16 +917,26 @@ tr.shown td.details-control::before {
 ----------------------------------------*/
 .section-one{
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   background-color: var( --light-yellow-color);
 }
 
 .section-two{
   width: 100%;
-  min-height:100vh;
+  min-height:80vh;
   background-color: var( --orange-color);
 }
+.section-one-small{
+  width: 100%;
+  min-height: 60vh;
+  background-color: var( --light-yellow-color);
+}
 
+.section-two-small{
+  width: 100%;
+  min-height:60vh;
+  background-color: var( --orange-color);
+}
 .container-one, 
 .container-two{
   width: 80%;

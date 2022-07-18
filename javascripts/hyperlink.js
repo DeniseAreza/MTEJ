@@ -40,3 +40,8 @@ $('#ATJournalButton').click(ATJournalButton);
 function ATJournalButton(){
     window.location.href = '/html/ATJPageInfo.html';
 }
+//When Mood Diary Button clicked
+$('#moodDiaryButton').click(moodDiaryButton);
+function moodDiaryButton(){
+    window.location.href = '/html/moodDiaryPage.html';
+}

@@ -75,7 +75,16 @@ FirebaseInit.checkActiveUser()
                             case "0": moodLevelDescription = "Worst"; break;
                         }
                         $("#table_MoodDiaryEntries").prepend(
-                            '<div class="container shadow-sm p-3 mb-5 bg-white rounded""><div class="text-justify"><p class="text-muted"><span>Date:</span> '+ date +'</p></div><div class="text-justify"><p class="text-muted"><span>Time:</span> '+ time +'</p><h3>Mood Level</h3><p class="text-justify">'+ moodLevel +'</p><h3>Mood Level Description</h3><p class="text-justify">'+ moodLevelDescription +'</p><h5>Post ID</h5><p class="text-justify">'+ postID +'</p></div></div>');
+                              '<div class="col">' 
+                            + '<div class="card m-1" style="width: 18rem;">'
+                            + '<div class="card-body">'
+                            + '<p class="card-title display-6">'+ date +'</p>'
+                            + '<p class="text-muted">'+ time +'</p>'
+                            + '<p class="card-text"><strong>Mood level:</strong> '+ moodLevel +'</p>'
+                            + '<p class="card-text"><strong>Mood level description:</strong> '+ moodLevelDescription +'</p>'
+                            + '</div>'
+                            + '</div>'
+                            + '</div>');
                         });
                 }, function() {
                     console.log('No user exists'); 

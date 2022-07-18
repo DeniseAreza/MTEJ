@@ -150,6 +150,9 @@ onChildAdded(MoodUsersRef, (data) => {
                 + '<div class="modal-footer"><button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-ban"></i> Close </button></div></div></div></div>'
             + '</td></tr>' 
         );
+				$(document).ready( function () {
+					$('#dataTable').DataTable();
+			} );
     })                     
 });
 

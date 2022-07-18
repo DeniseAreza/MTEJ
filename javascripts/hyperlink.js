@@ -40,8 +40,16 @@ $('#ATJournalButton').click(ATJournalButton);
 function ATJournalButton(){
     window.location.href = '/html/ATJPageInfo.html';
 }
+
 //When Mood Diary Button clicked
 $('#moodDiaryButton').click(moodDiaryButton);
 function moodDiaryButton(){
     window.location.href = '/html/moodDiaryPage.html';
+}
+
+
+// *Proceed to the laternative thought entry page
+$('#proceedToATJ').click(redirectATJ);
+function redirectATJ() {
+    window.location.href = '/html/automaticThoughtJournal.html';
 }

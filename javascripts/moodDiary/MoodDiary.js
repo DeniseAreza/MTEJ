@@ -126,6 +126,31 @@ $("#moodEntry").on("click",".mood",function(){
     var mood= $(this).attr('value');
     document.getElementById("moodLevel").innerHTML = mood;
     document.getElementById("moodLevel").setAttribute("value", mood);
+    
+    switch(mood) {
+        case "10": document.getElementById("moodDescription").innerHTML = 
+            "Abnormally elevated. Matinding pagbabago sa iyong mood o emosyon, antas ng enerhiya at antas ng aktibidad."; break;
+        case "9": document.getElementById("moodDescription").innerHTML = 
+            "Malubhang elevation ng mood. Matinding pakiramdam ng euphoria at blissfulness na nakikita sa mania."; break;
+        case "8": document.getElementById("moodDescription").innerHTML = 
+            "Katamtamang pagtaas ng mood. Pakiramdam ng malaking kaligayahan at exhilaration."; break;
+        case "7": document.getElementById("moodDescription").innerHTML = 
+            "Masayang pakiramdam ng sikolohikal na well-being at kaligayahan."; break;
+        case "6": document.getElementById("moodDescription").innerHTML = 
+            "Estado ng mapayapang kaligayahan."; break;
+        case "5": document.getElementById("moodDescription").innerHTML = 
+            "Normal ang pakiramdam."; break;
+        case "4": document.getElementById("moodDescription").innerHTML = 
+            "Estado ng kawalan ng interes at sigasig."; break;
+        case "3": document.getElementById("moodDescription").innerHTML = 
+            "Pakiramdam na hindi masaya, kawalan ng motibasyon at confidence sa sarili."; break;
+        case "2": document.getElementById("moodDescription").innerHTML = 
+            "Nakakaranas ng pag-aalala, unease, kaba, o takot."; break;
+        case "1": document.getElementById("moodDescription").innerHTML = 
+            "Dumaranas ng matinding kalungkutan, anxiousness, kawalan ng pag-asa, at misery."; break;
+        case "0": document.getElementById("moodDescription").innerHTML = 
+            "Abnormally depressed. Malubhang estado ng pagsuko, suicidal na damdamin at kaisipan, at despair"; break;
+    }
  });
 
  // Eto dito ko sinet
@@ -205,7 +230,7 @@ function initializeChart(chartID) {
         plugins: [plugin],
         options: {
             responsive: true,
-            title:{
+            title: {
                 display:true,
                 text:'Chart.js Line Chart'
             },

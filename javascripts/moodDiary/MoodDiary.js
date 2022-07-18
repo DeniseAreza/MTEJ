@@ -131,6 +131,8 @@ $("#moodEntry").on("click",".mood",function(){
  // Eto dito ko sinet
 $(document).ready(init);
 
+
+
 /**********************************************************************
     A. Initilize chart function: CHART LOGISTICS STARTS HERE!!! 
 -----------------------------------------------------------------------*/
@@ -141,8 +143,35 @@ function initializeChart(chartID) {
     // set the fill color to white
     
     /*------------------------
-        B. Fill Data
+        B.1 Fill Data
     ------------------------*/
+    const moodData = {
+        labels: [],
+        datasets: [{
+            label: 'Mood Level',
+            data: [],
+            borderWidth: 5,
+            segment: {
+                //change borline line color depending on mood    
+                borderColor: 
+                        ctx => ctx.p1.parsed.y == 10 ? 'rgba(255, 0, 0, 1)' : undefined
+                    ||  ctx.p1.parsed.y == 9 ? 'rgba(192, 0, 0, 1)' : undefined
+                    ||  ctx.p1.parsed.y == 8 ? 'rgba(191, 144, 0, 1)' : undefined
+                    ||  ctx.p1.parsed.y == 7 ? 'rgba(255, 204, 0, 1)' : undefined
+                    ||  ctx.p1.parsed.y == 6 ? 'rgba(255, 156, 25, 1)' : undefined
+                    ||  ctx.p1.parsed.y == 5 ? 'rgba(0, 176, 80, 1)' : undefined
+                    ||  ctx.p1.parsed.y == 4 ? 'rgba(6, 189, 208, 1)' : undefined
+                    ||  ctx.p1.parsed.y == 3 ? 'rgba(0, 112, 192, 1)' : undefined
+                    ||  ctx.p1.parsed.y == 2 ? 'rgba(112, 48, 160, 1)' : undefined
+                    ||  ctx.p1.parsed.y == 1 ? 'rgba(32, 56, 100, 1)' : undefined
+                    ||  ctx.p1.parsed.y == 0 ? 'rgba(0, 0, 0, 1)' : undefined
+            }
+        }]
+    }
+
+    /*--------------------------------------
+        B.2 create plugin and colors
+    ----------------------------------------*/
     const plugin = {
         id: 'custom_canvas_background_color',
         beforeDraw: (chart) => {
@@ -155,31 +184,18 @@ function initializeChart(chartID) {
         }
     };
 
-    const moodData = {
-        labels: [],
-        datasets: [{
-            label: 'Mood Level',
-            data: [],
-            borderWidth: 5,
-            segment: {
-                //change borline line color depending on mood    
-                borderColor: 
-                        ctx => ctx.p1.parsed.y == 10 ? 'rgba(255, 0, 0, 1)' : undefined
-                    ||  ctx.p1.parsed.y == 9 ? 'rgba(192, 0, 0, 1)' : undefined
-                    ||  ctx.p1.parsed.y == 8 ? 'rgba(255, 204, 0, 1)' : undefined
-                    ||  ctx.p1.parsed.y == 7 ? 'rgba(191, 144, 0, 1)' : undefined
-                    ||  ctx.p1.parsed.y == 6 ? 'rgba(255, 156, 25, 1)' : undefined
-                    ||  ctx.p1.parsed.y == 5 ? 'rgba(0, 176, 80, 1)' : undefined
-                    ||  ctx.p1.parsed.y == 4 ? 'rgba(6, 189, 208, 1)' : undefined
-                    ||  ctx.p1.parsed.y == 3 ? 'rgba(0, 112, 192, 1)' : undefined
-                    ||  ctx.p1.parsed.y == 2 ? 'rgba(112, 48, 160, 1)' : undefined
-                    ||  ctx.p1.parsed.y == 1 ? 'rgba(32, 56, 100, 1)' : undefined
-                    ||  ctx.p1.parsed.y == 0 ? 'rgba(0, 0, 0, 1)' : undefined
-            }
-        }]
-    }
-
-
+    const colors = ['rgba(0, 0, 0, 1)',         //worst
+                    'rgba(32, 56, 100, 1)',     //depressed
+                    'rgba(112, 48, 160, 1)',    //anxious
+                    'rgba(0, 112, 192, 1)',     //low
+                    'rgba(6, 189, 208, 1)',     //meh
+                    'rgba(0, 176, 80, 1)',      //good
+                    'rgba(255, 156, 25, 1)',    //content
+                    'rgba(255, 204, 0, 1)',     //happy
+                    'rgba(191, 144, 0, 1)',     //elation
+                    'rgba(192, 0, 0, 1)',       //ecstasy
+                    'rgba(255, 0, 0, 1)'];      //manic
+    
     /*----------------------------------------
         C. CREATE CHART, FILL LABEL OPTIONS
     ------------------------------------------*/
@@ -187,17 +203,32 @@ function initializeChart(chartID) {
         type: 'line',
         data: moodData,
         plugins: [plugin],
-        options: { 
+        options: {
+            responsive: true,
+            title:{
+                display:true,
+                text:'Chart.js Line Chart'
+            },
+            tooltips: {
+                mode: 'index',
+                intersect: false,
+            },
+            hover: {
+                mode: 'nearest',
+                intersect: true
+            },
             scales: { 
                 //FILL Y-AXIS (LEFT) DESCRIPTION
                 y: { 
                     suggestedMin: 0, 
                     suggestedMax: 10,
                     title: { display: true, text: 'Mood Level' },
+                    ticks: { color: (c) => { return colors[c.index % colors.length] } }
                 }, 
                 //FILL X-AXIS DESCRIPTION
                 x: {
-                    title: { display: true, text: 'Date Created' }
+                    title: { display: true, text: 'Date Created' },
+                    //ticks: { color: (c) => { return colors[c.index % colors.length] } }
                 },
                 //FILL Y-AXIS (RIGHT) DESCRIPTION
                 description: {
@@ -206,18 +237,21 @@ function initializeChart(chartID) {
                     position: 'right',
                     title: { display: true, text: 'Mood Description' },
                     ticks: {
-                        callback: function(value,index) {
+                        //change tick color individually
+                        color: (c) => { return colors[c.index % colors.length] },   
+                        //add tick description
+                        callback: function(value, index, values) {                            
                             console.log(this.getLabelForValue(value))
                             switch(this.getLabelForValue(value)) {
-                                case "10": return "Elevated"; break;
-                                case "9": return "Euphoric"; break;
-                                case "8": return "Blissful"; break;
+                                case "10": return "Manic"; break;
+                                case "9": return "Ecstasy"; break;
+                                case "8": return "Elation"; break;
                                 case "7": return "Happy"; break;
                                 case "6": return "Content"; break;
                                 case "5": return "Good"; break;
                                 case "4": return "Meh"; break;
                                 case "3": return "Low"; break;
-                                case "2": return "Sad"; break;
+                                case "2": return "Anxious"; break;
                                 case "1": return "Depressed"; break;
                                 case "0": return "Worst"; break;
                             }
@@ -286,13 +320,43 @@ FirebaseInit.checkActiveUser()
 // * Retrieve  ATJ as reference
 
 /****************************
- *  E. ADD CHART DATA    *
+ *  E. ADD NEW CHART DATA   *
  *--------------------------*/
 function addChartData(myChart, moodDate, moodLevel) {
     myChart.data.labels.push(moodDate);
     myChart.data.datasets.forEach((dataset) => {
         dataset.data.push(moodLevel);
     });
+
+    // duplicate array for sorting
+    let labels = myChart.data.labels;
+    let moodLevelArray = myChart.data.datasets[0].data;
+    
+    // sort data and label
+    var isDone = false;
+    while (!isDone) {
+        isDone = true;
+        
+        //sort through label
+        for (var i = 1; i <= labels.length; i++) {
+            if (labels[i-1] > labels[i]) {
+                isDone = false;
+
+                //sort label
+                var tmp = labels[i-1];
+                labels[i-1] = labels[i];
+                labels[i] = tmp;
+
+                //sort data
+                tmp = moodLevelArray[i-1];
+                moodLevelArray[i-1] = moodLevelArray[i];
+                moodLevelArray[i] = tmp;
+
+            }
+        }
+    }
+
+    //update chart
     myChart.update();
 }
 

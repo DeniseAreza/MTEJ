@@ -94,7 +94,7 @@ const MoodUsersRef = ref(database, 'users/');
 
                         const MDRef = ref(database, 'users/' + uid + '/MoodEntry');
                                     onChildAdded(MDRef, (data) => {
-                                    var uid = data.val().uid
+                                    //var uid = data.val().uid
                                     var moodLevel = data.val().moodLevel; 
                                     var time = data.val().time;
                                     var date = data.val().date;

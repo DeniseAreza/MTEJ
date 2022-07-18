@@ -688,9 +688,9 @@ table.moodDiaryTable td {
 :root {
   --mood10: #FF0000;
   --mood9: #C00000;
-  --mood8: #FFCC00;
-  --mood7: #BF9000;
-  --mood6: #FF9C19;
+  --mood8: #BF9000; //FFCC00
+  --mood7: #FFCC00; //#BF9000
+  --mood6: #FF9C19; 
   --mood5: #00B050;
   --mood4: #06BDD0;
   --mood3: #0070C0;
@@ -722,7 +722,7 @@ table.moodDiaryTable td {
 .btn-check:checked + .mood7, .btn-check:active + .mood7, .mood7:active, .mood7.active, .mood7.dropdown-toggle.show { background-color: var(--mood7); color: var(--white-color); border-color: var(--mood7); }
 .btn-check:checked + .mood8, .btn-check:active + .mood8, .mood8:active, .mood8.active, .mood8.dropdown-toggle.show { background-color: var(--mood8); color: var(--white-color); border-color: var(--mood8); }
 .btn-check:checked + .mood9, .btn-check:active + .mood9, .mood9:active, .mood9.active, .mood9.dropdown-toggle.show { background-color: var(--mood9); color: var(--white-color); border-color: var(--mood9); }
-.btn-check:checked + .mood10, .btn-check:active + .mood10, .mood10:active, .mood10.active, .mood10.dropdown-toggle.show { background-color: var(--mood10); color: var(--white-color); border-color: var(--mood0); }
+.btn-check:checked + .mood10, .btn-check:active + .mood10, .mood10:active, .mood10.active, .mood10.dropdown-toggle.show { background-color: var(--mood10); color: var(--white-color); border-color: var(--mood10); }
 
 
 div.dropdown-menu {

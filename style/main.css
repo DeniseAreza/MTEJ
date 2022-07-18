@@ -12766,8 +12766,8 @@ table.moodDiaryTable td {
 :root {
   --mood10: #FF0000;
   --mood9: #C00000;
-  --mood8: #FFCC00;
-  --mood7: #BF9000;
+  --mood8: #BF9000;
+  --mood7: #FFCC00;
   --mood6: #FF9C19;
   --mood5: #00B050;
   --mood4: #06BDD0;
@@ -12906,7 +12906,7 @@ table.moodDiaryTable td {
 .btn-check:checked + .mood10, .btn-check:active + .mood10, .mood10:active, .mood10.active, .mood10.dropdown-toggle.show {
   background-color: var(--mood10);
   color: var(--white-color);
-  border-color: var(--mood0);
+  border-color: var(--mood10);
 }
 
 div.dropdown-menu {

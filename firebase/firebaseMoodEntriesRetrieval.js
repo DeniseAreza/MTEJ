@@ -61,19 +61,21 @@ FirebaseInit.checkActiveUser()
                         var date = data.val().date;
                         var postID = data.val().postID;
                         var moodLevelDescription;
+                        
                         switch(moodLevel) {
-                            case "10": moodLevelDescription = "Elevated"; break;
-                            case "9": moodLevelDescription = "Euphoric"; break;
-                            case "8": moodLevelDescription = "Blissful"; break;
+                            case "10": moodLevelDescription = "Manic"; break;
+                            case "9": moodLevelDescription = "Ecstasy"; break;
+                            case "8": moodLevelDescription = "Elation"; break;
                             case "7": moodLevelDescription = "Happy"; break;
                             case "6": moodLevelDescription = "Content"; break;
                             case "5": moodLevelDescription = "Good"; break;
                             case "4": moodLevelDescription = "Meh"; break;
                             case "3": moodLevelDescription = "Low"; break;
-                            case "2": moodLevelDescription = "Sad"; break;
+                            case "2": moodLevelDescription = "Anxious"; break;
                             case "1": moodLevelDescription = "Depressed"; break;
                             case "0": moodLevelDescription = "Worst"; break;
                         }
+
                         $("#table_MoodDiaryEntries").prepend(
                               '<div class="col">' 
                             + '<div class="card m-1" style="width: 18rem;">'

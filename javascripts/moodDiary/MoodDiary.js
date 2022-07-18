@@ -303,21 +303,14 @@ FirebaseInit.checkActiveUser()
 
                         //filterDuplicate
                         filterDuplicate(myChart, moodDate, moodTime, moodLevel, dateArray1, timeArray1, moodLevelArray1, true);
-                        filterDuplicate(myAllChart, moodDate, moodTime, moodLevel, dateArray2, timeArray2, moodLevelArray2, false);    
-                        
-
-                        //TESTING PURPOSES
-                        testTable(moodDate, moodTime, moodLevel);           // test all data
-
-                        document.getElementById("demoDate").innerHTML = dateArray1;
-                        document.getElementById("demoTime").innerHTML = timeArray1;
-                        document.getElementById("demoMoodLevel").innerHTML = moodLevelArray1;
+                        filterDuplicate(myAllChart, moodDate, moodTime, moodLevel, dateArray2, timeArray2, moodLevelArray2, false);
                     });
                     
                 }, function() {
                     console.log('No user exists'); 
                 });
 // * Retrieve  ATJ as reference
+
 
 /****************************
  *  E. ADD NEW CHART DATA   *
@@ -351,7 +344,6 @@ function addChartData(myChart, moodDate, moodLevel) {
                 tmp = moodLevelArray[i-1];
                 moodLevelArray[i-1] = moodLevelArray[i];
                 moodLevelArray[i] = tmp;
-
             }
         }
     }
@@ -373,7 +365,6 @@ function updateChartData(myChart, newMoodLevel, index) {
 /****************************
  *  G. FILTER ARRAYS         *
  *--------------------------*/
-
 function filterDuplicate(myChart, moodDate, moodTime, moodLevel, dateArray, timeArray, moodLevelArray, isFilterChecked) {
     
     //get duplicate index
@@ -407,36 +398,6 @@ function filterDuplicate(myChart, moodDate, moodTime, moodLevel, dateArray, time
     
 }
     
-      
-/******************************************
- * TESTING PURPOSES: REMOVE WHEN DONE!!
- *----------------------------------------*/
-function testTable(moodDate, moodTime, moodLevel) {
-
-    var moodLevelDescription;
-    
-     switch(moodLevel) {
-        case "10": moodLevelDescription = "Elevated"; break;
-        case "9": moodLevelDescription = "Euphoric"; break;
-        case "8": moodLevelDescription = "Blissful"; break;
-        case "7": moodLevelDescription = "Happy"; break;
-        case "6": moodLevelDescription = "Content"; break;
-        case "5": moodLevelDescription = "Good"; break;
-        case "4": moodLevelDescription = "Meh"; break;
-        case "3": moodLevelDescription = "Low"; break;
-        case "2": moodLevelDescription = "Sad"; break;
-        case "1": moodLevelDescription = "Depressed"; break;
-        case "0": moodLevelDescription = "Worst"; break;
-    }
-
-    //Populate Table
-    $('#table_moodDiary').prepend('<tr>'
-    + '<td>'+ moodDate +'</td>'
-    + '<td>'+ moodTime +'</td>'
-    + '<td>'+ moodLevel + " – " + moodLevelDescription + '</td>'
-    + '</tr>'              
-    );
-}
 
 /****************************
  *  H. SAVE CHART AS IMAGE         *

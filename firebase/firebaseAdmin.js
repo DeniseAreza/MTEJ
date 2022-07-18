@@ -146,7 +146,7 @@ onChildAdded(MoodUsersRef, (data) => {
                 + '<input type="text" class="form-control" id="view_time" placeholder="'+ time +'" readonly></div></div>   <div class="row"><div class="col-md-12"><label for="postUID" class="col col-form-label">Post Unique Identifier (UID)</label>'
                 + '<input type="text" class="form-control" id="view_postID" placeholder="'+ postID +'" readonly></div></div></div>'
                 + '<div class="modal-footer"><button type="button" class="btn btn-danger" data-bs-dismiss="modal"> <i class="fa-solid fa-ban"></i> Close </button></div></div></div></div>'
-            + '</td></tr>' 
+            + '</td></tr>'  
         );
 				$(document).ready( function () {
 					$('#dataTable').DataTable();

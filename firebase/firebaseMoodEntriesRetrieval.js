@@ -54,11 +54,12 @@ FirebaseInit.checkActiveUser()
 // * Retrieve Mood Diary Entries as reference
 FirebaseInit.checkActiveUser()
                 .then((user) => {
+                    
                     const MDRef = ref(database, 'users/' + user.uid  + '/MoodEntry');
                     onChildAdded(MDRef, (data) => {
+                        var moodDate = data.val().date;
+                        var moodTime = data.val().time;
                         var moodLevel = data.val().moodLevel; 
-                        var time = data.val().time;
-                        var date = data.val().date;
                         var postID = data.val().postID;
                         var moodLevelDescription;
                         
@@ -77,18 +78,20 @@ FirebaseInit.checkActiveUser()
                         }
 
                         $("#table_MoodDiaryEntries").prepend(
-                              '<div class="col">' 
-                            + '<div class="card m-1" style="width: 18rem;">'
-                            + '<div class="card-body">'
-                            + '<p class="card-title display-6">'+ date +'</p>'
-                            + '<p class="text-muted">'+ time +'</p>'
-                            + '<p class="card-text"><strong>Mood level:</strong> '+ moodLevel +'</p>'
-                            + '<p class="card-text"><strong>Mood level description:</strong> '+ moodLevelDescription +'</p>'
-                            + '</div>'
-                            + '</div>'
-                            + '</div>');
-                        });
-                }, function() {
-                    console.log('No user exists'); 
-                });
+                            '<div class="col">' 
+                          + '<div class="card m-1" style="width: 18rem;">'
+                          + '<div class="card-body">'
+                          + '<p class="card-title display-6">'+ moodDate +'</p>'
+                          + '<p class="text-muted">'+ moodTime +'</p>'
+                          + '<p class="card-text"><strong>Mood level:</strong> '+ moodLevel +'</p>'
+                          + '<p class="card-text"><strong>Mood level description:</strong> '+ moodLevelDescription +'</p>'
+                          + '</div>'
+                          + '</div>'
+                          + '</div>'
+                        );
+
+                    });
+}, function() {
+    console.log('No user exists'); 
+});
 // * Retrieve  ATJ as reference
